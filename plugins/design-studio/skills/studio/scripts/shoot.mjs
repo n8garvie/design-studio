@@ -251,10 +251,12 @@ export async function launchBrowser(opts = {}) {
   const base = { headless: true, ...launchOptions };
   delete base.executablePath;
 
-  const attempts = explicit ? [{ executablePath: explicit, label: explicit }] : [{ label: "Playwright's Chromium" }];
-  if (!explicit) {
-    attempts.push({ channel: 'chrome', label: 'installed Google Chrome' }, { channel: 'msedge', label: 'installed Microsoft Edge' });
-  }
+  const attempts = [
+    ...(explicit ? [{ executablePath: explicit, label: explicit }] : []),
+    { label: "Playwright's Chromium" },
+    { channel: 'chrome', label: 'installed Google Chrome' },
+    { channel: 'msedge', label: 'installed Microsoft Edge' },
+  ];
   for (const exe of [...new Set([...systemBrowserPaths(), ...cachedBrowserPaths()])]) {
     if (exe !== explicit && isFile(exe)) attempts.push({ executablePath: exe, label: exe });
   }
