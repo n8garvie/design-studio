@@ -368,7 +368,7 @@ async function main() {
   log('Reading the desengs.com resource feed…');
   const scrapedResources = await fetchResources();
   const oldResources = byId(oldDesengs?.resources);
-  const resources = scrapedResources.map((r) => ({ ...r, notes: oldResources.get(r.id)?.notes ?? '' }));
+  const resources = scrapedResources.map((r) => ({ ...r, notes: oldResources.get(r.id)?.notes ?? '', inToolbox: oldResources.get(r.id)?.inToolbox ?? false }));
   guardShrink('desengs resources', oldDesengs?.resources, resources);
 
   log('Reading designengineer.tools…');
@@ -391,7 +391,7 @@ async function main() {
     site: `${DESENGS}/`,
     curator: oldDesengs?.curator ?? 'Maze Heart',
     capturedAt,
-    note: 'Snapshot for maintainers; the studio never fetches these at runtime. Curated fields: category, notes, indexed (entries) and notes (resources). Refresh with node tools/refresh-sources.mjs.',
+    note: 'Snapshot for maintainers; the studio never fetches these at runtime. Curated fields: category, notes, indexed (entries); notes, inToolbox (resources). Refresh with node tools/refresh-sources.mjs.',
     categories: oldDesengs?.categories ?? {},
     counts: { ...countBy(entries, 'collection'), total: entries.length, resources: resources.length },
     items: entries.sort((a, b) => a.id.localeCompare(b.id)),

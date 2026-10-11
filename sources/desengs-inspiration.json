@@ -2,9 +2,19 @@
   "source": "https://desengs.com/inspiration/",
   "site": "https://desengs.com/",
   "curator": "Maze Heart",
-  "capturedAt": "2026-10-11T22:19:13Z",
-  "note": "Snapshot for maintainers; the studio never fetches these at runtime. Curated fields: category, notes, indexed (entries) and notes (resources). Refresh with node tools/refresh-sources.mjs.",
-  "categories": {},
+  "capturedAt": "2026-10-11T22:29:18Z",
+  "note": "Snapshot for maintainers; the studio never fetches these at runtime. Curated fields: category, notes, indexed (entries); notes, inToolbox (resources). Refresh with node tools/refresh-sources.mjs.",
+  "categories": {
+    "portfolio": "Portfolios and personal sites (one person)",
+    "studio": "Studios, agencies and collectives",
+    "product": "Product, SaaS, AI and developer tools",
+    "finance": "Finance, markets and real assets",
+    "culture": "Editorial, culture, institutions and services",
+    "commerce": "Commerce, type foundries and physical products",
+    "experimental": "Experimental, world-building and motion",
+    "minimal-personal": "Minimal personal sites (desengs Minimum directory)",
+    "og-image": "Open Graph share images (desengs OG gallery)"
+  },
   "counts": {
     "inspiration": 107,
     "og": 48,
@@ -28,9 +38,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-06-kisawapfe-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Name set edge to edge as the masthead and every other line at caption size: two type sizes and one lo-fi image carry the fold.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-06-softglossary-space",
@@ -46,9 +56,9 @@
         "Arts & Culture"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-06-softglossary-space.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "culture",
+      "notes": "Code-made imagery (ASCII) for a site about web design and code; one italic serif word carries the brand's own term.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-07-moonbeam-network",
@@ -64,9 +74,9 @@
         "Web3 & Blockchain"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-07-moonbeam-network.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "finance",
+      "notes": "A cinematic render, a staggered three-line headline and a live network-stats strip as proof.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-07-vivienscreative-com-au",
@@ -82,9 +92,9 @@
         "Media & Entertainment"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-07-vivienscreative-com-au.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A full-bleed black-and-white photograph carries the emotion; a giant wordmark cropped at the bottom edge and one serif sentence frame it.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-08-bleibtgleich-com",
@@ -100,9 +110,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-08-bleibtgleich-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "One red does every job (type, rules, mark) on off-white; visible crosshair construction lines and a dry one-line voice.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-08-dub-co",
@@ -120,9 +130,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-08-dub-co.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "The conventional SaaS hero done precisely: medium-weight headline, real product UI with plausible data, a product tab switcher.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-08-neon-com",
@@ -140,9 +150,9 @@
         "Futuristic"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-08-neon-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Feature visuals are diagrams of the concept (light paths for scaling, splitting lines for branching); the accent is rationed to logo and CTA.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-08-tars-pro",
@@ -161,9 +171,9 @@
         "Landing Page"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-08-tars-pro.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "finance",
+      "notes": "The brand object (a chrome logo form) is the hero inside a stepped gradient grid, flanked by two short claims.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-09-cosmos-so",
@@ -179,9 +189,9 @@
         "Dark Mode"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-09-cosmos-so.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "experimental",
+      "notes": "The product's content orbits the wordmark in 3D; the corners hold utilities (theme toggle, scroll cue).",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-09-humbleops-ai",
@@ -202,9 +212,9 @@
         "Animated"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-09-humbleops-ai.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Shows the actual user (a factory operator) instead of abstract AI imagery; editorial three-column hero; accent down to a full stop.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-09-nuageboi-fr",
@@ -222,9 +232,9 @@
         "Arts & Culture"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-09-nuageboi-fr.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "One saturated field plus black; a cropped condensed-name marquee, numbered nav and a live local clock turn metadata into texture.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-10-conway-world",
@@ -238,9 +248,9 @@
         "Media / Content"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-10-conway-world.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "culture",
+      "notes": "Monochrome illustration in the brand colour only; a sans masthead with a serif deck for editorial voice.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-10-millermccormick-com",
@@ -255,9 +265,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-10-millermccormick-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "No hero: the homepage is the body of work as an irregular thumbnail field, with the bio cut to a four-line caption.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-10-quo-com",
@@ -273,9 +283,9 @@
         "Technology"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-10-quo-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Social proof above the headline, product UI filled with believable conversations, one saturated CTA colour used twice.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-10-tfortroels-com",
@@ -290,9 +300,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-10-tfortroels-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Strict label and value columns under tiny grey headers, a full-width name between hairlines, one hand-drawn scribble breaking the grid.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-11-atio-studio",
@@ -306,9 +316,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-11-atio-studio.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Wordmark bleeding off the top edge, then projects as five-column metadata rows; a deadpan spec line names the background colour.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-11-darkroom-au",
@@ -323,9 +333,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-11-darkroom-au.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "A layers panel drawn over the product photograph explains, inside the hero, that the mockup is editable.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-11-driftime-com",
@@ -341,9 +351,9 @@
         "Marketing & Sales"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-11-driftime-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Client work shown in use by a person on a real laptop instead of a flat mockup, under a heavy caps headline.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-11-letude-group",
@@ -357,9 +367,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-11-letude-group.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Three-colour poster logic: a photo panel knocks out the heavy wordmark it overlaps; a dictionary definition is the voice.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-11-mekuwelt-art",
@@ -374,9 +384,9 @@
         "AI & Data"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-11-mekuwelt-art.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Split screen: one loud saturated image half against a silent half holding an almost invisible embossed monogram.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-12-artworld-agency",
@@ -392,9 +402,9 @@
         "Media & Entertainment"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-12-artworld-agency.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "The roster is the design: names alternate roman and italic with superscript role codes and a legend, above a heavy wordmark.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-12-lelism-com",
@@ -409,9 +419,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-12-lelism-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Monospace everything: the numbered project index is the homepage, with coordinate columns at the edges for tabular rhythm.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-12-savoirfaire-nyc",
@@ -425,9 +435,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-12-savoirfaire-nyc.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A condensed didone wordmark sits on the bottom edge like a horizon, empty black above, an instruction marquee on top.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-13-caso-patrimoine-fr",
@@ -443,9 +453,9 @@
         "Business & Finance"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-13-caso-patrimoine-fr.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "finance",
+      "notes": "A headline alternating grotesk and serif lines (modern and heritage) above photographs of the actual buildings.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-13-habillagegraphique-com",
@@ -461,9 +471,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-13-habillagegraphique-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Light caps repeated as ruled, offset lines turn the name into a pattern; italic is spent only on the playful (RÉ).",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-13-sub-global",
@@ -479,9 +489,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-13-sub-global.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "experimental",
+      "notes": "The archive as a landscape of hundreds of coded thumbnails, filtered by facets written as plain text lists.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-13-theswaddle-com",
@@ -496,9 +506,9 @@
         "Media & Entertainment"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-13-theswaddle-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "culture",
+      "notes": "A classical masthead parked at the fold line over an empty upper half, inviting the scroll; mono category nav.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-14-danielherzog-design",
@@ -513,9 +523,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-14-danielherzog-design.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Restraint on dark: a regular-weight two-line headline, one hairline organising the fold, a text link instead of a button.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-14-flyingpapers-com",
@@ -530,9 +540,9 @@
         "Retail & Ecommerce"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-14-flyingpapers-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "Products personified as mascot characters; a tone-on-tone headline so the characters lead.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-14-giopandone-com",
@@ -548,9 +558,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-14-giopandone-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "An almost empty page whose grid shows only through the alignment of a few tiny text blocks.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-14-gte-xyz",
@@ -567,9 +577,9 @@
         "Web3 & Blockchain"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-14-gte-xyz.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "finance",
+      "notes": "A serif headline on a crypto exchange breaks the category convention; motion-blurred coins imply speed.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-14-tatsianashevarenkova-com",
@@ -584,9 +594,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-14-tatsianashevarenkova-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "Catalogue metadata (title, dimensions, price or sold) is the only interface over consistently lit photographs.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-15-davidebaratta-com",
@@ -603,9 +613,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-15-davidebaratta-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Full-width serif wordmark over an asymmetric work grid with deliberate gaps; micro labels mix two families.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-16-benmingo-com",
@@ -621,9 +631,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-16-benmingo-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Contact-sheet index: uniform thumbnails labelled with file names, so the work can vary while the frame stays fixed.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-17-hellomuller-com",
@@ -639,9 +649,9 @@
         "Bold"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-17-hellomuller-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "One colour, one typeface, one size jump: the wordmark is the hero and the nav sits on a four-column grid under a rule.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-17-kaer-co",
@@ -657,9 +667,9 @@
         "Health & Wellness"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-17-kaer-co.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "The brand device (parentheses) scaled up to frame one italic serif line over a dusk photograph.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-17-studiomuseum-org",
@@ -678,9 +688,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-17-studiomuseum-org.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "culture",
+      "notes": "One display serif carries the institution's voice; artworks sit on grey like a gallery wall.",
+      "indexed": true
     },
     {
       "id": "inspiration/2025-12-17-xx-ssense-com",
@@ -697,9 +707,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2025-12-17-xx-ssense-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "A single glyph (the anniversary numeral) fills the fold; nothing else but a scroll cue.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-19-luisaruzzenenti-com",
@@ -715,9 +725,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-19-luisaruzzenenti-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Small thumbnails in a sparse grid with empty cells; the pattern of whitespace is the composition.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-19-newgenre-studio",
@@ -732,9 +742,9 @@
         "Technology"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-19-newgenre-studio.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A single positioning sentence in serif over a time-of-day gradient; no image and one ghost button.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-19-omosa-co",
@@ -752,9 +762,9 @@
         "Lifestyle"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-19-omosa-co.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Client campaign photography as the hero with a case-study caption strip (client, services, year) across the fold.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-19-vap-studio",
@@ -770,9 +780,9 @@
         "Playful"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-19-vap-studio.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "experimental",
+      "notes": "The logo as a tactile chrome object with sticker decals; tiny lowercase copy against the loud object.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-20-claudetype-com",
@@ -787,9 +797,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-20-claudetype-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "Typefaces shown on physical products (bag, hair clip, wine label) in arch crops that echo the letterforms.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-20-off-site",
@@ -805,9 +815,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-20-off-site.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Classical serif caps headline with a mono kicker; secondary content parked in the corners as small cards.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-20-unknown-untitled-com",
@@ -823,9 +833,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-20-unknown-untitled-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "One family, two sizes: the name cropped at the top edge and a large-set paragraph as the only content.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-21-adcker-com",
@@ -841,9 +851,9 @@
         "Animated"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-21-adcker-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A photo set inside parentheses as a word of the stacked headline, annotated by small serif marginalia.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-21-equipo-exe-com",
@@ -857,9 +867,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-21-equipo-exe-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Running serif prose with inline See also chips linking concepts, above documentary team portraits that state the practice.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-21-giga-ai",
@@ -875,9 +885,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-21-giga-ai.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "A calm painted landscape and a serif headline give an AI product a human register; client logos sit on the image foot.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-02-21-posse-agency-com",
@@ -893,9 +903,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2026-02-21-posse-agency-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Manifesto set in heavy caps at the same size as the nav, counts in parentheses, one brush-script mark as the only hand-made element.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-03-24-relace-ai",
@@ -912,9 +922,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-03-24-relace-ai.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Scientific-figure captions (FIG. 002) and an analog landscape behind a code window; square buttons and one orange.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-03-24-studiolinear-com",
@@ -930,9 +940,9 @@
         "Playful"
       ],
       "image": "https://desengs.com/images/screenshots/2026-03-24-studiolinear-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Condensed caps wordmark with a googly-eyes glyph, a pixel font as second voice, and a bottom bar that routes visitors by intent.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-03-24-voku-studio",
@@ -947,9 +957,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-03-24-voku-studio.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "experimental",
+      "notes": "Images arranged as an object (a fanned arc of cards) instead of a grid; one line of nav.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-03-26-interfere-com",
@@ -965,9 +975,9 @@
         "Dark Mode"
       ],
       "image": "https://desengs.com/images/screenshots/2026-03-26-interfere-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Keyboard-shortcut badges on the nav buttons signal a keyboard-first product; a full issue view with a forecast chart is the proof.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-03-26-ntgent-be",
@@ -983,9 +993,9 @@
         "Corporate Website"
       ],
       "image": "https://desengs.com/images/screenshots/2026-03-26-ntgent-be.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "culture",
+      "notes": "A season statement paragraph instead of a slogan; cut-out props and stills collaged asymmetrically.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-03-26-obsidianos-com",
@@ -1001,9 +1011,9 @@
         "Dark Mode"
       ],
       "image": "https://desengs.com/images/screenshots/2026-03-26-obsidianos-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "finance",
+      "notes": "The brand name made literal as material (rendered obsidian rock) framing a realistic adviser dashboard.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-01-fora-so",
@@ -1017,9 +1027,9 @@
         "Technology"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-01-fora-so.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "The product window rises out of a rendered landscape, showing a real creator space rather than an empty dashboard.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-01-pacomepertant-com",
@@ -1036,9 +1046,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-01-pacomepertant-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "experimental",
+      "notes": "A 3D spiral of work with a plain list view one click away, an explicit sound toggle and a rotating showreel badge.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-01-rig-ai",
@@ -1053,9 +1063,9 @@
         "Landing Page"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-01-rig-ai.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Chamfered corners as brand geometry, a value-prop marquee, then a problem-first section numbered like a report.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-03-bymonolog-com",
@@ -1070,9 +1080,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-03-bymonolog-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "The wordmark mixes letter styles to show range; two short paragraphs name the client's exact problem.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-03-fromanother-love",
@@ -1087,9 +1097,9 @@
         "Animated"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-03-fromanother-love.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Indented caps headline with a video clip replacing one word, italic serif side notes and a language switch.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-03-langbase-com",
@@ -1105,9 +1115,9 @@
         "Dark Mode"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-03-langbase-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "The layout grid drawn as a design-tool canvas (dashed cells, corner handles) while the headline stays modest.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-03-stagecrew-studio",
@@ -1122,9 +1132,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-03-stagecrew-studio.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Asymmetric split: a column of full-bleed work against a mostly empty column holding one indented paragraph.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-05-anima-ai",
@@ -1139,9 +1149,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-05-anima-ai.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A scanned object weaves in front of and behind the headline letters (z-layering), with boxed mono annotations as callouts.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-05-nrthview-com",
@@ -1156,9 +1166,9 @@
         "Monochrome"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-05-nrthview-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "experimental",
+      "notes": "A desktop OS metaphor (folders, menubar, live weather) for a multidisciplinary archive, with instructions in a marquee.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-05-seb-astian-com",
@@ -1174,9 +1184,9 @@
         "Playful"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-05-seb-astian-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Print-form layout with ruled borders, a didone name split by rules, hand doodles and a self-deprecating voice.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-08-baytas-net",
@@ -1192,9 +1202,9 @@
         "Dark Mode"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-08-baytas-net.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "The whole practice as a dated table (year gutter, title, type tag), strikethrough for what ended, list/category/visual view switch.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-08-godaylight-com",
@@ -1208,9 +1218,9 @@
         "Animated"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-08-godaylight-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "Data annotations on a photograph of a real home make the product tangible; an address field is the CTA.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-08-museosansevero-it",
@@ -1223,9 +1233,9 @@
         "Arts & Culture"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-08-museosansevero-it.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "culture",
+      "notes": "A detail crop of the collection's masterpiece; header utilities each in their own ruled cell.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-08-weave-figma-com",
@@ -1240,9 +1250,9 @@
         "Technology"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-08-weave-figma-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "The product's own node graph (model to model) is the hero illustration; split titles name the product and its category.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-18-apossible-com",
@@ -1256,9 +1266,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-18-apossible-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "experimental",
+      "notes": "A research map on an infinite canvas (threads, tagged cards, zoom controls) beside a plain reading panel.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-18-contentarchitecture-dev",
@@ -1273,9 +1283,9 @@
         "Technology"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-18-contentarchitecture-dev.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "A terminal-style status line (versions, servers, drift 0) as proof beside a kinetic spiral of repeated words.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-18-getmaito-com",
@@ -1291,9 +1301,9 @@
         "SaaS / Web App"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-18-getmaito-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Two-tone serif headline (second line lighter) over a product calendar filled with real post titles.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-07-18-museumdepartment-com",
@@ -1307,9 +1317,9 @@
         "Arts & Culture"
       ],
       "image": "https://desengs.com/images/screenshots/2026-07-18-museumdepartment-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "culture",
+      "notes": "A heavy caps statement and a one-line description that teaches the keyboard search.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-19-caractere-bois-fr",
@@ -1326,9 +1336,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-19-caractere-bois-fr.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "An unexpected but motivated colour pair for a woodshop; the identity appears inside the photograph on a T-shirt.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-19-deadwater-fr",
@@ -1344,9 +1354,9 @@
         "Dark Mode"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-21-deadwater-fr.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Ultra-condensed wordmark along the bottom, one framed moving portrait, and a since-2012 badge for heritage.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-19-lift-type-fr",
@@ -1360,9 +1370,9 @@
         "Creative"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-21-lift-type-fr.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "A mascot interrupts the caps headline mid-line; a grid/list toggle for the catalogue.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-19-lightspark-com",
@@ -1377,9 +1387,9 @@
         "SaaS / Web App"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-21-lightspark-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "finance",
+      "notes": "Depth of field ranks many example UIs (sharp near the centre, blurred at the edges) around a small headline.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-19-melius-com",
@@ -1394,9 +1404,9 @@
         "SaaS / Web App"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-19-melius-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "The prompt box is the call to action; a perspective corridor of generated work shows the range of output.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-19-pryzm-design",
@@ -1410,9 +1420,9 @@
         "Landing Page"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-21-pryzm-design.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Outputs shown as named specimens (texture name plus technique): the naming is the taste signal.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-19-useportal-net",
@@ -1427,9 +1437,9 @@
         "Landing Page"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-19-useportal-net.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "An illustrated world gives warmth to a payments tool; the product card shows a real proposal with amounts.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-24-brikken-co",
@@ -1444,9 +1454,9 @@
         "Portfolio"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-24-brikken-co.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "The logo rendered as a physical material object; faint column lines expose the grid behind a full-width wordmark.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-24-ofricolada-com",
@@ -1462,9 +1472,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-24-ofricolada-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "One tightly kerned display-serif sentence is the hero with the name in italic; mono contact details are the only chrome.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-24-signal-a-studio",
@@ -1480,9 +1490,9 @@
         "Portfolio"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-24-signal-a-studio.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Weight and family contrast inside one justified sentence does the emphasis; live city clocks sit in a ruled six-column nav.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-24-works-studio",
@@ -1496,9 +1506,9 @@
         "Portfolio"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-24-works-studio.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "Light serif caps headline with italic lowercase connectors; the captions repeat the same serif system under portrait work.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-26-nogood-studio",
@@ -1515,9 +1525,9 @@
         "Portfolio"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-26-nogood-studio.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "A personal site run like a dashboard: ruled columns, a now note, status lights, a system log and a shop sidebar.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-26-nounagency-com",
@@ -1532,9 +1542,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-26-nounagency-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "The name spelled down a 4x4 grid alternating letters and work photos, with print crop marks at the intersections.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-26-twofoldny-com",
@@ -1549,9 +1559,9 @@
         "Health & Wellness"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-26-twofoldny-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "culture",
+      "notes": "A double exposure literalises the name; the type stays minimal so the photograph speaks.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-29-antimetal-com",
@@ -1565,9 +1575,9 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-29-antimetal-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Old-style serif in a devops category, a topology burst diagram, and bracket-corner secondary buttons.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-29-jasonbergh-com",
@@ -1583,9 +1593,9 @@
         "Portfolio"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-29-jasonbergh-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Cinema vocabulary for a filmmaker: timecode rulers, frame corners, a runtime clock and a slider/list toggle around an italic serif title.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-29-ornn-com",
@@ -1599,9 +1609,9 @@
         "Dark Mode"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-29-ornn-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "finance",
+      "notes": "The product's core number (an index price) is the hero, with a mono timestamp proving it is live.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-29-primora-xyz",
@@ -1615,9 +1625,9 @@
         "Landing Page"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-29-primora-xyz.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "finance",
+      "notes": "The CTA names a person (Talk to Aiden) with his avatar; a candlestick chart works as category texture.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-31-giallo-studio",
@@ -1633,9 +1643,9 @@
         "Portfolio"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-31-giallo-studio.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "One ink on black and a numbered project table (no., name, category, client, description, year) as the homepage.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-31-griffin-com",
@@ -1650,9 +1660,9 @@
         "Dark Mode"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-31-griffin-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "finance",
+      "notes": "Currency glyphs as a pattern band; body copy in two tones so the key sentence reads first.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-31-helenedelmarmol-com",
@@ -1667,9 +1677,9 @@
         "Personal Website"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-31-helenedelmarmol-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "A grey (not black) name lets cut-out object photographs lead; a typewriter-set project list doubles as navigation.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-08-31-tikhon-io",
@@ -1685,9 +1695,9 @@
         "Personal Website"
       ],
       "image": "https://desengs.com/images/screenshots/2026-08-31-tikhon-io.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "experimental",
+      "notes": "The CV as a till receipt: order number, line items, quantities and years in tabular columns.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-09-26-anuchome-com",
@@ -1700,14 +1710,14 @@
         "Minimal"
       ],
       "image": "https://desengs.com/images/screenshots/2026-09-26-anuchome-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "The logo is built from the page's four columns (arches) and one interior photograph is sliced by the same grid.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-09-26-jackandjill-ai",
       "collection": "inspiration",
-      "title": "Jack & Kill",
+      "title": "Jack & Jill",
       "url": "https://jackandjill.ai",
       "page": "https://desengs.com/inspiration/2026-09-26-jackandjill-ai/",
       "date": "2026-09-26",
@@ -1717,9 +1727,9 @@
         "Landing Page"
       ],
       "image": "https://desengs.com/images/screenshots/2026-09-26-jackandjill-ai.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "A symmetric two-audience split, each with its own CTA, and UI that explains why the agent suggested something.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-09-26-plnty-app",
@@ -1734,9 +1744,9 @@
         "Landing Page"
       ],
       "image": "https://desengs.com/images/screenshots/2026-09-26-plnty-app.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "A live activity ticker as social proof, large-set body copy, and a hazard sticker admitting the site is unfinished.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-09-26-vault-hyperiux-com",
@@ -1750,9 +1760,9 @@
         "Dark Mode"
       ],
       "image": "https://desengs.com/images/screenshots/2026-09-26-vault-hyperiux-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Square geometry everywhere (buttons, bullets) and ASCII texture for a developer effects library.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-10-01-infinitemachine-com",
@@ -1767,9 +1777,9 @@
         "Landing Page"
       ],
       "image": "https://desengs.com/images/screenshots/2026-10-01-infinitemachine-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "A studio product shot with a rider in visible delight; the price sits next to the product name.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-10-01-ploy-ai",
@@ -1785,9 +1795,9 @@
         "Bold"
       ],
       "image": "https://desengs.com/images/screenshots/2026-10-01-ploy-ai.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "Documentary video in an inset rounded frame keeps the page edge; condensed caps for punch; a founder-photo announcement card.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-10-01-thedesignsociety-fr",
@@ -1803,9 +1813,9 @@
         "Community"
       ],
       "image": "https://desengs.com/images/screenshots/2026-10-01-thedesignsociety-fr.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "experimental",
+      "notes": "Bitmap serif with inline pictograms and seal-like ornaments for a secret-society tone, on a CRT-textured field.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-10-01-trulytype-com",
@@ -1819,9 +1829,9 @@
         "Playful"
       ],
       "image": "https://desengs.com/images/screenshots/2026-10-01-trulytype-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "commerce",
+      "notes": "The type specimen is the hero; one unexpected real object (a spotted frog) makes it memorable.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-10-02-berd-xyz",
@@ -1836,9 +1846,9 @@
         "Bold"
       ],
       "image": "https://desengs.com/images/screenshots/2026-10-02-berd-xyz.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "The app window is the hero, ringed by odd low-poly figurines that set a playful register.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-10-02-doubleyoumanagement-net",
@@ -1849,9 +1859,9 @@
       "date": "2026-10-02",
       "tags": [],
       "image": "https://desengs.com/images/screenshots/2026-10-02-doubleyoumanagement-net.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A hover roster drives the full-bleed image: the active name bright with an italic role, the others dimmed.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-10-02-getgalaxy-io",
@@ -1864,9 +1874,9 @@
         "Landing Page"
       ],
       "image": "https://desengs.com/images/screenshots/2026-10-02-getgalaxy-io.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "product",
+      "notes": "A Garamond-style serif for data infrastructure, the last line greyed to shift voice, a fan of fine lines as data flow.",
+      "indexed": true
     },
     {
       "id": "inspiration/2026-10-02-lemansclassic-richardmille-com",
@@ -1880,9 +1890,9 @@
         "Typographic"
       ],
       "image": "https://desengs.com/images/screenshots/2026-10-02-lemansclassic-richardmille-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "experimental",
+      "notes": "One hot colour on a monochrome motion-blur photograph, framed by four corner captions like a film poster.",
+      "indexed": true
     },
     {
       "id": "inspiration/og/2025-04-08-artone-studio",
@@ -1893,7 +1903,7 @@
       "date": "2025-04-08",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-08-artone-studio.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -1906,7 +1916,7 @@
       "date": "2025-04-08",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-08-frame-io.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -1919,9 +1929,9 @@
       "date": "2025-04-08",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-08-jasonjun-dev.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "og-image",
+      "notes": "The name cropped at poster scale, with the job title as a tiny caption.",
+      "indexed": true
     },
     {
       "id": "inspiration/og/2025-04-08-openai-com",
@@ -1932,7 +1942,7 @@
       "date": "2025-04-08",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-08-openai-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -1945,7 +1955,7 @@
       "date": "2025-04-08",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-08-p-cv.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -1958,7 +1968,7 @@
       "date": "2025-04-09",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-09-fruitful-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -1971,9 +1981,9 @@
       "date": "2025-04-09",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-09-sfcompute-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "og-image",
+      "notes": "An illustrated local landmark and a friendly serif line make infrastructure feel neighbourly.",
+      "indexed": true
     },
     {
       "id": "inspiration/og/2025-04-09-sketch-com-blog",
@@ -1984,7 +1994,7 @@
       "date": "2025-04-09",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-09-sketch-com-blog.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -1997,7 +2007,7 @@
       "date": "2025-04-09",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-09-sonarmusic-com-au.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2010,7 +2020,7 @@
       "date": "2025-04-09",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-09-suno-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2023,7 +2033,7 @@
       "date": "2025-04-14",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-14-coldplay-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2036,7 +2046,7 @@
       "date": "2025-04-14",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-14-electronicmaterialsoffice-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2049,7 +2059,7 @@
       "date": "2025-04-14",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-14-greenday-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2062,7 +2072,7 @@
       "date": "2025-04-14",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-14-magmamusicagency-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2075,7 +2085,7 @@
       "date": "2025-04-14",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-14-outerbase-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2088,7 +2098,7 @@
       "date": "2025-04-14",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-14-vibes-site.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2101,7 +2111,7 @@
       "date": "2025-04-19",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-04-19-batch-film.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2114,7 +2124,7 @@
       "date": "2025-08-08",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-08-08-super-work.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2127,7 +2137,7 @@
       "date": "2025-08-10",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-08-10-checkout-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2140,7 +2150,7 @@
       "date": "2025-08-10",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-08-10-getvidflow-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2153,7 +2163,7 @@
       "date": "2025-08-10",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-08-10-neoculturalcouture-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2166,7 +2176,7 @@
       "date": "2025-08-10",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-08-10-raycast-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2179,7 +2189,7 @@
       "date": "2025-08-10",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-08-10-starcloud-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2192,7 +2202,7 @@
       "date": "2025-12-08",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2025-12-08-craft-do.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2205,7 +2215,7 @@
       "date": "2026-07-17",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-07-17-jordans-peachworlds-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2218,7 +2228,7 @@
       "date": "2026-07-17",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-07-17-orkenworld-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2231,7 +2241,7 @@
       "date": "2026-07-17",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-07-17-retailpath-xyz.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2244,9 +2254,9 @@
       "date": "2026-08-22",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-22-solidroad-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "og-image",
+      "notes": "A halftone landscape with the wordmark centred; one image, one mark.",
+      "indexed": true
     },
     {
       "id": "inspiration/og/2026-08-22-steel-dev",
@@ -2257,7 +2267,7 @@
       "date": "2026-08-22",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-22-steel-dev.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2270,7 +2280,7 @@
       "date": "2026-08-22",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-22-webflow-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2283,9 +2293,9 @@
       "date": "2026-08-23",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-23-hermes-agent-nousresearch-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "og-image",
+      "notes": "Classical serif caps on a single saturated blue.",
+      "indexed": true
     },
     {
       "id": "inspiration/og/2026-08-25-aquaduck-ai",
@@ -2296,9 +2306,9 @@
       "date": "2026-08-25",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-25-aquaduck-ai.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "og-image",
+      "notes": "A giant didone wordmark cropped over a faint engraving: one image idea at poster scale.",
+      "indexed": true
     },
     {
       "id": "inspiration/og/2026-08-25-letude-group",
@@ -2309,7 +2319,7 @@
       "date": "2026-08-25",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-25-letude-group.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2322,7 +2332,7 @@
       "date": "2026-08-25",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-25-modal-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2335,9 +2345,9 @@
       "date": "2026-08-25",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-25-telemetry-dev.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "og-image",
+      "notes": "The share card shows a real trace waterfall from the product beside a two-line headline.",
+      "indexed": true
     },
     {
       "id": "inspiration/og/2026-08-28-brightscout-com",
@@ -2348,7 +2358,7 @@
       "date": "2026-08-28",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-28-brightscout-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2361,7 +2371,7 @@
       "date": "2026-08-28",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-28-dirtverse-co.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2374,7 +2384,7 @@
       "date": "2026-08-28",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-28-idle-space.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2387,7 +2397,7 @@
       "date": "2026-08-28",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-28-lovable-dev.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2400,7 +2410,7 @@
       "date": "2026-08-28",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-08-28-patch-io.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2413,7 +2423,7 @@
       "date": "2026-10-07",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-10-07-darkroom-engineering.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2426,7 +2436,7 @@
       "date": "2026-10-07",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-10-07-getfernand-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2439,7 +2449,7 @@
       "date": "2026-10-07",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-10-07-set-space.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2452,7 +2462,7 @@
       "date": "2026-10-07",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-10-07-xander-xyz.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2465,7 +2475,7 @@
       "date": "2026-10-10",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-10-10-brasshands-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2478,7 +2488,7 @@
       "date": "2026-10-10",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-10-10-ribbit-dk.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2491,7 +2501,7 @@
       "date": "2026-10-10",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-10-10-runway-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2504,7 +2514,7 @@
       "date": "2026-10-10",
       "tags": [],
       "image": "https://desengs.com/images/og-images/2026-10-10-weav-com.webp",
-      "category": "",
+      "category": "og-image",
       "notes": "",
       "indexed": false
     },
@@ -2521,9 +2531,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-13-dantase-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Classical serif statement with an italic connector word; underlined text links instead of buttons.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-04-13-ijpowell-co-uk",
@@ -2538,8 +2548,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-13-ijpowell-co-uk.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "Near-empty page with one black-and-white product photograph and a live GMT clock.",
       "indexed": false
     },
     {
@@ -2555,9 +2565,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-13-redis-agency.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A pun made physical: a 3D radish replaces a letter of the serif wordmark.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-04-13-repponen-com",
@@ -2572,9 +2582,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-13-repponen-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Figure-numbered captions and a Swiss multi-column nav with sub-labels.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-04-15-56-digital",
@@ -2589,9 +2599,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-15-56-digital.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "The whole site is a narrow list of services and dated projects, with most of the page left empty.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-04-15-almond-studio",
@@ -2606,8 +2616,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-15-almond-studio.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "Pale blue condensed wordmark on moss green with mono labels and a three-panel footer (services, news, projects).",
       "indexed": false
     },
     {
@@ -2623,9 +2633,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-15-cristinagomezruiz-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "A labelled meta row (location with local time, navigation, theme) above a portrait and a giant light serif name.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-04-15-davidfiz-com",
@@ -2640,9 +2650,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-15-davidfiz-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Thresholded images on a contact sheet with registration marks and zoom, grid and list controls.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-04-15-garbett-com-au",
@@ -2657,9 +2667,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-15-garbett-com-au.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A wayfinding studio shows its symbols as a colour grid next to a photograph of real signage.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-04-15-herocollective-co",
@@ -2674,8 +2684,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-15-herocollective-co.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "Hand-drawn circles and underlines over a condensed caps headline.",
       "indexed": false
     },
     {
@@ -2691,9 +2701,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-15-pedroajo-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "The studio as a CV table (worked with, years, services, capacity) under spaced giant initials.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-04-15-studio-size-com",
@@ -2708,8 +2718,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-15-studio-size-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A medium grotesk statement on a black band above product photography.",
       "indexed": false
     },
     {
@@ -2725,9 +2735,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-15-tparkes-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Inline pictograms between the words of a large grey sentence act as punctuation.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-04-17-bynikistudio-com",
@@ -2742,8 +2752,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-17-bynikistudio-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "Heavy wordmark over a grainy landscape with boxed collectible renders.",
       "indexed": false
     },
     {
@@ -2759,8 +2769,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-17-kirillz-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "A document-like page: bold statement, long bio with underlined links, captioned portrait.",
       "indexed": false
     },
     {
@@ -2776,8 +2786,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-17-offmenu-design.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "Logo letters rendered as concrete and green objects behind a two-tone headline.",
       "indexed": false
     },
     {
@@ -2793,8 +2803,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-04-17-sania-io.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "Centred italic serif statement with a live London clock pill.",
       "indexed": false
     },
     {
@@ -2810,9 +2820,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-07-31-darkroom-engineering.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "The photo-lab red light becomes the whole palette, with pixel display type, for a dev studio called darkroom.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-08-01-ingamana-com",
@@ -2827,8 +2837,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-08-01-ingamana-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A horizontally stretched wordmark above a strip of dated project thumbnails.",
       "indexed": false
     },
     {
@@ -2844,8 +2854,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-08-07-essesi-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "A sparse grid of small product renders with tiny caps captions.",
       "indexed": false
     },
     {
@@ -2861,9 +2871,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-08-07-estplus6-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A full-bleed film photograph with the client's mark overlaid; a footer of city clocks for a two-city studio.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2025-08-09-keithgreenbaum-com",
@@ -2878,8 +2888,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-08-09-keithgreenbaum-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "Cut-out jewellery photographs with thin line drawings overlaid.",
       "indexed": false
     },
     {
@@ -2895,8 +2905,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-08-09-pleasecallmechamp-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A giant lowercase wordmark filling the width and a large statement sentence.",
       "indexed": false
     },
     {
@@ -2912,8 +2922,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-08-10-synchronized-studio.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "Condensed high-contrast serif headline staggered over satin texture with a starburst ornament.",
       "indexed": false
     },
     {
@@ -2929,8 +2939,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-08-13-alexcascallana-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "A dense full-bleed wall of fashion and product photography, no text.",
       "indexed": false
     },
     {
@@ -2946,8 +2956,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-08-13-kurtwinterdesign-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "Light serif statement over a soft grain gradient, with a mono contact line and clock.",
       "indexed": false
     },
     {
@@ -2963,9 +2973,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2025-12-08-duties-xyz.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A status line (currently off-duty, red dot, local time) and the services as plain mono text.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2026-02-09-bizar-ro",
@@ -2980,8 +2990,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-02-09-bizar-ro.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "A custom blackletter-meets-techno wordmark with year numerals set large.",
       "indexed": false
     },
     {
@@ -2997,9 +3007,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-02-09-sophieloloi-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Text colour echoes the photograph: a red italic client list beside red lips.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2026-02-10-chloedesjardins-com",
@@ -3014,8 +3024,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-02-10-chloedesjardins-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "Small object photographs scattered sparsely in faint grid cells.",
       "indexed": false
     },
     {
@@ -3031,9 +3041,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-02-11-georgebadea-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "A bio paragraph with a first-line indent on a coloured field with faint column lines.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2026-02-12-murmure-me",
@@ -3048,8 +3058,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-02-12-murmure-me.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "An ultra-condensed wordmark above a dense poster grid.",
       "indexed": false
     },
     {
@@ -3065,9 +3075,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-02-18-michaelbernard-fr.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "The designer's own type design overlaps the title, showing the work inside the hero.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2026-08-31-bymonolog-com",
@@ -3082,8 +3092,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-08-31-bymonolog-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "Same studio as the main-gallery MONOLOG entry.",
       "indexed": false
     },
     {
@@ -3099,8 +3109,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-08-31-jasminegunarto-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "Ultra-condensed name across the width with the role split left and right around a project card.",
       "indexed": false
     },
     {
@@ -3116,8 +3126,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-08-31-otherkind-design.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A soft heavy serif wordmark and two city clocks in opposite corners.",
       "indexed": false
     },
     {
@@ -3133,8 +3143,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-08-31-slowrat-design.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A serif side note invites a conversation beside a bold sans statement and language pills.",
       "indexed": false
     },
     {
@@ -3150,9 +3160,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-02-edoardolunardi-dev.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Small OS-like windows (article, about, experiment) float over a dithered field above a filmstrip of work.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2026-09-02-iverson-inc",
@@ -3167,8 +3177,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-02-iverson-inc.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A glass 3D logo object on black with a small grey statement.",
       "indexed": false
     },
     {
@@ -3184,8 +3194,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-02-studiofaculty-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "An industrial machine video with tiny numbered captions, split against a product photograph.",
       "indexed": false
     },
     {
@@ -3201,8 +3211,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-09-briganti-works.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "A wordmark rotated up the left edge and a sparse grid of type specimens.",
       "indexed": false
     },
     {
@@ -3218,8 +3228,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-09-jackentee-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "Posters at large size with a category filter bar showing counts.",
       "indexed": false
     },
     {
@@ -3235,8 +3245,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-09-julianoni-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "One editorial photograph centred with an image counter (1/66).",
       "indexed": false
     },
     {
@@ -3252,8 +3262,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-09-rronberisha-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "SELECTED (WORKS) ©16–26 in condensed caps is the entire hero.",
       "indexed": false
     },
     {
@@ -3269,8 +3279,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-10-ko-collective-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A stacked serif wordmark with a mono tagline and one fashion photograph.",
       "indexed": false
     },
     {
@@ -3286,9 +3296,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-10-nwiesner-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "portfolio",
+      "notes": "Two portraits are the navigation; the labels sit directly on the photographs.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2026-09-10-sananes-co",
@@ -3303,8 +3313,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-10-sananes-co.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "A scanline portrait with colour fringing and a custom squared display face, plus an availability status.",
       "indexed": false
     },
     {
@@ -3320,9 +3330,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-10-voyeurverite-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "The whole page graded to one hue so image and type merge into a single colour field.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2026-09-29-goodside-studio",
@@ -3337,8 +3347,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-29-goodside-studio.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A giant tight serif wordmark and a row of branded object photographs of varying heights.",
       "indexed": false
     },
     {
@@ -3354,8 +3364,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-29-julienpianetti-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "A large sans bio paragraph and an oversized Selected works* heading.",
       "indexed": false
     },
     {
@@ -3371,9 +3381,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-29-play-grounds-studio.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "A project table with status (completed, in progress) and locations under loosely tumbling initials.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2026-09-29-this-design",
@@ -3388,9 +3398,9 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-09-29-this-design.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "studio",
+      "notes": "One sentence mixes weights, angle brackets and an italic serif word to perform the studio's three values.",
+      "indexed": true
     },
     {
       "id": "inspiration/portfolios/2026-10-02-locomotive-ca",
@@ -3405,8 +3415,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-10-02-locomotive-ca.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A red-graded video portrait with projected type and a light serif descriptor.",
       "indexed": false
     },
     {
@@ -3422,8 +3432,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-10-02-maximiliankaspar-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "portfolio",
+      "notes": "An ASCII-drawn image with a large custom geometric sentence.",
       "indexed": false
     },
     {
@@ -3439,8 +3449,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-10-02-originbrand-io.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A giant light-grey rounded techno wordmark with a grey paragraph below.",
       "indexed": false
     },
     {
@@ -3456,8 +3466,8 @@
         "web design inspiration"
       ],
       "image": "https://desengs.com/images/portfolios/2026-10-02-parker-studio.webp",
-      "category": "",
-      "notes": "",
+      "category": "studio",
+      "notes": "A centred condensed serif headline with underlined words.",
       "indexed": false
     },
     {
@@ -3469,8 +3479,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-2dots-xyz.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Tiny text blocks on black with a dotted grid ornament and described project list.",
       "indexed": false
     },
     {
@@ -3482,8 +3492,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-anandbaburajan-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "A long plain bio on black with underlined links.",
       "indexed": false
     },
     {
@@ -3495,8 +3505,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-arsenije-me.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Large regular sans text with superscript notes and a numbered writing list.",
       "indexed": false
     },
     {
@@ -3508,8 +3518,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-bmrks-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Tiny grey sections (about, join, credits), a version number and a signature.",
       "indexed": false
     },
     {
@@ -3521,8 +3531,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-buditanrim-co.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Monospace list of projects with one-line descriptions on black.",
       "indexed": false
     },
     {
@@ -3534,8 +3544,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-daftsocial-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Small serif headline stack, one priced pill CTA and two phone mockups.",
       "indexed": false
     },
     {
@@ -3547,8 +3557,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-eryc-cc.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Tiny grey section index (field notes, pixel lab, bookshelf, resources).",
       "indexed": false
     },
     {
@@ -3560,8 +3570,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-felipe-design.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "A single serif-free bio column with underlined client links.",
       "indexed": false
     },
     {
@@ -3573,8 +3583,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-findaboxing-club.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "An italic serif title over a directory table with pill tags.",
       "indexed": false
     },
     {
@@ -3586,8 +3596,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-gav-space.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Dated professional work list on near-black with underlined links.",
       "indexed": false
     },
     {
@@ -3599,8 +3609,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-goods-so.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Product catalogue cards on grey with a tiny category list.",
       "indexed": false
     },
     {
@@ -3612,8 +3622,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-hiasmir-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Avatar, short intro and one embedded project preview.",
       "indexed": false
     },
     {
@@ -3625,8 +3635,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-liams-life.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Monogram, tiny nav and a short bio with a local time.",
       "indexed": false
     },
     {
@@ -3638,8 +3648,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-marcelokunze-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Inline pill tags for skills and links within the sentences, local time shown.",
       "indexed": false
     },
     {
@@ -3651,8 +3661,8 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-minimalism-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Line-drawn object cards on black as the navigation.",
       "indexed": false
     },
     {
@@ -3664,9 +3674,9 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-naveen-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "Plain monospace text with numbered entries; nothing is designed except the order.",
+      "indexed": true
     },
     {
       "id": "minimum/2025-04-05-niklasrosen-se",
@@ -3677,7 +3687,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-niklasrosen-se.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3690,7 +3700,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-once-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3703,7 +3713,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-otherdays-studio.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3716,7 +3726,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-paco-me.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3729,7 +3739,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-parth-ski.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3742,7 +3752,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-ppppoems-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3755,7 +3765,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-prateekkeshari-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3768,7 +3778,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-reaper-is.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3781,7 +3791,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-shud-in.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3794,7 +3804,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-studiomds-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3807,7 +3817,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-thisisveryrude-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3820,7 +3830,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-tr-af.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3833,7 +3843,7 @@
       "date": "2025-04-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-05-vitor-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3846,7 +3856,7 @@
       "date": "2025-04-06",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-06-andymccune-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3859,7 +3869,7 @@
       "date": "2025-04-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-07-brunch-work.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3872,7 +3882,7 @@
       "date": "2025-04-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-07-craighooper-xyz.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3885,7 +3895,7 @@
       "date": "2025-04-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-07-daleanthony-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3898,7 +3908,7 @@
       "date": "2025-04-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-07-jakub-kr.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3911,7 +3921,7 @@
       "date": "2025-04-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-07-jamesbraund-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3924,7 +3934,7 @@
       "date": "2025-04-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-07-maxpotze-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3937,7 +3947,7 @@
       "date": "2025-04-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-07-omercan-io.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3950,7 +3960,7 @@
       "date": "2025-04-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-07-preciousm-co.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3963,7 +3973,7 @@
       "date": "2025-04-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-07-thisispam-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3976,7 +3986,7 @@
       "date": "2025-04-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-07-wireframe-co.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -3989,7 +3999,7 @@
       "date": "2025-04-08",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-08-alexnaghavi-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4002,7 +4012,7 @@
       "date": "2025-04-08",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-08-federic-ooo.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4015,7 +4025,7 @@
       "date": "2025-04-08",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-08-jimmyl-ee.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4028,7 +4038,7 @@
       "date": "2025-04-08",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-08-navchatterji-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4041,7 +4051,7 @@
       "date": "2025-04-08",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-08-tcosta-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4054,7 +4064,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-6942020-xyz.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4067,7 +4077,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-alxmurashko-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4080,7 +4090,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-ambedg-ar.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4093,8 +4103,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-amirmxt-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Newsletter field and a list of products with icons and short descriptions.",
       "indexed": false
     },
     {
@@ -4106,8 +4116,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-andrs-me.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "A monospace terminal page with view counts on posts.",
       "indexed": false
     },
     {
@@ -4119,9 +4129,9 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-benja-dev.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "Work listed as receipt lines priced at $0.00.",
+      "indexed": true
     },
     {
       "id": "minimum/2025-04-10-borys-is",
@@ -4132,8 +4142,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-borys-is.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Writing list and one case-study card under a short header.",
       "indexed": false
     },
     {
@@ -4145,8 +4155,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-bridger-to.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Bordered table cells hold the bio, links and subscribe field.",
       "indexed": false
     },
     {
@@ -4158,8 +4168,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-cameron-so.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Projects with dates in a quiet two-column list.",
       "indexed": false
     },
     {
@@ -4171,8 +4181,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-carlbeaverson-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "A centred grey bio sentence above two project cards.",
       "indexed": false
     },
     {
@@ -4184,8 +4194,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-chanhdai-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "The profile as a contact card (icon rows, save vCard) on a faint grid.",
       "indexed": false
     },
     {
@@ -4197,8 +4207,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-christinalj-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "One photograph and a dated life log in lowercase.",
       "indexed": false
     },
     {
@@ -4210,8 +4220,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-facumontanaro-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Greeting, short bio and links with a local time on black.",
       "indexed": false
     },
     {
@@ -4223,8 +4233,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-fromthen-com.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Company list with an arrow cue on black; email and X links at the foot.",
       "indexed": false
     },
     {
@@ -4236,9 +4246,9 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-giteshsarvaiya-co.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "A README document (contents, rules, sections) as the site.",
+      "indexed": true
     },
     {
       "id": "minimum/2025-04-10-jasonjun-dev",
@@ -4249,7 +4259,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-jasonjun-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4262,9 +4272,9 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-jetset-nl.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "An entire studio archive as dense multi-column text lists, with no images.",
+      "indexed": true
     },
     {
       "id": "minimum/2025-04-10-jrosen-design",
@@ -4275,8 +4285,8 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-jrosen-design.webp",
-      "category": "",
-      "notes": "",
+      "category": "minimal-personal",
+      "notes": "Project thumbnails in a two-column grid with a tiny header.",
       "indexed": false
     },
     {
@@ -4288,7 +4298,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-jstn-net.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4301,7 +4311,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-kulpinski-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4314,7 +4324,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-kyler-design.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4327,7 +4337,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-kylethacker-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4340,7 +4350,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-lakshb-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4353,7 +4363,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-laurendorman-io.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4366,7 +4376,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-marcusfarrell-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4379,7 +4389,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-min-dpaulos-pt.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4392,7 +4402,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-prosper-org.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4405,7 +4415,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-shadcn-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4418,7 +4428,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-shawnfarsai-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4431,7 +4441,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-somoscuchillo-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4444,7 +4454,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-suresh-im.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4457,7 +4467,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-twilson-net.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4470,7 +4480,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-udara-io.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4483,7 +4493,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-udeet-in.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4496,7 +4506,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-viliandve-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4509,7 +4519,7 @@
       "date": "2025-04-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-10-zaidmukaddam-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4522,9 +4532,9 @@
       "date": "2025-04-11",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-11-lucchaissac-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "An acid-yellow field with a large plain introduction and client marks; one colour decision does all the branding.",
+      "indexed": true
     },
     {
       "id": "minimum/2025-04-11-max-dev",
@@ -4535,7 +4545,7 @@
       "date": "2025-04-11",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-11-max-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4548,7 +4558,7 @@
       "date": "2025-04-11",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-11-roko-g-work.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4561,7 +4571,7 @@
       "date": "2025-04-12",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-12-jasur-io.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4574,7 +4584,7 @@
       "date": "2025-04-12",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-12-pixelwrld-co.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4587,7 +4597,7 @@
       "date": "2025-04-12",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-12-pqoqubbw-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4600,7 +4610,7 @@
       "date": "2025-04-14",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-14-paolonessim-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4613,7 +4623,7 @@
       "date": "2025-04-19",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-19-atillataskiran-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4626,7 +4636,7 @@
       "date": "2025-04-19",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-19-evilrabbit-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4639,7 +4649,7 @@
       "date": "2025-04-19",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-19-hamzaalabou-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4652,7 +4662,7 @@
       "date": "2025-04-19",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-19-jasonyuan-design.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4665,7 +4675,7 @@
       "date": "2025-04-19",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-19-kundo-studio.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4678,9 +4688,9 @@
       "date": "2025-04-19",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-19-rauchg-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "Essays as a table of year, title and view count.",
+      "indexed": true
     },
     {
       "id": "minimum/2025-04-19-serhii-be",
@@ -4691,7 +4701,7 @@
       "date": "2025-04-19",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-19-serhii-be.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4704,7 +4714,7 @@
       "date": "2025-04-21",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-21-535-studio.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4717,7 +4727,7 @@
       "date": "2025-04-21",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-21-armond-me.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4730,7 +4740,7 @@
       "date": "2025-04-21",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-21-margins-app.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4743,7 +4753,7 @@
       "date": "2025-04-21",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-21-nickdilallo-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4756,7 +4766,7 @@
       "date": "2025-04-28",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-28-15min-design.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4769,7 +4779,7 @@
       "date": "2025-04-28",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-28-anzy-io.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4782,7 +4792,7 @@
       "date": "2025-04-28",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-28-ash-cv.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4795,7 +4805,7 @@
       "date": "2025-04-28",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-28-faizanwar-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4808,7 +4818,7 @@
       "date": "2025-04-28",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-28-fennell-cv.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4821,7 +4831,7 @@
       "date": "2025-04-28",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-28-leerob-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4834,7 +4844,7 @@
       "date": "2025-04-28",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-28-mononym-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4847,7 +4857,7 @@
       "date": "2025-04-28",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-28-moodie-blog.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4860,7 +4870,7 @@
       "date": "2025-04-28",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-28-tino-works.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4873,7 +4883,7 @@
       "date": "2025-04-30",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-30-anirnair-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4886,7 +4896,7 @@
       "date": "2025-04-30",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-04-30-eric-rest.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4899,7 +4909,7 @@
       "date": "2025-05-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-05-05-minnix-cv.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4912,7 +4922,7 @@
       "date": "2025-07-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-07-05-baytas-net.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4925,7 +4935,7 @@
       "date": "2025-07-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-07-05-offscript-cc.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4938,9 +4948,9 @@
       "date": "2025-07-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-07-05-prompt-files-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "A file tree drawn in text is the navigation.",
+      "indexed": true
     },
     {
       "id": "minimum/2025-07-05-ragojose-com",
@@ -4951,7 +4961,7 @@
       "date": "2025-07-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-07-05-ragojose-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4964,7 +4974,7 @@
       "date": "2025-07-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-07-05-victorlbq-fr.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4977,7 +4987,7 @@
       "date": "2025-07-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-07-20-pqoqubbw-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -4990,7 +5000,7 @@
       "date": "2025-07-24",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-07-24-rokadakia-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5003,7 +5013,7 @@
       "date": "2025-08-01",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-08-01-alasdairmonk-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5016,7 +5026,7 @@
       "date": "2025-08-01",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-08-01-sonderpoems-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5029,9 +5039,9 @@
       "date": "2025-08-02",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-08-02-montyanderson-net.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "Default-browser HTML (serif, blue links, bullets) used on purpose.",
+      "indexed": true
     },
     {
       "id": "minimum/2025-08-04-jckhlry-com",
@@ -5042,7 +5052,7 @@
       "date": "2025-08-04",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-08-04-jckhlry-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5055,7 +5065,7 @@
       "date": "2025-08-05",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-08-05-pham-codes.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5068,7 +5078,7 @@
       "date": "2025-08-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-08-07-moeritz-io.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5081,7 +5091,7 @@
       "date": "2025-08-08",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-08-08-fennell-cv.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5094,7 +5104,7 @@
       "date": "2025-08-10",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-08-10-bastienallard-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5107,7 +5117,7 @@
       "date": "2025-08-30",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-08-30-adriengriveau-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5120,7 +5130,7 @@
       "date": "2025-10-28",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-10-28-nutlope-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5133,7 +5143,7 @@
       "date": "2025-12-08",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2025-12-08-designerdada-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5146,7 +5156,7 @@
       "date": "2026-07-14",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-14-blackduke-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5159,7 +5169,7 @@
       "date": "2026-07-15",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-15-dom-fyi.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5172,7 +5182,7 @@
       "date": "2026-07-15",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-15-gustavofior-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5185,7 +5195,7 @@
       "date": "2026-07-15",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-15-jespervos-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5198,7 +5208,7 @@
       "date": "2026-07-15",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-15-suepark-xyz.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5211,7 +5221,7 @@
       "date": "2026-07-17",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-17-joshmillgate-co-uk.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5224,7 +5234,7 @@
       "date": "2026-07-17",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-17-mocarski-design.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5237,7 +5247,7 @@
       "date": "2026-07-18",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-18-gharbi-me.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5250,7 +5260,7 @@
       "date": "2026-07-18",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-18-hamzaalabou-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5263,7 +5273,7 @@
       "date": "2026-07-18",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-18-sorenblank-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5276,7 +5286,7 @@
       "date": "2026-07-18",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-18-stylessh-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5289,7 +5299,7 @@
       "date": "2026-07-18",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-18-tanvir-io.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5302,7 +5312,7 @@
       "date": "2026-07-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-20-aniketpawar-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5315,7 +5325,7 @@
       "date": "2026-07-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-20-diklein-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5328,7 +5338,7 @@
       "date": "2026-07-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-20-dqnamo-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5341,7 +5351,7 @@
       "date": "2026-07-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-20-nelson-co.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5354,7 +5364,7 @@
       "date": "2026-07-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-20-newsystems-ca.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5367,7 +5377,7 @@
       "date": "2026-07-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-20-tldr-aryank-space.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5380,7 +5390,7 @@
       "date": "2026-07-21",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-07-21-shedsgns-me.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5393,7 +5403,7 @@
       "date": "2026-08-01",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-01-adikris-in.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5406,7 +5416,7 @@
       "date": "2026-08-01",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-01-loganliffick-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5419,7 +5429,7 @@
       "date": "2026-08-01",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-01-saadb-me.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5432,7 +5442,7 @@
       "date": "2026-08-01",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-01-senyil-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5445,7 +5455,7 @@
       "date": "2026-08-15",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-15-nachi-design.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5458,7 +5468,7 @@
       "date": "2026-08-15",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-15-nilseller-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5471,7 +5481,7 @@
       "date": "2026-08-15",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-15-saivamshi-aethoscompany-in.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5484,7 +5494,7 @@
       "date": "2026-08-15",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-15-vanjek-co.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5497,7 +5507,7 @@
       "date": "2026-08-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-20-aniket-fyi.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5510,7 +5520,7 @@
       "date": "2026-08-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-20-benja-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5523,7 +5533,7 @@
       "date": "2026-08-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-20-eduardwieandt-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5536,7 +5546,7 @@
       "date": "2026-08-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-20-lorenzodelijser-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5549,7 +5559,7 @@
       "date": "2026-08-22",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-22-flohoeller-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5562,7 +5572,7 @@
       "date": "2026-08-22",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-22-rokadakia-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5575,7 +5585,7 @@
       "date": "2026-08-22",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-22-sanyam-sh.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5588,7 +5598,7 @@
       "date": "2026-08-22",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-22-xchyler-works.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5601,7 +5611,7 @@
       "date": "2026-08-27",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-27-designcult-us.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5614,7 +5624,7 @@
       "date": "2026-08-27",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-27-instinct-co.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5627,7 +5637,7 @@
       "date": "2026-08-27",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-27-internetlabs-co.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5640,7 +5650,7 @@
       "date": "2026-08-27",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-27-paulfaivret-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5653,7 +5663,7 @@
       "date": "2026-08-31",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-31-antoinefoucault-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5666,7 +5676,7 @@
       "date": "2026-08-31",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-31-cormac-so.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5679,7 +5689,7 @@
       "date": "2026-08-31",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-31-danielhowells-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5692,7 +5702,7 @@
       "date": "2026-08-31",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-08-31-flowercomputer-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5705,7 +5715,7 @@
       "date": "2026-09-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-07-arikko-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5718,7 +5728,7 @@
       "date": "2026-09-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-07-familyoffice-is.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5731,7 +5741,7 @@
       "date": "2026-09-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-07-sutharjay-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5744,7 +5754,7 @@
       "date": "2026-09-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-07-travisstreet-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5757,7 +5767,7 @@
       "date": "2026-09-09",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-09-jckhlry-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5770,7 +5780,7 @@
       "date": "2026-09-13",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-13-cleonwong-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5783,7 +5793,7 @@
       "date": "2026-09-13",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-13-dogancan-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5796,7 +5806,7 @@
       "date": "2026-09-13",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-13-imran-studio.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5809,7 +5819,7 @@
       "date": "2026-09-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-20-anmoldeep-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5822,7 +5832,7 @@
       "date": "2026-09-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-20-noq-studio.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5835,9 +5845,9 @@
       "date": "2026-09-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-20-sasi-codes.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "A career told as a dated message thread.",
+      "indexed": true
     },
     {
       "id": "minimum/2026-09-20-tohirr-dev",
@@ -5848,7 +5858,7 @@
       "date": "2026-09-20",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-09-20-tohirr-dev.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5861,9 +5871,9 @@
       "date": "2026-10-01",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-01-bobby-so.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "Year and event in two columns: a résumé as a timeline.",
+      "indexed": true
     },
     {
       "id": "minimum/2026-10-01-jasonyuan-design",
@@ -5874,7 +5884,7 @@
       "date": "2026-10-01",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-01-jasonyuan-design.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5887,7 +5897,7 @@
       "date": "2026-10-01",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-01-julienaudiger-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5900,7 +5910,7 @@
       "date": "2026-10-01",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-01-sashabalandina-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5913,7 +5923,7 @@
       "date": "2026-10-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-07-jib-design.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5926,9 +5936,9 @@
       "date": "2026-10-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-07-karrisaarinen-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "Numbered notes on building as the centrepiece of a quiet text page.",
+      "indexed": true
     },
     {
       "id": "minimum/2026-10-07-lauriparonen-com",
@@ -5939,9 +5949,9 @@
       "date": "2026-10-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-07-lauriparonen-com.webp",
-      "category": "",
-      "notes": "",
-      "indexed": false
+      "category": "minimal-personal",
+      "notes": "A justified book paragraph with an ornamental drop cap is the whole homepage.",
+      "indexed": true
     },
     {
       "id": "minimum/2026-10-07-stallboerger-com",
@@ -5952,7 +5962,7 @@
       "date": "2026-10-07",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-07-stallboerger-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5965,7 +5975,7 @@
       "date": "2026-10-11",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-11-adamwhitcroft-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5978,7 +5988,7 @@
       "date": "2026-10-11",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-11-itaydreyfus-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -5991,7 +6001,7 @@
       "date": "2026-10-11",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-11-jacob-energy.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     },
@@ -6004,7 +6014,7 @@
       "date": "2026-10-11",
       "tags": [],
       "image": "https://desengs.com/images/minimum/screenshots/2026-10-11-jordiplz-com.webp",
-      "category": "",
+      "category": "minimal-personal",
       "notes": "",
       "indexed": false
     }
@@ -6017,7 +6027,8 @@
       "kind": "Browse",
       "date": "2026-07-13",
       "description": "Curated collection of A/B test results from best-in-class apps",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "agentation.com",
@@ -6026,7 +6037,8 @@
       "kind": "Use",
       "date": "2026-07-13",
       "description": "The visual feedback tool for agents.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "aicss.dev",
@@ -6035,7 +6047,8 @@
       "kind": "Build",
       "date": "2026-08-29",
       "description": "Beautifully designed, copy-paste UI components for AI agent conversations: thinking states, tool calls, streaming text, citations, tables and more. Ships in React, Vue and Svelte.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "animations.dev",
@@ -6044,7 +6057,8 @@
       "kind": "Learn",
       "date": "2026-03-06",
       "description": "Animations on the Web",
-      "notes": ""
+      "notes": "Emil Kowalski's animation course: easing, timing, springs and taste (course page).",
+      "inToolbox": false
     },
     {
       "id": "audio.raphaelsalaja.com",
@@ -6053,7 +6067,8 @@
       "kind": "Build",
       "date": "2026-05-16",
       "description": "Declarative audio synthesis for the web.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "beautifului.dev",
@@ -6062,7 +6077,8 @@
       "kind": "Build",
       "date": "2026-09-01",
       "description": "A small library of extremely crafted, copy-paste components for chat agents, thinking states, human-in-the-loop approvals, and everything agents need to talk to humans beautifully.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "bencho.dev",
@@ -6071,7 +6087,8 @@
       "kind": "Browse",
       "date": "2026-09-11",
       "description": "A library of interactive UI blocks you can explore, tweak, and take straight into your projects.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "benji.org/family-values",
@@ -6080,7 +6097,8 @@
       "kind": "Read",
       "date": "2026-03-09",
       "description": "What makes Family, Family.",
-      "notes": ""
+      "notes": "Benji Taylor on Family: simplicity through trays revealed in context, fluidity by never teleporting or duplicating, and delight placed inversely to frequency, with polish held even across rare screens.",
+      "inToolbox": false
     },
     {
       "id": "blog.designeng.club/p/design-engineering-a-state-of-mind",
@@ -6089,7 +6107,8 @@
       "kind": "Read",
       "date": "2026-03-08",
       "description": "Finding my dream role blending code, design, and product thinking",
-      "notes": ""
+      "notes": "Andy Zhang: design engineering as a state of mind; rotate between engineer, designer and PM views to find the global rather than local maximum.",
+      "inToolbox": false
     },
     {
       "id": "bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development",
@@ -6098,7 +6117,8 @@
       "kind": "Read",
       "date": "2026-05-15",
       "description": "",
-      "notes": ""
+      "notes": "Brad Frost splits front-end work: the look and feel of a button versus what happens when it is clicked; a component library is the handshake.",
+      "inToolbox": false
     },
     {
       "id": "calligraph.raphaelsalaja.com",
@@ -6107,7 +6127,8 @@
       "kind": "Build",
       "date": "2026-03-16",
       "description": "Fluid text transitions powered by Motion",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "chrisburnell.com/html-can-do-that",
@@ -6116,7 +6137,8 @@
       "kind": "Browse",
       "date": "2026-09-14",
       "description": "HTML has been gobbling up swathes of what used to be JavaScript’s remit. This page lists a bunch of dynamic functionality that we can now achieve with just HTML.",
-      "notes": ""
+      "notes": "Chris Burnell's list of what HTML now does without JavaScript: popover, dialog, exclusive details, invoker commands, lazy loading, hidden until-found, native inputs (with accessibility caveats).",
+      "inToolbox": false
     },
     {
       "id": "component.gallery",
@@ -6125,7 +6147,8 @@
       "kind": "Browse",
       "date": "2026-03-10",
       "description": "An up-to-date repository of interface components based on examples from the world of design systems, designed to be a reference for anyone building user interfaces.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "corner-radii.xyz",
@@ -6134,7 +6157,8 @@
       "kind": "Use",
       "date": "2026-09-20",
       "description": "A tool to calculate perfect nested border radii.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "crd-ui.juanda.co",
@@ -6143,7 +6167,8 @@
       "kind": "Build",
       "date": "2026-08-05",
       "description": "A credit & debit card component for payment forms: live brand detection, 3D flip, themeable variants.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "cuelume.dev",
@@ -6152,7 +6177,8 @@
       "kind": "Build",
       "date": "2026-08-26",
       "description": "Cuelume is a tiny, dependency-free library of carefully designed interaction sounds, synthesized live with Web Audio.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "design.dev/ai/design-tokens-generator",
@@ -6161,7 +6187,8 @@
       "kind": "Use",
       "date": "2026-09-16",
       "description": "Paste brand colors or a Figma, Tokens Studio, or DTCG export and get production-ready design tokens: semantic CSS variables with dark mode, a Tailwind v4 @theme, DTCG tokens.json, and rules your AI coding agents can follow.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "design.lightspark.com/limit-the-number-of-details",
@@ -6170,7 +6197,8 @@
       "kind": "Read",
       "date": "2026-09-16",
       "description": "Every detail asks for attention. Limiting how many we add is what gives us room to make the ones that remain better.",
-      "notes": ""
+      "notes": "Geoff Teehan: make every detail perfect and limit the number of details; every control is a small mortgage, complexity must earn its way in, removing things buys back time for craft.",
+      "inToolbox": false
     },
     {
       "id": "designbooks.org",
@@ -6179,7 +6207,8 @@
       "kind": "Browse",
       "date": "2026-07-09",
       "description": "A curated reading list for product, interaction, and visual designers studying usability, systems, typography, research, and the craft of making useful things.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "designdisciplin.com/p/design-engineering-101",
@@ -6188,7 +6217,8 @@
       "kind": "Read",
       "date": "2026-03-07",
       "description": "Practical guide to the jobs and skills of the design engineer in tech",
-      "notes": ""
+      "notes": "M.A. Baytaş maps the jobs (marketing, product polish and systems, R&D prototyping, founding) and how to dual-class into them.",
+      "inToolbox": false
     },
     {
       "id": "designeng.club",
@@ -6197,7 +6227,8 @@
       "kind": "Join",
       "date": "2026-03-08",
       "description": "Design Engineering Community",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "designengineer.io",
@@ -6206,7 +6237,8 @@
       "kind": "Browse",
       "date": "2026-03-08",
       "description": "Find a design engineering job in a next generation software company.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "designengineer.tools",
@@ -6215,7 +6247,8 @@
       "kind": "Browse",
       "date": "2026-03-14",
       "description": "A list of useful tools for web-focused design engineers.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "designengineer.xyz/design-engineering",
@@ -6224,7 +6257,8 @@
       "kind": "Read",
       "date": "2026-03-15",
       "description": "Learn what Design Engineers do, why they matter to modern tech companies, and how they differ from vibe coders.",
-      "notes": ""
+      "notes": "Defines the role (design fluency, production code, the bridge) and contrasts design engineering with vibe coding: principles over accepting output.",
+      "inToolbox": false
     },
     {
       "id": "designspells.com",
@@ -6233,7 +6267,8 @@
       "kind": "Browse",
       "date": "2026-05-18",
       "description": "Discover micro-interactions, easter eggs, and other seemingly extra design details that infuse life, personality, and fun back into the web.",
-      "notes": ""
+      "notes": "Micro-interactions and easter eggs that add personality (blocked by a bot check at capture).",
+      "inToolbox": true
     },
     {
       "id": "designsystemchecklist.com",
@@ -6242,7 +6277,8 @@
       "kind": "Use",
       "date": "2026-03-17",
       "description": "An open-source checklist to help you plan, build and grow your design system.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "designsystems.surf",
@@ -6251,7 +6287,8 @@
       "kind": "Browse",
       "date": "2026-05-16",
       "description": "Best-in-class Design Systems collection with a repository of Components and Foundations references from top-tier tech companies and leading UI teams.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "devl.dev",
@@ -6260,7 +6297,8 @@
       "kind": "Build",
       "date": "2026-04-27",
       "description": "Two years of UI experiments. 159+ components built on coss-ui, all on the shadcn registry.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "devouringdetails.com",
@@ -6269,7 +6307,8 @@
       "kind": "Learn",
       "date": "2026-03-09",
       "description": "An interactive reference manual for interaction-curious designers.",
-      "notes": ""
+      "notes": "Rauno Freiberg's interactive manual: inferring intent, interaction metaphors, ergonomics, simulated physics, choreography, contained gestures (course page).",
+      "inToolbox": false
     },
     {
       "id": "didoesdigital.com/project/design-for-engineers",
@@ -6278,7 +6317,8 @@
       "kind": "Browse",
       "date": "2026-05-13",
       "description": "Design and code work hand-in-hand to produce memorable digital products.",
-      "notes": ""
+      "notes": "A curated syllabus of design fundamentals for software engineers.",
+      "inToolbox": false
     },
     {
       "id": "dotmatrix.zzzzshawn.cloud",
@@ -6287,7 +6327,8 @@
       "kind": "Build",
       "date": "2026-08-30",
       "description": "Dot Matrix is a React component library of dot matrix loaders—expressive loading primitives you install via the shadcn registry and own as local code.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "easing.dev",
@@ -6296,7 +6337,8 @@
       "kind": "Use",
       "date": "2026-03-15",
       "description": "A curated collection of easing graphs",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "edoardolunardi.github.io/kugiri",
@@ -6305,7 +6347,8 @@
       "kind": "Build",
       "date": "2026-09-07",
       "description": "Splits text into lines, words and characters exactly where the browser already broke it.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "emilkowal.ski",
@@ -6314,7 +6357,8 @@
       "kind": "Follow",
       "date": "2026-03-06",
       "description": "Design engineer working at Linear.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "emilkowal.ski/ui/developing-taste",
@@ -6323,7 +6367,8 @@
       "kind": "Read",
       "date": "2026-03-05",
       "description": "Why taste matters and how to develop it.",
-      "notes": ""
+      "notes": "Emil Kowalski: taste is a trained instinct; surround yourself with great work, explain why something works instead of labelling it, and practise through the taste gap.",
+      "inToolbox": false
     },
     {
       "id": "emilkowal.ski/ui/you-dont-need-animations",
@@ -6332,7 +6377,8 @@
       "kind": "Read",
       "date": "2026-07-08",
       "description": "Why you are animating more often than you should.",
-      "notes": ""
+      "notes": "Emil Kowalski: animate with purpose; frequency decides (no animation for keyboard-driven or hundreds-a-day actions); keep UI motion under about 300 ms.",
+      "inToolbox": false
     },
     {
       "id": "fancycomponents.dev",
@@ -6341,7 +6387,8 @@
       "kind": "Build",
       "date": "2026-03-18",
       "description": "Ready to use, fancy React components to make the web fun again. Free & Open Source.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "findautumn.com/careers/design-engineer",
@@ -6350,7 +6397,8 @@
       "kind": "Apply",
       "date": "2026-07-13",
       "description": "Founding Design Engineer / Remote, United States",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "floguo.com",
@@ -6359,7 +6407,8 @@
       "kind": "Follow",
       "date": "2026-03-15",
       "description": "Founding design engineer at Paradigm",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "floguo.com/notes/design-engineering",
@@ -6368,7 +6417,8 @@
       "kind": "Browse",
       "date": "2026-03-15",
       "description": "Links and observations on design engineering",
-      "notes": ""
+      "notes": "floguo's living syllabus: material understanding beats tool proficiency; marry design and implementation; foundations lift whole teams.",
+      "inToolbox": false
     },
     {
       "id": "fluidfunctionalism.com",
@@ -6377,7 +6427,8 @@
       "kind": "Build",
       "date": "2026-08-05",
       "description": "Open Source UI components created by @micka_design",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "github.com/benjitaylor/liveline",
@@ -6386,7 +6437,8 @@
       "kind": "Build",
       "date": "2026-03-09",
       "description": "Real-time animated line chart for React.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "github.com/dip/cmdk",
@@ -6395,7 +6447,8 @@
       "kind": "Build",
       "date": "2026-03-09",
       "description": "Fast, unstyled command menu React component.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "github.com/emilkowalski/skills",
@@ -6404,7 +6457,8 @@
       "kind": "Use",
       "date": "2026-07-12",
       "description": "Skills for Design Engineers.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "github.com/jakubkrehel/skills",
@@ -6413,7 +6467,8 @@
       "kind": "Use",
       "date": "2026-07-15",
       "description": "A set of agent skills that help improve different parts of a product, from animations and typography to layout and colors.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "glass.samasante.com",
@@ -6422,7 +6477,8 @@
       "kind": "Build",
       "date": "2026-08-11",
       "description": "A headless React lens that refracts the live page.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "gooey.jakubantalik.com",
@@ -6431,7 +6487,8 @@
       "kind": "Build",
       "date": "2026-08-11",
       "description": "Liquid UI effects for React.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "gradient-border.floriankiem.com",
@@ -6440,7 +6497,8 @@
       "kind": "Build",
       "date": "2026-05-15",
       "description": "A simple Tailwind CSS plugin for beautiful gradient borders using mask-composite. Mirrors Tailwind's gradient utilities with from / via / to color stops, configurable widths, and an animated variant.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "gradientool.com",
@@ -6449,7 +6507,8 @@
       "kind": "Use",
       "date": "2026-10-01",
       "description": "A simple tool for infinite unique outputs.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "haptics.lochie.me",
@@ -6458,7 +6517,8 @@
       "kind": "Build",
       "date": "2026-03-07",
       "description": "Haptic feedback for the mobile web.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "hashvatar.com",
@@ -6467,7 +6527,8 @@
       "kind": "Build",
       "date": "2026-05-13",
       "description": "Generate deterministic, unique avatars from wallet addresses, usernames, or any string. Zero dependencies. Gradient & dither modes. React & vanilla JS.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "ibelick.com/anatomy-ai-input",
@@ -6476,7 +6537,8 @@
       "kind": "Read",
       "date": "2026-09-12",
       "description": "Understanding the structure of an AI input.",
-      "notes": ""
+      "notes": "Layer-by-layer anatomy of an AI prompt input: never lock typing while streaming, send turns into stop, errors near the generation not in toasts, optimistic attachments, no layout jumps.",
+      "inToolbox": false
     },
     {
       "id": "iim.smartsquad.io",
@@ -6485,7 +6547,8 @@
       "kind": "Build",
       "date": "2026-09-04",
       "description": "Open-source JS library for displaying independent columns, opposite directions: a continuous animated image pattern for the web.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "impeccable.style",
@@ -6494,7 +6557,8 @@
       "kind": "Use",
       "date": "2026-03-17",
       "description": "1 skill, 20 commands, and curated anti-patterns for impeccable frontend design. Works with Cursor, Claude Code, Gemini CLI, and Codex CLI.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "interfacecraft.dev",
@@ -6503,7 +6567,8 @@
       "kind": "Learn",
       "date": "2026-03-10",
       "description": "A working library for those committed to designing with uncommon care.",
-      "notes": ""
+      "notes": "Josh Puckett's library for designing with uncommon care (course page).",
+      "inToolbox": false
     },
     {
       "id": "interfaces.dev",
@@ -6512,7 +6577,8 @@
       "kind": "Browse",
       "date": "2026-05-13",
       "description": "Design Engineering Magazine",
-      "notes": ""
+      "notes": "Jakub Krehel's design engineering magazine.",
+      "inToolbox": false
     },
     {
       "id": "interfaces.dev/cheat-sheet",
@@ -6521,7 +6587,8 @@
       "kind": "Read",
       "date": "2026-08-21",
       "description": "A list of tips, improvements and best practices that quickly make your interfaces better.",
-      "notes": ""
+      "notes": "Interfaces cheat sheet: concentric radii, optical alignment, layered shadows, image outlines, trigger-origin motion, exit-only menus, named transition properties, press scale 0.95 to 0.98, semantic colour tokens, native elements, 24 to 44 px targets, verb-first labels.",
+      "inToolbox": true
     },
     {
       "id": "interfaces.rauno.me",
@@ -6530,7 +6597,8 @@
       "kind": "Read",
       "date": "2026-03-09",
       "description": "A non-exhaustive list of details that make a good web interface.",
-      "notes": ""
+      "notes": "Rauno Freiberg's web interface guidelines: interactivity, typography, motion, touch, optimisations and accessibility details as a checklist.",
+      "inToolbox": true
     },
     {
       "id": "interior.dev",
@@ -6539,7 +6607,8 @@
       "kind": "Build",
       "date": "2026-08-13",
       "description": "Micro-interactions for react, built for the half-second after a click.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "jakub.kr",
@@ -6548,7 +6617,8 @@
       "kind": "Follow",
       "date": "2026-05-13",
       "description": "Founding Design Engineer at Interfere",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "jakub.kr/work/using-ai-as-a-design-engineer",
@@ -6557,7 +6627,8 @@
       "kind": "Read",
       "date": "2026-04-05",
       "description": "How I use AI as a design engineer on a daily basis.",
-      "notes": ""
+      "notes": "Jakub Krehel uses AI to try concepts in minutes and throw them away, never to replace thinking; short codebase rules, structured prompts, understand every change.",
+      "inToolbox": false
     },
     {
       "id": "jakub.kr/writing/details-that-make-interfaces-feel-better",
@@ -6566,7 +6637,8 @@
       "kind": "Read",
       "date": "2026-03-16",
       "description": "A collection of details that make your interfaces feel better.",
-      "notes": ""
+      "notes": "Jakub Krehel's finishing details: balance and pretty wrapping, concentric radii, contextual icon swaps, antialiasing, tabular numbers, interruptible transitions, split staggers, subtle exits, optical alignment, shadows for borders, image outlines.",
+      "inToolbox": false
     },
     {
       "id": "joshpuckett.me/dialkit",
@@ -6575,7 +6647,8 @@
       "kind": "Build",
       "date": "2026-03-17",
       "description": "A floating control panel for React: sliders, toggles, color pickers, spring editors, and action buttons wired directly to your UI values.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "lawsofux.com",
@@ -6584,7 +6657,8 @@
       "kind": "Browse",
       "date": "2026-03-17",
       "description": "Laws of UX is a collection of best practices that designers can consider when building user interfaces.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "lessons.design",
@@ -6593,7 +6667,8 @@
       "kind": "Read",
       "date": "2026-09-16",
       "description": "The musings of a designer on why he designs the way he does and what he’s learned along the journey.",
-      "notes": ""
+      "notes": "Fabricio Teixeira's seven lessons: find conceptual models, simplicity is saying no, framing is magic, consistency compounds, break the system with love, change is the job, joy is the legacy.",
+      "inToolbox": false
     },
     {
       "id": "loading.dev",
@@ -6602,7 +6677,8 @@
       "kind": "Build",
       "date": "2026-10-02",
       "description": "A lightweight library full of beautiful loading indicators for React.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "maggieappleton.com/design-engineers",
@@ -6611,7 +6687,8 @@
       "kind": "Browse",
       "date": "2026-03-24",
       "description": "Collecting people I know who work at the intersection of design and engineering, in an attempt to figure out what a design engineer is",
-      "notes": ""
+      "notes": "Maggie Appleton's collection of design engineers and their public work, to show what the role produces.",
+      "inToolbox": false
     },
     {
       "id": "magicui.design",
@@ -6620,7 +6697,8 @@
       "kind": "Build",
       "date": "2026-07-01",
       "description": "Beautiful UI components and templates to make your landing page look stunning.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "marcel.io/posts/becoming-a-design-engineer",
@@ -6629,7 +6707,8 @@
       "kind": "Read",
       "date": "2026-03-15",
       "description": "Thoughts about design, code, technology and everything in between.",
-      "notes": ""
+      "notes": "A product designer on moving from pushing frames to building real states in code; the one-artifact argument from Jim Nielsen.",
+      "inToolbox": false
     },
     {
       "id": "morphicons.com",
@@ -6638,7 +6717,8 @@
       "kind": "Build",
       "date": "2026-08-16",
       "description": "Morph any SVG icon into any other with spring physics.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "morphrig.dev",
@@ -6647,7 +6727,8 @@
       "kind": "Learn",
       "date": "2026-08-20",
       "description": "How icon morphing actually works, in ten parts, ending with enough to go and build it yourself.",
-      "notes": ""
+      "notes": "A ten-part manual on how icon morphing actually works, from point correspondence up.",
+      "inToolbox": true
     },
     {
       "id": "number-flow.barvian.me",
@@ -6656,7 +6737,8 @@
       "kind": "Build",
       "date": "2026-07-09",
       "description": "A React component to animate numbers. Dependency-free. Accessible. Customizable.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "oklch.fyi",
@@ -6665,7 +6747,8 @@
       "kind": "Use",
       "date": "2026-03-11",
       "description": "Convert, generate and explore OKLCH colors – a powerful tool to build unique and uniform color palettes.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "orbs.jakubantalik.com",
@@ -6674,7 +6757,8 @@
       "kind": "Build",
       "date": "2026-07-22",
       "description": "Dotted thought-orb loading indicators for AI and agent UIs.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "pierrickcalvez.com/journal/a-five-minute-guide-to-better-typography",
@@ -6683,7 +6767,8 @@
       "kind": "Read",
       "date": "2026-09-12",
       "description": "",
-      "notes": ""
+      "notes": "Slide-deck primer: think of type as blocks, one family with four or more weights, skip a weight for contrast, double the size for hierarchy, 1.2 to 1.5 leading, 40 to 70 characters, align optically, real dashes.",
+      "inToolbox": false
     },
     {
       "id": "practicaltypography.com",
@@ -6692,7 +6777,8 @@
       "kind": "Learn",
       "date": "2026-09-16",
       "description": "",
-      "notes": ""
+      "notes": "Butterick's free web book on typography rules (index page skimmed).",
+      "inToolbox": true
     },
     {
       "id": "principles.design",
@@ -6701,7 +6787,8 @@
       "kind": "Browse",
       "date": "2026-03-18",
       "description": "A curated collection of design principles used as decision-making frameworks. Practical examples and guidance for teams building products.",
-      "notes": ""
+      "notes": "A collection of published design principles used as decision frameworks.",
+      "inToolbox": false
     },
     {
       "id": "rams.ai",
@@ -6710,7 +6797,8 @@
       "kind": "Use",
       "date": "2026-03-21",
       "description": "Automated design reviews for AI-generated code. Catches accessibility issues and visual bugs in React, Vue, Svelte, and more.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "raphaelsalaja.com/library/12-principles-of-animation",
@@ -6719,7 +6807,8 @@
       "kind": "Read",
       "date": "2026-03-05",
       "description": "A guide to the foundational principles of animation.",
-      "notes": ""
+      "notes": "Disney's twelve principles mapped to UI: anticipation before destructive actions, staging with a backdrop, overlapping action as stagger, timing under 300 ms, exaggeration only for errors and rare moments.",
+      "inToolbox": false
     },
     {
       "id": "raphaelsalaja.com/library/the-concept-of-taste",
@@ -6728,7 +6817,8 @@
       "kind": "Read",
       "date": "2026-05-13",
       "description": "An exploration of aesthetic taste in art, design, and creative fields.",
-      "notes": ""
+      "notes": "Raphael Salaja: taste is built through study and critique; what lasts is fundamentals (composition, hierarchy, clarity) open to reinvention.",
+      "inToolbox": false
     },
     {
       "id": "rauno.me",
@@ -6737,7 +6827,8 @@
       "kind": "Follow",
       "date": "2026-03-07",
       "description": "Staff Design Engineer at Vercel",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "rauno.me/craft/interaction-design",
@@ -6746,7 +6837,8 @@
       "kind": "Read",
       "date": "2026-03-10",
       "description": "What makes great interactions feel right?",
-      "notes": ""
+      "notes": "Rauno Freiberg on why interactions feel right: metaphors that compound, momentum, trigger thresholds by destructiveness, immediate gesture response, spatial consistency, frequency versus novelty, implicit input, Fitts.",
+      "inToolbox": false
     },
     {
       "id": "ref.tools/blog/how-i-design-with-ai",
@@ -6755,7 +6847,8 @@
       "kind": "Read",
       "date": "2026-09-13",
       "description": "As an engineer who is not a designer and hates slop.",
-      "notes": ""
+      "notes": "De-slopping with AI: lay out constraints before fixing symptoms, remove what agents add, iterate in a design surface to avoid prototype gravity, build components on a showcase page, judge on preview deploys with real data, steal from solved problems.",
+      "inToolbox": false
     },
     {
       "id": "remediate.ski",
@@ -6764,7 +6857,8 @@
       "kind": "Build",
       "date": "2026-05-04",
       "description": "Capture screenshots, video, voice notes, and annotations from users as in-app feedback. One React component, one server helper. Routes to Slack, Linear, GitHub, email, or webhooks. MIT licensed.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "resend.com/careers/9b68ba51-3895-4d29-8fd1-364bdf8956e7",
@@ -6773,7 +6867,8 @@
       "kind": "Apply",
       "date": "2026-07-08",
       "description": "Product Engineer / Americas / Remote",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "rockstargames.com/careers/openings/position/7767935003",
@@ -6782,7 +6877,8 @@
       "kind": "Apply",
       "date": "2026-07-08",
       "description": "Design Engineer / Rockstar New York",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "ryngonzalez.com/blog/the-attributes-of-a-design-engineer",
@@ -6791,7 +6887,8 @@
       "kind": "Read",
       "date": "2026-03-16",
       "description": "My definition of design engineering after building the practice at DoorDash.",
-      "notes": ""
+      "notes": "Kathryn Gonzalez: build with significant autonomy, practise and teach software craft, raise the final fidelity of what ships; own the outcome, not the deliverable.",
+      "inToolbox": false
     },
     {
       "id": "shadowlab.mocarski.design",
@@ -6800,7 +6897,8 @@
       "kind": "Use",
       "date": "2026-03-27",
       "description": "A playground for creating box shadows for web and React Native.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "shedsgns.me/taste",
@@ -6809,7 +6907,8 @@
       "kind": "Read",
       "date": "2026-08-28",
       "description": "",
-      "notes": ""
+      "notes": "Juliette on AI and the human filter: good enough is never good enough; taste lives in rhythm, hierarchy, atmosphere, restraint and the right amount of nothing.",
+      "inToolbox": false
     },
     {
       "id": "shoogle.dev",
@@ -6818,7 +6917,8 @@
       "kind": "Browse",
       "date": "2026-09-04",
       "description": "Search shadcn UI blocks, components and templates across the shadcn registries",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "sonner.emilkowal.ski",
@@ -6827,7 +6927,8 @@
       "kind": "Build",
       "date": "2026-03-06",
       "description": "An opinionated toast component for React.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "soundcn.xyz",
@@ -6836,7 +6937,8 @@
       "kind": "Build",
       "date": "2026-03-08",
       "description": "700+ curated UI sound effects for modern web apps.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "svg.guide",
@@ -6845,7 +6947,8 @@
       "kind": "Learn",
       "date": "2026-03-10",
       "description": "An interactive mini-course on creating SVG animations by Nanda Syahrasyad.",
-      "notes": ""
+      "notes": "Nanda Syahrasyad's interactive course on SVG animation (course page).",
+      "inToolbox": true
     },
     {
       "id": "tasteskill.dev",
@@ -6854,7 +6957,8 @@
       "kind": "Use",
       "date": "2026-05-14",
       "description": "Taste Skill gives your AI coding agent good taste. Open-source skill files that stop Cursor, Claude Code, Codex & more from generating generic, boring frontends. Install in one command.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "tonyward.dev/articles/code-as-the-source-of-truth",
@@ -6863,7 +6967,8 @@
       "kind": "Read",
       "date": "2026-10-04",
       "description": "With AI tooling, code being the source of truth just makes sense.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "torph.lochie.me",
@@ -6872,7 +6977,8 @@
       "kind": "Build",
       "date": "2026-04-03",
       "description": "Dependency-free animated text component.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "transitions.dev",
@@ -6881,7 +6987,8 @@
       "kind": "Browse",
       "date": "2026-05-02",
       "description": "Collection of the most essential transitions for web apps that you can just copy and paste into any project.",
-      "notes": ""
+      "notes": "A library of crafted UI transitions with a motion skill for agents.",
+      "inToolbox": true
     },
     {
       "id": "tripwire.sh/dither-kit",
@@ -6890,7 +6997,8 @@
       "kind": "Build",
       "date": "2026-07-13",
       "description": "Composable, dithered charts with a recharts-style children-as-config API.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "twilson.net/writing/ai-design-engineer",
@@ -6899,7 +7007,8 @@
       "kind": "Read",
       "date": "2026-08-24",
       "description": "What's changed, and what still matters.",
-      "notes": ""
+      "notes": "Tim Wilson: AI shrinks the gap; what remains human is knowing what not to build, novel ideas and crafted visuals.",
+      "inToolbox": false
     },
     {
       "id": "ui-skills.com",
@@ -6908,7 +7017,8 @@
       "kind": "Use",
       "date": "2026-03-24",
       "description": "A set of skills to polish interfaces built by agents.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "ui.camera",
@@ -6917,7 +7027,8 @@
       "kind": "Use",
       "date": "2026-08-22",
       "description": "Create beautiful product visuals from your UI. Studio-quality photos and videos of software, right in the browser.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": true
     },
     {
       "id": "ui.land",
@@ -6926,7 +7037,8 @@
       "kind": "Browse",
       "date": "2026-04-16",
       "description": "The Digital Library for Designers and Engineers.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "uiplaybook.dev",
@@ -6935,7 +7047,8 @@
       "kind": "Browse",
       "date": "2026-03-09",
       "description": "The documented collection of UI components.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "uselayouts.com",
@@ -6944,7 +7057,8 @@
       "kind": "Browse",
       "date": "2026-09-29",
       "description": "Free React components with animation, built with Framer Motion and Tailwind CSS. Preview them, copy the code, and add them to your site.",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     },
     {
       "id": "userinterface.wiki",
@@ -6953,7 +7067,8 @@
       "kind": "Browse",
       "date": "2026-03-14",
       "description": "A living manual for better interfaces. Learn design principles, motion, typography, and more.",
-      "notes": ""
+      "notes": "A living manual of interface principles, motion and typography (not reachable at capture).",
+      "inToolbox": false
     },
     {
       "id": "uxdesign.cc/how-to-become-an-ai-designer-ff8ee8aed205",
@@ -6962,7 +7077,8 @@
       "kind": "Read",
       "date": "2026-08-16",
       "description": "A realistic guide to shipping your own designs.",
-      "notes": ""
+      "notes": "Not read: the page blocked automated access.",
+      "inToolbox": false
     },
     {
       "id": "vercel.com/blog/design-engineering-at-vercel",
@@ -6971,7 +7087,8 @@
       "kind": "Read",
       "date": "2026-03-04",
       "description": "Learn what Design Engineers are and what they do at Vercel.",
-      "notes": ""
+      "notes": "Vercel's design engineers: no handoff, prototype what Figma cannot show (motion, keyboard, touch), weigh implementation cost against experience impact, own results not process.",
+      "inToolbox": false
     },
     {
       "id": "yeptype.com/article/inter-alternatives",
@@ -6980,7 +7097,8 @@
       "kind": "Read",
       "date": "2026-09-12",
       "description": "Tired of Inter being everywhere? Two real criteria—cap-centered vertical metrics and a tall x-height—for choosing a UI font, plus 10 alternatives from independent foundries.",
-      "notes": ""
+      "notes": "Choose a UI face by two metrics: cap-centred vertical metrics (one padding token centres labels) and an x-height of 70 to 75 percent of cap height; ten alternatives to Inter.",
+      "inToolbox": false
     },
     {
       "id": "youtu.be/uEMEs499fUs",
@@ -6989,7 +7107,8 @@
       "kind": "Watch",
       "date": "2026-08-26",
       "description": "",
-      "notes": ""
+      "notes": "Video, not watched (no transcript available to the capture).",
+      "inToolbox": false
     },
     {
       "id": "youtube.com/watch?v=GLvFTMtw4Jk",
@@ -6998,7 +7117,8 @@
       "kind": "Watch",
       "date": "2026-10-04",
       "description": "As AI makes it easier to build, how do we keep products from becoming generic “zombie UI”?",
-      "notes": ""
+      "notes": "Video, not watched (no transcript available to the capture).",
+      "inToolbox": false
     },
     {
       "id": "zed.dev/jobs/product-designer",
@@ -7007,7 +7127,8 @@
       "kind": "Apply",
       "date": "2026-07-13",
       "description": "Product Design Engineer / Remote",
-      "notes": ""
+      "notes": "",
+      "inToolbox": false
     }
   ]
 }
