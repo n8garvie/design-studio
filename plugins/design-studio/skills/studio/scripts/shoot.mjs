@@ -671,7 +671,11 @@ export function summarize(m, vpName = '') {
   if (h.h1Count === 0) flags.push('no h1');
   else if (h.h1Count > 1) flags.push(`${h.h1Count} h1 elements`);
   const tg = m.targets ?? {};
-  if (tg.under24) flags.push(`${plural(tg.under24, 'target')} under 24px${tg.under24Spaced ? ` (${tg.under24Spaced} meet the WCAG spacing exception)` : ''}`);
+  if (tg.under24) {
+    const small = [...(tg.under24Items ?? [])].sort((x, y) => x.w * x.h - y.w * y.h)[0];
+    const notes = [small && `smallest ${small.w}×${small.h}`, tg.under24Spaced && `${tg.under24Spaced} meet the WCAG spacing exception`].filter(Boolean);
+    flags.push(`${plural(tg.under24, 'target')} under 24px${notes.length ? ` (${notes.join('; ')})` : ''}`);
+  }
   if (tg.under44) flags.push(`${plural(tg.under44, 'touch target')} under 44px`);
   const a = m.a11y ?? {};
   if (a.focusVisibleRule === false) {
