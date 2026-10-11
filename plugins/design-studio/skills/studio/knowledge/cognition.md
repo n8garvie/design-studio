@@ -1,6 +1,6 @@
 # Cognition
 
-> Used by: interaction designer, product strategist, content strategist. Distilled from: Don Norman, The Design of Everyday Things (revised ed.); Jeff Johnson, Designing with the Mind in Mind (2nd ed.); human time constants as summarized by Card, Robertson and Mackinlay and by Nielsen; Cowan (2001). Written in our own words; see CREDITS.md.
+> Used by: interaction designer, product strategist, content strategist; UX researcher (guest). Distilled from: Don Norman, The Design of Everyday Things (revised ed.); Jeff Johnson, Designing with the Mind in Mind (2nd ed.); human time constants as summarized by Card, Robertson and Mackinlay and by Nielsen; Cowan (2001). Written in our own words; see CREDITS.md.
 
 How people perceive, act and fail sets limits that taste can't override. Use Norman for the action loop (can I see what to do; can I tell what happened) and Johnson for the limits of perception, attention and memory. `kb/knowledge/ux-laws.md` names the laws; this file explains why they hold. Values are defaults to beat, not ceilings; judge in context; never apply mechanically.
 

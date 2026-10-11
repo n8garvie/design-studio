@@ -1,6 +1,6 @@
 # UX laws
 
-> Used by: all roles; owned by interaction designer and product strategist. Distilled from: Adam Hayes, "The UX Laws in My CLAUDE.md" (2026; his 20 laws, their law, sentence and four-bullet shape, much of his wording and his implementation steps are adapted with credit, at his invitation: "Copy it."); Jon Yablonski, Laws of UX; Norman, The Design of Everyday Things; Cowan (2001) on working memory. Written in our own words except Hayes's kept phrasing; see CREDITS.md.
+> Used by: all roles; owned by interaction designer and product strategist; UX researcher (guest). Distilled from: Adam Hayes, "The UX Laws in My CLAUDE.md" (2026; his 20 laws, their law, sentence and four-bullet shape, much of his wording and his implementation steps are adapted with credit, at his invitation: "Copy it."); Jon Yablonski, Laws of UX; Norman, The Design of Everyday Things; Cowan (2001) on working memory. Written in our own words except Hayes's kept phrasing; see CREDITS.md.
 
 A model can reason from a principle; it can only copy from a spec (Hayes). Reason from the named law to the case in front of you, then verify with the Check line. Values are defaults to beat, not ceilings. Judge in context and never apply these mechanically: a screen can satisfy all of them and still feel like a tax return. The goal, in Hayes's words: minimize confusion, reduce effort, prevent mistakes, and help users complete their intended task as quickly as possible. Where we depart from Hayes, the principle says so.
 

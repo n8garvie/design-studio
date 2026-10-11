@@ -57,7 +57,7 @@ Do not read `KB/knowledge/ai-tells.md` while building. It primes the very patter
 7. **Prototypes are self-contained.**
    - One HTML file per tile or screen, with inline CSS and JS, no build step and no network dependencies.
    - Fonts: system stacks, or web fonts only if the brief allows network access, always with a fallback stack and `font-display: swap`.
-8. **States are real.** Make each state reachable by URL (`?state=empty`, `?state=error`, `?state=loading`), so the Head can screenshot it.
+8. **States are real.** Make each state reachable by URL (`?state=empty`, `?state=loading`, `?state=error`, `?state=partial`, `?state=success`, and `?state=stress` for the real-content stress dataset), so the Head can screenshot it.
 9. **In a real codebase:**
    - Use its stack, components and tokens: shadcn, Tailwind, CSS modules, whatever is there.
    - Keep diffs minimal and focused, and don't break the build.

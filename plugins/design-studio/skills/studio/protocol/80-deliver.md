@@ -31,7 +31,7 @@ Fixing a tell means removing or replacing it. A purple gradient with a noise ove
 
 1. Capture every state the work touches:
    ```
-   node SCRIPTS/shoot.mjs <target> --out SESSION/deliver/states --state empty=?state=empty --state loading=?state=loading --state error=?state=error --state partial=?state=partial --state success=?state=success
+   node SCRIPTS/shoot.mjs <target> --out SESSION/deliver/states --state empty=?state=empty --state loading=?state=loading --state error=?state=error --state partial=?state=partial --state success=?state=success --state stress=?state=stress
    ```
    Also cover long text, the narrowest viewport, and dark mode where one exists.
 2. Spawn the interaction designer, the content strategist, and the UX researcher if invited, each with `TASK: states`. Each reports every state as designed, unstyled or missing.

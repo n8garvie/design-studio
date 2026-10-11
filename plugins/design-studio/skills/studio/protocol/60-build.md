@@ -9,7 +9,7 @@ Spawn the `design-engineer` with `TASK: build-screens`.
 - The engineer builds:
   - the target screens, as `build/index.html` or several screen files, or in the user's codebase
   - `build/states.html`
-  - URL-reachable states (`?state=empty|loading|error|partial|success`)
+  - URL-reachable states (`?state=empty|loading|error|partial|success|stress`). `stress` is the real-content stress board: the longest names, 0, 1 and 1,000+ items, translated-length labels.
 - Record the engineer's name or id in `state.md` under `maker:`.
 
 ## 2. Continue the same maker across rounds

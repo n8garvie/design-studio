@@ -15,7 +15,7 @@ Design Studio stands on other people's thinking. Everything in `knowledge/`, `ro
 | [Vmobify](https://vmobify.com/blog/claude-code-ui-ux-plugins-skills) | One signature move; the 9-state matrix; DESIGN.md sections | `knowledge/interaction.md`, `templates/DESIGN.md` |
 | Claude Academy, "A CLAUDE.md that follows" | Lean, checkable rules; name the replacement for every ban | house style |
 | Gustavo Fior, [Craft](https://craft.gustavofior.com/) (MIT, per its README) and "Incremental Complexity" | Design-engineering concepts with exact values (tabular numbers, optical alignment, noise, nested radius, image outlines, hover restraint, and more); complexity that is contextual, not merely delayed | `knowledge/*` (tagged "Craft") |
-| Kausthubh, [Critly](https://github.com/kausthubh-coder/craft), a fork of Craft (MIT) | Interaction and content concepts: states, focus rings, inputs, empty states, toasts, destructive actions, microcopy, real content | `knowledge/interaction.md`, `knowledge/content.md` (tagged "Critly") |
+| Kausthubh, [Critly](https://github.com/kausthubh-coder/craft), a fork of Craft (MIT) | Interaction and content concepts: states, focus rings, inputs, empty states, toasts, destructive actions, microcopy, real content | `knowledge/interaction.md`, `knowledge/content.md`, `knowledge/research.md`, `knowledge/imagery.md` (tagged "Critly") |
 | Eric Lammertsma, [world-class-designer](https://github.com/elammertsma/world-class-designer) (MIT) | The studio critic is adapted from its design-critic agent; the AI-tells catalog, cut pass and states pass build on its references; the 3-critic median | `roles/critic.md`, `knowledge/ai-tells.md` |
 | Jason Prunty, [design-director](https://github.com/j-withmission/design-director) (MIT) | Evidence on critic reliability (strong models for absolute scores, cheap models only pairwise); a written reference brief instead of photo moodboards; rules tallied apart from the score; fixed and open axes; the divergence check | `protocol/20-discover.md`, `protocol/40-develop.md`, `protocol/90-overnight.md` |
 | José Nogueira, [design-director](https://github.com/jose-nogueira1/design-director) (MIT) | The intake interview: feeling words, anti-inspirations, the ambition dial, never asking what you can find yourself | `protocol/10-intake.md` |
@@ -53,5 +53,6 @@ These are distilled as principles in our own words. No text is reproduced.
 | Marty Neumeier, *The Brand Gap* and *Zag* | Differentiation |
 | Byron Sharp, *How Brands Grow* | Distinctive brand assets |
 | Adam Connor and Aaron Irizarry, *Discussing Design* | Critique practice |
+| Jakob Nielsen (usability heuristics); Wharton, Rieman, Lewis and Polson (cognitive walkthrough); Steve Krug, *Don't Make Me Think* (trunk test); Card, Moran and Newell (keystroke-level model); Microsoft Inclusive Design (persona spectrum); Jeff Gothelf, *Lean UX* (assumptions) | Research methods in `knowledge/research.md` |
 
 If we've missed a credit, or credited something wrongly, please open an issue.
