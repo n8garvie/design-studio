@@ -12,6 +12,8 @@ roster     lens notes  the bar     blind lineup vs    system sheet      states  
                                    refs, you pick     rendered + crit            debates → rulings → maker applies  final gate
 ```
 
+For diagrams of the phases, one crit round and how the agents pass work to each other, open [`docs/how-it-works.html`](docs/how-it-works.html) in a browser.
+
 ## Why it works
 
 - **Your references set the bar.** The team reads them into a written brief: what to match, where to go further, and 3–5 rules a critic can check. Each round, jurors rank our screenshot blind among your references. "Done" means ranking first.
