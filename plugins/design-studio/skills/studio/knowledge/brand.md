@@ -1,6 +1,6 @@
 # Brand identity and marketing design
 
-> Used by: brand designer (owner), visual designer, content strategist, emotion designer. Distilled from: Designing Brand Identity (Wheeler); The Brand Gap and Zag (Neumeier); How Brands Grow (Sharp) and Ehrenberg-Bass work on distinctive assets (Romaniuk); Designing for Emotion (Walter); Laws of UX (Yablonski); Anthropic's frontend-design skill; Craft by Gustavo Fior (how to get references, timelessness); Anshu Chimala (Lenny's Newsletter); world-class-designer (Lammertsma); design-director (Prunty) bench notes. Written in our own words; see CREDITS.md.
+> Used by: brand designer (owner), visual designer, content strategist, emotion designer. Distilled from: Designing Brand Identity (Wheeler); The Brand Gap and Zag (Neumeier); How Brands Grow (Sharp) and Ehrenberg-Bass work on distinctive assets (Romaniuk); Designing for Emotion (Walter); Laws of UX (Yablonski); Anthropic's frontend-design skill; Craft by Gustavo Fior (how to get references, timelessness); Anshu Chimala (Lenny's Newsletter); world-class-designer (Lammertsma); design-director (Prunty) bench notes; the desengs.com inspiration corpus and OG gallery. Written in our own words; see CREDITS.md.
 
 Use this to build an identity out of the subject's own world and to write the page that sells it. Visual execution lives in `kb/knowledge/visual-systems.md` and words in `kb/knowledge/content.md`; this file decides what the brand is and how it argues. Principles generalise; Values are defaults to beat, not ceilings. Judge in context; never apply mechanically. One test runs under every principle: could this identity be put on a competitor without anyone noticing? If yes, it is not finished.
 
@@ -14,6 +14,7 @@ Distinctive identities come from the subject's industry, materials, tools, place
 - Do not start from a component kit, a favourite palette or "modern and clean".
 
 Check: a critic can name at least two things in the first screenshot that come from the subject's world; with a competitor's name swapped in, the page should no longer fit.
+Values: when the name itself is a thing, try making it literal before inventing a metaphor. In the desengs corpus: rendered obsidian rock for Obsidian, a double exposure for Twofold Therapy, the darkroom's red safelight as the whole palette for darkroom.engineering, a 3D radish in the wordmark for Redis Agency, a till receipt for a CV.
 
 ## 2. Find the one thing only this brand can say: Onliness (Neumeier)
 
@@ -73,7 +74,7 @@ Check: for each attribute, a critic can point to its consequence in the screensh
 
 ## 7. Refuse the generated-identity defaults: Slop clusters (frontend-design)
 
-Generated identities cluster around a few looks and lines that appear whatever the subject, and each reads as a default rather than a choice (visual list and replacements: `kb/knowledge/visual-systems.md` #29).
+Generated identities cluster around a few looks and lines that appear whatever the subject, and each reads as a default rather than a choice (visual list and replacements: `kb/knowledge/visual-systems.md` #27).
 
 - Visual clusters: cream with serif and terracotta; near-black with one acid accent; broadsheet hairlines; the SaaS-card kit; template chrome.
 - Brand-level clusters: a gradient-blob or sparkle mark, a name ending in -ly or -ify, "the all-in-one platform for", a hero of smiling stock teams, the canonical landing stack.
@@ -236,7 +237,7 @@ An identity is judged at its weakest touchpoint, which is rarely the hero.
 - Design them before calling the identity done.
 - Do not leave the 404 and the emails to framework defaults.
 
-Check: the system sheet and state board include the favicon, a 1200×630 OG tile, the 404 and one email header, all in the brand.
+Check: the system sheet and state board include the favicon, a 1200×630 OG tile, the 404 and one email header, all in the brand. The OG tile is composed as a poster (one image idea plus the wordmark or one line, legible when shown 600px wide), not the hero shrunk down, the framework default, or the logo on a gradient (desengs OG gallery).
 Values: OG image 1200×630; favicon 16 and 32px plus SVG.
 
 ## 22. Fix the brand architecture early: Brand architecture (Wheeler)
@@ -271,6 +272,18 @@ Voice stays constant while tone flexes with the moment, and both must match what
 - Do not let a restrained identity shout in exclamation marks, or a playful one speak legal prose.
 
 Check: five strings sampled from the screenshots (hero, CTA, empty, error, success) all fit the attribute pairs, and none uses the banned words in `kb/knowledge/ai-tells.md`.
+
+## 25. Depart from the category on one axis: Category contrast (desengs corpus; Neumeier)
+
+The strongest product and finance references in the corpus borrow one convention from another world and keep the rest of their category's conventions: serif headlines on crypto, banking, data and devops pages, painted landscapes on AI pages, visible joy on a scooter page.
+
+- Name the category's default look before designing (dark dev-tool gradient, fintech blue, AI purple glow) and write it in the brief as the look to avoid.
+- Depart on one axis only (type voice, imagery, colour or tone), and borrow the departure from a neighbouring world whose values match: editorial for trust, nature for calm, industrial for precision.
+- Keep the category's legibility conventions (nav placement, pricing pattern, form behaviour) so the page still reads as a product in its category.
+- Do not depart on every axis at once; that reads as a different category, not a distinctive member of this one.
+
+Check: the critic can name the category default and point to the single axis where the design departs; nav, CTA placement and form patterns still follow the category.
+Values: about two in five of the desengs main gallery set display type in a serif, including roughly a third of its product and finance entries (studio tally, captured 2026-10-11).
 
 ## When these conflict
 

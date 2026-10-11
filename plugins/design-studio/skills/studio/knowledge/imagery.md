@@ -1,8 +1,8 @@
 # Imagery and art direction
 
-> Used by: art director (owner), visual designer, brand & marketing designer, emotion designer, design engineer (image delivery). Distilled from: Anshu Chimala's technique 4 on image generation (Lenny's Newsletter) and Mika Reyes's notes on it; world-class-designer by Eric Lammertsma (media.md and the imagery tells in ai-tells.md); Craft by Gustavo Fior (image-outlines, noise, icons); the Critly fork of Craft by kausthubh-coder (real-content, image-loading); Tufte on explanatory graphics; WCAG 2.2 on text alternatives; and studio practice in editorial photography, illustration commissioning and product art direction. Written in our own words; see CREDITS.md.
+> Used by: art director (owner), visual designer, brand & marketing designer, emotion designer, design engineer (image delivery). Distilled from: Anshu Chimala's technique 4 on image generation (Lenny's Newsletter) and Mika Reyes's notes on it; world-class-designer by Eric Lammertsma (media.md and the imagery tells in ai-tells.md); Craft by Gustavo Fior (image-outlines, noise, icons); the Critly fork of Craft by kausthubh-coder (real-content, image-loading); Tufte on explanatory graphics; WCAG 2.2 on text alternatives; the desengs.com inspiration corpus (grade, work in use, depth of field, cut-out collage); and studio practice in editorial photography, illustration commissioning and product art direction. Written in our own words; see CREDITS.md.
 
-Principles 1–10 set what images are for and how a set holds together; 11–17 cover icons, screenshots, materials and finish; 18–22 cover generating and sourcing; 23–26 cover slots, delivery, access and themes. Principles generalise; Values are defaults to beat, not ceilings. Judge an image in the page, at real size, at both widths, never in a folder of thumbnails.
+Principles 1–10 set what images are for and how a set holds together; 11–17 cover icons, screenshots, materials and finish; 18–22 cover generating and sourcing; 23–26 cover slots, delivery, access and themes; 27–28 cover showing work in use and cut-out collage. Principles generalise; Values are defaults to beat, not ceilings. Judge an image in the page, at real size, at both widths, never in a folder of thumbnails.
 
 ## 1. Give every image a job: The four jobs (Chimala; studio)
 
@@ -35,9 +35,10 @@ One excellent image at commanding size does more than six small ones, and where 
 - Cut images that repeat the copy beside them ("a person on a laptop" next to "work from anywhere").
 - Don't sprinkle spot illustrations over every section; one image moment per screenful is plenty.
 
-Check: in the desktop top shot, a lead image (if any) covers at least 40% of the viewport; no section carries an image whose content only restates its heading.
+Check: in the desktop top shot, a lead image (if any) covers at least 40% of the viewport; no section carries an image whose content only restates its heading. When a page must show many images at once (a wall of example screens, an archive), one is sharp and the rest step back by depth of field, scale or tone, so the eye still finds a lead (desengs: Lightspark).
+Values: for a ranked field of images, background items blurred about 4–12px or dimmed to about 60% (studio default).
 
-## 4. Hold the set together: Palette, lens and grade (world-class-designer; studio)
+## 4. Hold the set together: Palette, lens and grade (world-class-designer; studio; desengs corpus)
 
 A page's images read as one family when they share palette, lens, grade and background treatment, so the set, not the single frame, is the unit of art direction.
 
@@ -47,7 +48,7 @@ A page's images read as one family when they share palette, lens, grade and back
 - Don't accept a frame from another renderer, era or color temperature because it looks good alone.
 
 Check: put every image in one row at equal height; a frame with visibly different color temperature, contrast or rendering style fails.
-Values: shadows tinted toward the ink color, never pure #000; saturation within about ±10% across the set; CSS grade only at low values, e.g. `filter: contrast(1.05) saturate(0.9)`.
+Values: shadows tinted toward the ink color, never pure #000; saturation within about ±10% across the set; CSS grade only at low values, e.g. `filter: contrast(1.05) saturate(0.9)`. Let type echo the grade: in the desengs corpus a red italic client list sits beside red lips, a whole page is graded to one red so image and type merge, and black-and-white photography takes one hot type color.
 
 ## 5. Light the set from one source: Shared light (studio)
 
@@ -303,6 +304,29 @@ Images made for a light page glare on a dark one, so the system says how each im
 
 Check: the dark screenshot shows no white image rectangles and no illustration whose ink vanishes into the background.
 Values: photo dim on dark about `filter: brightness(0.9)`; illustration ink through `currentColor` or color tokens.
+
+## 27. Show the work in use: Context over mockup (desengs corpus)
+
+Work proves itself in the hands and places it was made for: a site open on a laptop someone is using, an identity printed on the team's T-shirt, a typeface on a bag, a hair clip and a wine label.
+
+- Photograph or render the work in its real context, with a person or object that gives it scale and use.
+- Let the context carry the brand (the identity on a uniform, the product in the room it was made for) instead of adding a caption to explain it.
+- Keep the work legible in the frame: the screen or print large enough that its type and layout read at the displayed size.
+- Don't float flat mockups, angled devices or generic coffee-cup desks where the real use can be shown.
+
+Check: case-study and hero images show the work in use or in place with a person or real setting; the work inside the frame is readable at display size; no tilted device mockup.
+
+## 28. Cut objects out to curate them: Cut-out collage (desengs corpus)
+
+Objects photographed and cut from their background (props, product, sculpture) can be arranged on the page like a curator's table, which suits culture, craft and portfolio subjects that are about things.
+
+- Cut out real objects cleanly, with a soft contact shadow or none, and place them at varied scales and positions with generous space between them.
+- Mix cut-outs with one or two framed photographs, so the page has both objects and places.
+- Keep the type quiet and let the objects lead: a grey name, a typewriter-set list, a paragraph statement.
+- Don't cut out people or crop through objects in ways that leave halos; a ragged mask reads as clip-art.
+
+Check: cut-out edges show no halo or fringe at 2x in the screenshot; objects keep consistent light direction and contact shadows; the composition leaves clear space around each object.
+Values: contact shadow at about 10–20% opacity with a 20–40px blur under each object (studio default); the cut-out set shares one grade (principle 4).
 
 ## When these conflict
 

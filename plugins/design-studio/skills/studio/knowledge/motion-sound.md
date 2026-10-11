@@ -1,6 +1,6 @@
 # Motion and sound
 
-> Used by: interaction designer (behavior), emotion designer (feel), design engineer; motion designer (guest, owns motion tokens and choreography when invited). Distilled from: Craft (Gustavo Fior: hover restraint, novelty budget, the Craft video's timeline), Critly (Kausthubh's completed and extended Craft concepts: easings, springs, button press, interruptibility, exit animations, scale entrances, stagger, shared layout, liquid motion, clip-path, icon morph, momentum, living charts, smooth animation, reduced motion, product feel, interface SFX, layering sounds), NumberFlow (Maxwell Barvian), Anthropic's frontend-design skill, world-class-designer (Lammertsma), Anshu Chimala (Lenny's Newsletter, technique 5), Remotion. Written in our own words; see CREDITS.md.
+> Used by: interaction designer (behavior), emotion designer (feel), design engineer; motion designer (guest, owns motion tokens and choreography when invited). Distilled from: Craft (Gustavo Fior: hover restraint, novelty budget, the Craft video's timeline), Critly (Kausthubh's completed and extended Craft concepts: easings, springs, button press, interruptibility, exit animations, scale entrances, stagger, shared layout, liquid motion, clip-path, icon morph, momentum, living charts, smooth animation, reduced motion, product feel, interface SFX, layering sounds), NumberFlow (Maxwell Barvian), Anthropic's frontend-design skill, world-class-designer (Lammertsma), Anshu Chimala (Lenny's Newsletter, technique 5), Remotion, and the desengs.com reading list and inspiration corpus (Benji Taylor's Family Values, Rauno Freiberg's Invisible Details of Interaction Design, Emil Kowalski). Written in our own words; see CREDITS.md.
 
 Motion is behavior first and feel second: the interaction designer owns when something moves and whether it explains a change, the emotion designer owns how it feels. Values are defaults to beat, not ceilings; most come from Critly's demos and are studio defaults unless a product reference says otherwise. Screenshots cannot show motion, so many checks read the motion table in direction.md, the system sheet's replayable motion section, or the code. Never apply mechanically: a launcher and a celebration screen want opposite answers from the same rule.
 
@@ -26,7 +26,7 @@ A single page-load sequence or one reveal tied to the signature move lands; fade
 
 Check: the full-page screenshot captured without scrolling shows every section's content; any blank band where content should be is a blocker. Count scroll-triggered entrances in the motion table: one sequence per page at most.
 
-## 3. Spend novelty by frequency: Novelty budget (Craft; Critly: novelty budget)
+## 3. Spend novelty by frequency: Novelty budget (Craft; Critly: novelty budget; desengs: Family Values, Benji Taylor)
 
 Keep about 90% of the experience familiar and spend the 10% where it lands: the rarer the moment, the more expressive it can be.
 
@@ -36,7 +36,7 @@ Keep about 90% of the experience familiar and spend the 10% where it lands: the 
 - Don't spend the budget on novel interaction patterns casually; people must learn those before they can use them.
 
 Check: the motion table marks each pattern's frequency (constant, occasional, rare) and only rare rows carry expressive motion (overshoot, sequence, sound).
-Values: constant 0ms; occasional 150–250ms; rare up to 600ms with sequence or spring.
+Values: constant 0ms; occasional 150–250ms; rare up to 600ms with sequence or spring. Delight rises as frequency falls: hide surprises where repeat visits won't wear them out (a ripple on a QR code, brief confetti after a backup), and give daily paths small useful details instead (a comma that slides into place as digits are typed).
 
 ## 4. Set the pace from the product's feel: Pace (Critly: product feel)
 
@@ -273,7 +273,7 @@ An interface sound is a cue, not a soundtrack: it says that worked about somethi
 - Shape the cue like the action: a two-note flip for a toggle, a tick for done, a rising arpeggio for sent, a falling pop for removed.
 - Never sound typing, scrolling, menus, navigation or anything that can fire twice in a second; drop cues before the first user gesture, and keep an obvious mute that remembers.
 
-Check: the sound table in direction.md pairs each cue with its visible change and frequency class; a mute control appears in the chrome screenshot whenever sound exists.
+Check: the sound table in direction.md pairs each cue with its visible change and frequency class; a mute control appears in the chrome screenshot whenever sound exists. Ambient or reel audio starts muted behind a visible, labelled sound toggle on the first screen, and plays only after the person turns it on (desengs corpus).
 Values: cue length 16ms to under 300ms; gain 0.04–0.1 (library defaults near 0.5 are far too loud); hover whisper 0.01 rising 25 cents per item, or silence; trigger it twenty times in a row and cut it if it tires by the tenth.
 
 ## 24. Build cues from short layers that each add something: Layering sounds (Critly: layering sounds)
@@ -299,6 +299,42 @@ Motion that lives only in someone's head drifts in the build, so write it as tok
 
 Check: system.html has a motion section rendering every token with replay and its reduced-motion alternative; the direction.md motion table has no blank cells.
 Values: `| pattern | trigger | property | distance | duration | easing | frequency | reduced |`.
+
+## 26. Announce ambient motion and keep it skippable: Marquees and motion cues (desengs corpus; Kowalski)
+
+Tickers, scroll cues, showreel thumbnails and view toggles tell people that something moves and give them the controls, so a page can be lively without making anyone wait or chase text.
+
+- Use a marquee only for text people can miss: instructions, announcements, a list of value props that also appears elsewhere.
+- Keep it slow, pause it on hover and focus, and stop it under reduced motion, falling back to the static text.
+- Offer a showreel as a thumbnail or a button, never as an autoplaying full-screen video that hides navigation; give experimental 3D or spiral views a plain list toggle beside them.
+- Don't put the only copy of essential content (a price, a CTA, the positioning line) in a ticker.
+
+Check: marquee text in the screenshots is non-essential or repeated elsewhere on the page, and every experimental view has a visible plain alternative. Check (code): marquees pause on hover and focus and stop under `prefers-reduced-motion`.
+Values: ticker speed around 30–60px per second (studio default); one ticker per screen.
+
+## 27. Travel instead of teleporting: Spatial continuity (desengs: Family Values, Benji Taylor)
+
+People stay oriented when interface elements move to where they go next and the direction of travel matches where things live; a hard cut between related views leaves people unsure what just happened.
+
+- Match direction to position: a tab to the left of the current one slides in from the left, and a sheet leaves the way it came.
+- Morph a label whose meaning changes (Continue to Confirm), keeping the shared letters still, so the change is noticed at the moment it matters.
+- Never show a second copy of an element that is already on screen during a transition; move the one that exists.
+- Give each step of a stepped tray a different height so progress reads as change, and keep the originating context visible behind it.
+
+Check: the motion table lists direction for every navigation transition and names each morphing label; before and after screenshots show persisting elements in one place at a time. Check (code): tab transitions read the index delta to pick their direction.
+Values: directional tab flash 150–200ms with `--ease-out`; label morph on the 300ms shared-layout spring of principle 14.
+
+## 28. Move with the finger, commit by the action's weight: Gesture thresholds (desengs: Rauno Freiberg, "Invisible Details of Interaction Design")
+
+A gesture feels direct when the interface follows from the first pixel, and correct when it commits at the moment that matches what the action costs.
+
+- Apply the gesture's delta immediately (drag, pinch, swipe) and animate only past the threshold, so people can feel that something responds before they commit.
+- Fire light actions mid-gesture once the moving elements reach their logical place (revealing a search field, sliding a lock layer away), so a single swipe can open and close.
+- Commit destructive actions only on release, whatever the distance travelled, so a change of mind halfway is free.
+- Keep a drag alive when the finger slides off a small target (sliders, scrubbers), and show what the finger hides (a loupe, an enlarged key, a value bubble).
+
+Check: the motion table marks each gesture's commit point (mid-gesture or on release) and every destructive gesture commits on release. Check (code): handlers update on pointer move and commit destructive actions on pointer up; interrupting a gesture-driven animation reverses it from its current position.
+Values: light-action threshold at the element's resting position; destructive commit on release plus the velocity rules of principle 17.
 
 ## When these conflict
 

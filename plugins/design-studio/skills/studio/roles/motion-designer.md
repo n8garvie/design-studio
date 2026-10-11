@@ -19,9 +19,10 @@ You never: write or edit product code (the design engineer builds; you describe 
 1. `kb/roles/_contracts.md` (task formats, finding schema, return block)
 2. `kb/knowledge/motion-sound.md` (your home file: meaning, the one moment, novelty by frequency, pace, tokens, springs, enters and exits, shared layout, numbers, compositor rules, reduced motion, authored motion, the motion spec)
 3. `kb/knowledge/interaction.md` (the states, feedback, microinteractions and performance your motion expresses)
-4. `kb/knowledge/emotion.md` (the target, pace dial, peak and end, delight budget and the emotional floor)
-5. `kb/knowledge/accessibility.md` #11 only (motion, flashing and auto-play: the floor)
-6. `kb/knowledge/ai-tells.md` (crit, cut and tells tasks only; the motion tells)
+4. `kb/knowledge/design-engineering.md` (motion by trigger and frequency, gestures, spatial continuity, tuning with instruments)
+5. `kb/knowledge/emotion.md` (the target, pace dial, peak and end, delight budget and the emotional floor)
+6. `kb/knowledge/accessibility.md` #11 only (motion, flashing and auto-play: the floor)
+7. `kb/knowledge/ai-tells.md` (crit, cut and tells tasks only; the motion tells)
 Screenshots can't show motion, so you judge from the motion table, the system sheet's replay section, filmstrips and still states. Read the Values and Check lines closely; they are your measuring tools.
 
 ## What you look for

@@ -1,6 +1,6 @@
 # Interaction
 
-> Used by: interaction designer (owner), product strategist, content strategist, design engineer; UX researcher (guest). Distilled from: About Face (Cooper, Reimann, Cronin, Noessel), Designing Interfaces (Tidwell, Brewer, Valencia), Microinteractions (Saffer), Gustavo Fior ("Incremental Complexity"; Craft), Critly (Kausthubh's fork of Craft: interaction states, focus rings, input details, empty states, command menu, overlays, toasts, destructive actions, responsiveness, instant navigation, layout shift), world-class-designer (Lammertsma: the states pass), Hayes. Written in our own words; see CREDITS.md.
+> Used by: interaction designer (owner), product strategist, content strategist, design engineer; UX researcher (guest). Distilled from: About Face (Cooper, Reimann, Cronin, Noessel), Designing Interfaces (Tidwell, Brewer, Valencia), Microinteractions (Saffer), Gustavo Fior ("Incremental Complexity"; Craft), Critly (Kausthubh's fork of Craft: interaction states, focus rings, input details, empty states, command menu, overlays, toasts, destructive actions, responsiveness, instant navigation, layout shift), world-class-designer (Lammertsma: the states pass), Hayes, ibelick ("Anatomy of AI Input", via the desengs.com reading list). Written in our own words; see CREDITS.md.
 
 Read each principle, then its Check line: the Check is how critics will judge the work, so design to it. Values are defaults to beat, not ceilings. Judge in context: a sovereign tool used all day and a flow used once a year want different answers from the same principle. Never apply a rule mechanically; when one fights the stated direction, find the version of the rule that serves the direction. Motion values live in `kb/knowledge/motion-sound.md`, words in `kb/knowledge/content.md`, the legal floor in `kb/knowledge/accessibility.md`.
 
@@ -292,6 +292,18 @@ What you show during a wait decides how long it feels, so acknowledgment is imme
 
 Check: loading screenshots show skeletons matching the final layout, not a spinner in a void; loaded and loading screenshots align with no shift; the optimistic screenshot shows the result before confirmation. Check (code): interaction to next paint stays under 100ms on a throttled mid-range profile.
 Values: show nothing for the first 150–300ms (hold the space); once an indicator appears, keep it at least 300ms so it never flashes; prefetch after 65ms of hover; INP 200ms is the failure line, not the goal; layout shift (CLS) 0.1 or less.
+
+## 26. Keep the prompt live while the model works: AI input anatomy (desengs: ibelick, "Anatomy of AI Input")
+
+An AI prompt input is a stack of layers (the field, a context bar, tool triggers, attachments, an assist layer, message controls and states), and every layer must leave the person able to type, correct or stop at any moment.
+
+- Grow the field with its text up to a fixed maximum height, then scroll inside it, without pushing the layout or jumping the page; Enter sends and Shift+Enter adds a line (configurable).
+- Keep typing possible in every state (loading, streaming, error), turn send into stop the moment a request starts, and never steal focus when a response starts or ends.
+- Keep the context bar (model, mode, memory) quieter than the field and limited to what people change often; move the rest to slash commands or a menu, all reachable from the keyboard.
+- Show attachments as uploading, uploaded, failed or removable with stated limits, preview them optimistically, and put generation errors with a retry in the conversation, not in a toast.
+
+Check: streaming and error screenshots show an enabled input with a stop control during streaming and an inline error with a retry; measure.json input font size is 16px or more on mobile. Check (code): the field is never disabled while a response streams; growth causes no layout shift; every context-bar control has a keyboard path.
+Values: field grows from one line to about 8–12 lines before scrolling (studio default); send-to-stop swap with no delay; input font 16px or more on touch.
 
 ## When these conflict
 

@@ -1,6 +1,6 @@
 # Visual systems
 
-> Used by: visual designer (owner), brand designer, typographer, design engineer. Distilled from: Refactoring UI (Wathan & Schoger), Grid Systems in Graphic Design (Müller-Brockmann), Interaction of Color (Albers), shadcn/ui theming, Craft by Gustavo Fior and its Critly fork, Anthropic's frontend-design skill, Graphical, StyleSeed, open-design craft rules. Written in our own words; see CREDITS.md.
+> Used by: visual designer (owner), brand designer, typographer, design engineer. Distilled from: Refactoring UI (Wathan & Schoger), Grid Systems in Graphic Design (Müller-Brockmann), Interaction of Color (Albers), shadcn/ui theming, Craft by Gustavo Fior and its Critly fork, Anthropic's frontend-design skill, Graphical, StyleSeed, open-design craft rules, the desengs.com inspiration corpus. Written in our own words; see CREDITS.md.
 
 Read this before you pick a single value. Principles generalise, so reason from them when a case is not covered; Values are defaults to beat, not ceilings, and a direction that earns a different number should use it. Judge in context and never apply a rule mechanically: a look is a set of decisions that agree with each other.
 
@@ -35,7 +35,7 @@ One memorable element against a calm, disciplined baseline lands harder than man
 - Keep everything around it quiet: neutral surfaces, one accent, one shadow recipe, no decorative gradients.
 - Remove one accessory before shipping; if the page does not get worse, it stays removed.
 
-Check: in the hero screenshot the eye lands on the named move first; a second focal point (a rival saturated block, image or display line) is a finding.
+Check: in the hero screenshot the eye lands on the named move first; a second focal point (a rival saturated block, image or display line) is a finding. Blur the screenshot by 8px: one shape should own the fold, and the next largest element should cover less than a third of its area (desengs corpus; `kb/knowledge/inspiration.md` principle 3).
 
 ## 4. Prove hierarchy without color: Greyscale first (Refactoring UI; StyleSeed)
 
@@ -89,7 +89,8 @@ Space taken out of a generous layout looks like a decision, space squeezed into 
 - Separate in order: more space, a faint tint on one group, a shadow on surfaces that contain things, then a line; keep lines for inputs, table rows and dense-list dividers.
 - Don't box single paragraphs, nest cards in cards, or draw a border that duplicates a gap.
 
-Check: squint at the screenshot; good spacing leaves a few clear clusters, bad spacing a ladder of even stripes; a box in a box in a box, or a heading equidistant from content above and below, is a finding.
+Check: squint at the screenshot; good spacing leaves a few clear clusters, bad spacing a ladder of even stripes; a box in a box in a box, or a heading equidistant from content above and below, is a finding. On a first screen, anything that exists only to fill space (a glow, a blob, a floating badge, a decorative logo strip) is a finding.
+Values: label to field 8px, field to field 16px, section 32px and up; on marketing and portfolio first screens, an estimated 40–70% of the area carries no content in most of the desengs corpus, held by one owner (`kb/knowledge/inspiration.md` principle 14).
 
 ## 9. Divide the page into fields and margins: Modular grid (Müller-Brockmann)
 
@@ -156,7 +157,7 @@ Neutrals do almost everything, the accent marks what you can do and where you ar
 - Plan pixel shares before CSS: neutrals 70–90%, one accent 5–10%, status 0–5%, effects under 1% (a studio default).
 - Don't color headings, decorative icons, or every badge with the accent; a color on sixteen elements means nothing.
 
-Check: count accent uses per screen in the screenshot (about 2 visible, rarely more); any status color used decoratively is a finding.
+Check: count accent uses per screen in the screenshot (about 2 visible, rarely more); any status color used decoratively is a finding. Leaving out photographs and product imagery, the first screen shows at most two non-neutral hues.
 
 ## 15. Never set grey text on color: Hue-matched foregrounds (Refactoring UI)
 
@@ -187,6 +188,7 @@ The same palette in different proportions makes a different picture; a color's s
 - Lower chroma as area grows: full-bleed fields near 0.02–0.06, buttons and dots up to 0.15–0.20; never scale a small-area color to a section unchanged.
 
 Check: in the hero screenshot the raw accent covers under about 10% of the area, unless a full-bleed accent field is the named signature move.
+Values: write the color stance as one sentence before any token. The stances that recur in the desengs corpus are: one saturated field plus one ink (acid green and black, orange and black); a monochrome page with one hot accent on one element (yellow on a black-and-white photograph); or a page graded to a single hue. A full-bleed field is a signature move, so its chroma rule is set by the direction, not by the 0.02–0.06 default.
 
 ## 18. Manage the edges between colors: Vibration and transparency (Albers)
 

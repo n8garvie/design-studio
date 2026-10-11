@@ -1,11 +1,12 @@
 # AI tells: patterns that read as generated
 
-> Used by: every critic, in `crit`, `panel`, `cut` and `tells` tasks. **Not read by the design engineer while building**, because naming the patterns primes them. Distilled from: Anthropic's frontend-design skill (Apache-2.0), world-class-designer by Eric Lammertsma (MIT), Anshu Chimala's techniques via Lenny's Newsletter, Mika Reyes, Vmobify, open-design (Apache-2.0, ideas only), and the studio's own practice. Written in our own words; see CREDITS.md.
+> Used by: every critic, in `crit`, `panel`, `cut` and `tells` tasks. **Not read by the design engineer while building**, because naming the patterns primes them. Distilled from: Anthropic's frontend-design skill (Apache-2.0), world-class-designer by Eric Lammertsma (MIT), Anshu Chimala's techniques via Lenny's Newsletter, Mika Reyes, Vmobify, open-design (Apache-2.0, ideas only), the desengs.com inspiration corpus (for the device test), and the studio's own practice. Written in our own words; see CREDITS.md.
 
 A tell is a default, not a choice: it shows up whatever the subject is.
 - **Any one tell is survivable. Three together are a verdict.** The page reads as generated, and "competent generic" (3–4) is its ceiling.
 - **Every trait here is legitimate when the brief asks for it.** The brief's own words always win. Where the brief leaves an axis open, don't spend that freedom on a default.
 - **Fixing a tell means removing it or replacing it with a decision.** Decorating around it doesn't count: a purple gradient with a noise overlay is still a purple gradient.
+- **A device is not a tell when a critic can name its subject reason in one sentence.** The best references use some of these traits on purpose: timecode and frame marks on a filmmaker's site, a till-receipt layout for a CV, mono tables for an archive, darkroom red for a studio called darkroom. Before flagging, write the reason ("monospace because the content is a dated index of files"). If no reason ties the trait to this subject, or the reason would fit any subject, it is a tell. The test is in `kb/knowledge/inspiration.md` (principle 2).
 
 How to report one: `tell | where | smallest fix`. The smallest fix is usually a deletion.
 
@@ -65,7 +66,7 @@ Each of these is a whole look, not a single detail. If one turns up without the 
 |---|---|
 | Inter, Roboto, Poppins or the framework default for everything, chosen by nobody | A type system chosen for the direction: a real display face plus a real text face, or one exceptional family across a large scale |
 | Huge bold heading, grey subtitle, repeated in every section | A scale with a reason (a modular ratio or an editorial hierarchy) and varied roles |
-| Accenting a single word in a headline (color, italic, underline swash) | A whole-line hierarchy. Accent only when the word carries the meaning. |
+| Accenting a single word in a headline (color, italic, underline swash) for stress | A whole-line hierarchy. A word may be set apart only when it is the name, the brand's own term or a role held consistently across the page, and then by style or family (italic, serif, mono), never by color, gradient or a swash (`kb/knowledge/typography.md` principle 13). |
 | Wide tracking on everything, or negative tracking on body text | Tight tracking only on large display sizes, default tracking on body, open tracking on small caps and labels |
 | Long lines, centred paragraphs, a lonely last word | A measure of 45–75 characters, left-aligned, with `text-wrap: balance` on headings and `pretty` on paragraphs |
 | Too many sizes and weights (10+ distinct sizes) | 5–7 sizes with clear jumps between them |
@@ -93,7 +94,7 @@ Each of these is a whole look, not a single detail. If one turns up without the 
 | `transition: all` everywhere | Transitions on specific properties, ease-out, short |
 | Custom checkboxes, selects, scrollbars and tooltips that work worse than native ones | Native controls styled with `accent-color` and `color-scheme`. Go custom only when it is genuinely better. |
 | Toggles for things that aren't on/off; tabs for two items; accordions hiding the important content | The simplest control that fits |
-| Avatar stacks, "online" dots, notification badges as decoration | Remove them unless they're real |
+| Avatar stacks, "online" dots, notification badges as decoration; "live" badges, clocks and counters that never update | Remove them unless they're real. A live signal carries its source or timestamp ("Index updated 20:00 UTC") and actually updates. |
 | Floating chat bubbles, sticky CTAs everywhere | One clear path to the action |
 | Spinner in a void; grey skeletons that don't match the layout | Loading shaped like the content it precedes |
 | "No data" empty states; a red wall for errors | An empty state in the product's voice with one next action, and errors that say what happened and what to do |
@@ -108,6 +109,8 @@ Each of these is a whole look, not a single detail. If one turns up without the 
 | Stock photos of diverse teams high-fiving | Product, objects, environments, or type |
 | Images that don't match each other (different renderers, light or palette) | A set made with a shared style prompt and reference |
 | Gradients and shapes standing in for imagery | If a gradient could replace the image, the image isn't doing a job. Make one that does. |
+| Product mocks filled with "John Doe", "Acme Inc", lorem ipsum or round invented numbers ($12,345, 99%) | Domain-true content: plausible names, amounts, dates, states and the reason behind a suggestion |
+| The framework's default share card, a screenshot of the hero shrunk to 1200×630, or the logo on a gradient as the OG image | A card composed as a poster: one image idea plus the wordmark or one line, legible at 600px wide (`kb/knowledge/brand.md` principle 21) |
 
 ## 8. Motion
 

@@ -70,7 +70,7 @@ Leading depends on x-height, size and line length: longer lines and larger x-hei
 - Use unitless values or rem on a 4px grid so text keeps its rhythm and fallbacks keep the same box.
 
 Check: in screenshots multi-line headings hold together as one block and paragraphs have even air; measure.json line-height to size ratios sit near 1.4–1.7 for body and under 1.25 for Latin display.
-Values: body 1.5, UI 20px on 14px, headings 1.2, display 1.0–1.1.
+Values: body 1.5, UI 20px on 14px, headings 1.2, display 1.0–1.1; viewport-scale display in caps or condensed faces 0.85–1.0, checked for colliding accents (desengs corpus).
 
 ## 7. Build a scale with few sizes: Modular scale (Bringhurst; Critly: type-scale)
 
@@ -81,8 +81,8 @@ Sizes related by a ratio give the page a structure the eye can feel, and a few c
 - Round to rem values; adjacent steps must be visibly different (never 15 and 16px). A hand-tuned scale is fine if every step is a visible jump.
 - Don't add a size for one component; extend the scale or use weight and tone.
 
-Check: measure.json shows 7 or fewer distinct sizes per page (2–3 per component) and no two sizes under 24px within 2px of each other.
-Values: product UI 12 14 16 20 24 (32) px; editorial at 1.333: 16 21 28 38 50 67 px.
+Check: measure.json shows 7 or fewer distinct sizes per page (2–3 per component) and no two sizes under 24px within 2px of each other. On a display-led first screen, measure.json shows at most three sizes above the fold and the largest is at least six times the smallest.
+Values: product UI 12 14 16 20 24 (32) px; editorial at 1.333: 16 21 28 38 50 67 px; display-led pages use two registers, display 72–320px clamped to the viewport over captions at 11–14px, with ratios of 8–20 common in the desengs corpus (`kb/knowledge/inspiration.md` principle 4).
 
 ## 8. Store sizes as complete sets: Type tokens (Critly: type-scale)
 
@@ -116,7 +116,7 @@ Faces are spaced for text sizes, so large sizes want tighter tracking, small tex
 - Don't add negative tracking to body text or positive tracking to lowercase headlines.
 
 Check: large headlines in the screenshot read as words, not rows of letters, and small text never touches. Check (code): letter-spacing in em, matching the tracking table.
-Values: 11–12px +0.01em · 14–16px 0 · 20px −0.01em · 24–40px −0.02em · 48px+ −0.02 to −0.03em · caps +0.05 to +0.1em.
+Values: 11–12px +0.01em · 14–16px 0 · 20px −0.01em · 24–40px −0.02em · 48px+ −0.02 to −0.03em · grotesks at 64px and up as far as −0.05em when the face holds it (desengs corpus) · caps +0.05 to +0.1em.
 
 ## 11. Letterspace capitals and small caps: Caps need air (Bringhurst)
 
@@ -140,16 +140,16 @@ Tracked all-caps labels over every section, and eyebrows that restate their head
 
 Check: more than one or two all-caps strings per screen outside table headers is a finding; every eyebrow passes the "what would be lost" test.
 
-## 13. Let the whole line carry emphasis: No single accented word (frontend-design)
+## 13. Let the whole line carry emphasis: No single accented word (frontend-design; desengs corpus)
 
-Coloring, italicizing or bolding one word of a headline is a default treatment; the replacement is a headline whose scale, weight, measure and breaks are themselves the design.
+Coloring, italicizing or bolding one word of a headline for stress is a default treatment; the replacement is a headline whose scale, weight, measure and breaks are themselves the design. The exception is a second voice with a job: the strongest references set one word apart when it is the name or the brand's own term, or when the contrast holds a consistent role across the page.
 
 - Treat display type as an active element: set it large, break lines by sense, and let the face's character carry the voice.
 - If one idea needs stress, rewrite so the stressed words land at the end of a line or alone on one.
-- Reserve a second family or italic for a whole phrase with a structural role (a pull quote, a standfirst), never one word.
-- Don't use gradient text, highlighted-word chips or outlined text as emphasis.
+- Reserve a second family or italic for a structural role (a pull quote, a standfirst, connecting words, marginal notes, the name or the brand's own term), held the same way everywhere, never for an adjective you want to stress.
+- Contrast by style or family (italic, serif, mono), never by color, gradient text, highlighted-word chips or outlined text.
 
-Check: no headline in the screenshot has a single word in a different color, weight or style from the rest of its line, unless the brief asked for it.
+Check: no headline in the screenshot has a single word in a different color, weight or style from the rest of its line, unless the brief asked for it or the word is the name, the brand's own term or a role repeated consistently (see `kb/knowledge/inspiration.md` principle 7); a word set apart by color or gradient fails either way.
 
 ## 14. Pick numerals for the context: Figure styles (Bringhurst; Craft: tabular-numbers)
 
@@ -285,6 +285,18 @@ Generated pages share a typographic signature; builders apply the replacements, 
 - Centered paragraphs, long measures, runts, straight quotes: left-aligned, measured, pretty-wrapped text with real punctuation.
 
 Check: run each screenshot against this list; any tell present without a brief that asked for it is a finding, with its replacement named.
+
+## 26. Choose UI faces by their metrics: Cap-centered metrics (desengs: Yep! Type, "Inter alternatives")
+
+A UI face is easy to build with when its cap height sits centered in the line box and its x-height is tall, because then one padding value centers every label and icon.
+
+- Test centering at a large size: tighten line-height on a capital H until the box meets the cap height and the baseline at the same moment; if the two edges don't meet together, keep the face for display or print.
+- Prefer an x-height of 70–75% of the cap height for interface labels, so a word reads as a block and looks centered when its capital is.
+- Trim the line box with `text-box: trim-both cap alphabetic` where supported, with untrimmed fallbacks that still look centered (Firefox lacked support in mid-2026).
+- Don't hand-tune asymmetric padding per button size to fake centering; change the face or trim the box.
+
+Check: button and chip labels look vertically centered at every size in the screenshot and align with the icon beside them. Check (code): one vertical padding token per control size, no asymmetric padding nudges.
+Values: x-height to cap height 0.70–0.75 (Inter and SF sit near 0.75, per Yep! Type); below about 0.70 labels sit low.
 
 ## When these conflict
 

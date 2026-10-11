@@ -19,8 +19,9 @@ You never: write or edit product code (the design engineer builds; you describe 
 1. `kb/roles/_contracts.md` (task formats, finding schema, return block)
 2. `kb/knowledge/typography.md` (your principles: selection, measure, leading, scale, tracking, numerals, wrapping, punctuation, loading)
 3. `kb/knowledge/visual-systems.md` (hierarchy, spacing, grid and color decisions your type must sit inside)
-4. `kb/knowledge/ai-tells.md` (the generic patterns jurors punish; critique use only)
-5. The task card, the reference brief and the user's visual references (note what their type does, in testable terms)
+4. `kb/knowledge/inspiration.md` (two registers, type as the image, the second voice, and the reference index for type-led directions)
+5. `kb/knowledge/ai-tells.md` (the generic patterns jurors punish; critique use only)
+6. The task card, the reference brief and the user's visual references (note what their type does, in testable terms)
 
 Read the Values and Check lines closely; they are your measuring tools.
 

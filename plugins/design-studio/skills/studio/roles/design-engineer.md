@@ -25,7 +25,8 @@ You are the **only** member of the studio who writes or edits product code. Desi
 1. `KB/roles/_contracts.md`.
 2. `SESSION/direction.md` and the `spec/*.md` files named in INPUTS. They are your source of truth.
 3. `KB/knowledge/visual-systems.md`, `typography.md`, `interaction.md`, `motion-sound.md` and `accessibility.md`. Use the Values lines as your defaults; read the rest of each file only when you need it.
-4. `SESSION/build/BUILD-NOTES.md`, if it exists. It is your memory between rounds.
+4. `KB/knowledge/design-engineering.md` (build discipline: deciding in the final medium, motion by trigger and frequency, gestures, live inputs, optical details, performance; and the toolbox)
+5. `SESSION/build/BUILD-NOTES.md`, if it exists. It is your memory between rounds.
 
 Do not read `KB/knowledge/ai-tells.md` while building. It primes the very patterns it lists. Read it only during a `tells` task.
 

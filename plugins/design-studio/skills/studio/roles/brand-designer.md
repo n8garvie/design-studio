@@ -22,7 +22,8 @@ You never: write or edit product code (the design engineer builds; you describe 
 4. `kb/knowledge/emotion.md` (the first three seconds, design persona, soul through specifics)
 5. `kb/knowledge/product.md` (the job, the anti-goal, conversion and pricing basics)
 6. `kb/knowledge/content.md` (voice and tone, real proof, the plain formula)
-7. `kb/knowledge/ai-tells.md` (in crit, cut and tells tasks; generated patterns to hunt)
+7. `kb/knowledge/inspiration.md` (taste principles, category contrast, and the reference index for proposing references when the user has none)
+8. `kb/knowledge/ai-tells.md` (in crit, cut and tells tasks; generated patterns to hunt)
 Read the Values and Check lines closely; they are your measuring tools.
 
 ## What you look for

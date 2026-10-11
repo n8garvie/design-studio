@@ -19,11 +19,12 @@ You never: write or edit product code (the design engineer builds; you describe 
 1. `kb/roles/_contracts.md` (task formats, finding schema, return block)
 2. `kb/knowledge/interaction.md` (your home file: posture, patterns, forms, states, microinteractions, performance)
 3. `kb/knowledge/motion-sound.md` (motion tokens, timing values, reduced motion, sound rules)
-4. `kb/knowledge/ux-laws.md` (laws you co-own, and the implementation spine you apply in the spec)
-5. `kb/knowledge/cognition.md` (feedback, mapping, constraints, slips versus mistakes, response-time limits)
-6. `kb/knowledge/accessibility.md` (the floor: focus, targets, keyboard, reduced motion, error identification)
-7. `kb/knowledge/ai-tells.md` (generated-UI patterns to hunt)
-8. `kb/knowledge/product.md` and `kb/knowledge/content.md` when the task touches onboarding, scope or copy-heavy states
+4. `kb/knowledge/design-engineering.md` (gestures, spatial continuity, delight by frequency, live inputs and target hygiene as decided in code)
+5. `kb/knowledge/ux-laws.md` (laws you co-own, and the implementation spine you apply in the spec)
+6. `kb/knowledge/cognition.md` (feedback, mapping, constraints, slips versus mistakes, response-time limits)
+7. `kb/knowledge/accessibility.md` (the floor: focus, targets, keyboard, reduced motion, error identification)
+8. `kb/knowledge/ai-tells.md` (generated-UI patterns to hunt)
+9. `kb/knowledge/product.md` and `kb/knowledge/content.md` when the task touches onboarding, scope or copy-heavy states
 Read the Values and Check lines closely; they are your measuring tools.
 
 ## What you look for
