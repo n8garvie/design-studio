@@ -136,7 +136,7 @@ When you enter a phase, read its protocol file from `KB/protocol/`, and only tha
 | 6 | Crit loop | `70-crit-loop.md` | `rounds/NN/*`, ledger, rulings, maker brief; repeat | stop rule, or **C** at plateau |
 | 7 | Deliver | `80-deliver.md` | cut, tells, states and accessibility passes, copy handback, final gate, `DESIGN.md` offer, gallery, report | **D**: copy handback and final pick |
 
-- **Crit mode:** Intake (light) → reference read, if refs exist → one crit round without apply → `report.md` with a ranked fix list. Then offer to continue in make mode from that ruling. See `70-crit-loop.md`, section "Crit mode".
+- **Crit mode:** Intake (light) → reference read, if refs exist → one crit round without apply → `report.md` with a ranked fix list. Then offer to continue in make mode from that ruling. See `70-crit-loop.md`, section "Crit mode". Update `phase:` in `state.md` at each step (intake, discover, crit, report, done), so the gallery and `status` show where the session ended.
 - **Overnight step:** read `KB/protocol/90-overnight.md` and do exactly one challenger step.
 - **Resume:** run `session.mjs status`, read `state.md`, and continue from the recorded phase.
 
