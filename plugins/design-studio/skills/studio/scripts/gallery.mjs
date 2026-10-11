@@ -700,15 +700,17 @@ export async function renderBoardPng(htmlFile, pngFile, cols) {
   try {
     const pw = typeof shoot.resolvePlaywright === 'function' ? await shoot.resolvePlaywright() : null;
     if (!pw || !pw.chromium) return skip('Playwright not found; install it with `npm i -D playwright && npx playwright install chromium`');
+    // shoot.mjs: launchBrowser({playwright, warnings, ...launchOptions}) tries fallbacks and returns a Browser.
+    const warnings = [];
     const launched = typeof shoot.launchBrowser === 'function'
-      ? await shoot.launchBrowser(pw)
+      ? await shoot.launchBrowser({ playwright: pw, warnings })
       : await pw.chromium.launch({ headless: true, ...(process.env.STUDIO_CHROMIUM_PATH ? { executablePath: process.env.STUDIO_CHROMIUM_PATH } : {}) });
     browser = launched && typeof launched.newPage === 'function' ? launched : launched && launched.browser;
     if (!browser || typeof browser.newPage !== 'function') return skip('no browser could be launched');
     const page = await browser.newPage({ viewport: { width: cols >= 3 ? 1600 : 1200, height: 800 }, deviceScaleFactor: 1, colorScheme: 'light' });
     await page.goto(pathToFileURL(htmlFile).href, { waitUntil: 'load' });
-    await page.screenshot({ path: pngFile, fullPage: true });
-    return { png: pngFile, warning: null };
+    await page.locator('.board').screenshot({ path: pngFile });
+    return { png: pngFile, warning: warnings.length ? warnings.join('; ') : null };
   } catch (err) {
     return skip(String(err && err.message ? err.message : err).split('\n')[0]);
   } finally {

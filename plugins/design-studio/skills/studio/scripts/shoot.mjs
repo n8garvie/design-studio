@@ -284,8 +284,9 @@ function toUrl(target) {
     if (!isFile(file)) throw new UserError(`no index.html in ${abs}`);
     return pathToFileURL(file).href;
   }
-  // "localhost:3000/x" or "example.com" without a scheme.
-  if (/^(localhost|127\.0\.0\.1|\[::1\]|[\w-]+(\.[\w-]+)+)(:\d+)?(\/|$)/i.test(target)) {
+  // "localhost:3000/x" or "example.com" without a scheme (but "missing.html" is a missing file).
+  const looksLikeFile = /\.(x?html?|svg|php|md|png|jpe?g|webp)$/i.test(target);
+  if (!looksLikeFile && /^(localhost|127\.0\.0\.1|\[::1\]|[\w-]+(\.[\w-]+)+)(:\d+)?(\/|$)/i.test(target)) {
     return `${/^(localhost|127\.|\[::1\])/i.test(target) ? 'http' : 'https'}://${target}`;
   }
   throw new UserError(`target not found: ${abs}`);
@@ -1419,8 +1420,16 @@ function collectMeasure({ viewport, width, height, mobile, freezeId, cap }) {
 
 // ---------- CLI ----------
 
+function parseCli(config) {
+  try {
+    return parseArgs(config);
+  } catch (err) {
+    throw new UserError(firstLine(err.message));
+  }
+}
+
 export async function main(argv = process.argv.slice(2)) {
-  const { values, positionals } = parseArgs({
+  const { values, positionals } = parseCli({
     args: argv,
     allowPositionals: true,
     options: {
