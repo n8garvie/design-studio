@@ -673,7 +673,7 @@ export function summarize(m, vpName = '') {
   const tg = m.targets ?? {};
   if (tg.under24) {
     const small = [...(tg.under24Items ?? [])].sort((x, y) => x.w * x.h - y.w * y.h)[0];
-    const notes = [small && `smallest ${small.w}×${small.h}`, tg.under24Spaced && `${tg.under24Spaced} meet the WCAG spacing exception`].filter(Boolean);
+    const notes = [small && `smallest ${small.w}×${small.h}`, tg.under24Spaced && `${tg.under24Spaced} ${tg.under24Spaced === 1 ? 'meets' : 'meet'} the WCAG spacing exception`].filter(Boolean);
     flags.push(`${plural(tg.under24, 'target')} under 24px${notes.length ? ` (${notes.join('; ')})` : ''}`);
   }
   if (tg.under44) flags.push(`${plural(tg.under44, 'touch target')} under 44px`);
@@ -977,9 +977,10 @@ function collectMeasure({ viewport, width, height, mobile, freezeId, cap }) {
     consoleErrors: 0,
   };
   if (page.horizontalOverflow) {
-    page.overflowing = visible
-      .filter((el) => el.getBoundingClientRect().right > vw + 1)
-      .filter((el) => !visible.includes(el.parentElement) || el.parentElement.getBoundingClientRect().right <= vw + 1)
+    // The outermost elements that stick out past the right edge.
+    const sticking = new Set(visible.filter((el) => el.getBoundingClientRect().right > vw + 1));
+    page.overflowing = [...sticking]
+      .filter((el) => !sticking.has(el.parentElement))
       .slice(0, 5)
       .map((el) => ({ selector: selectorOf(el), right: Math.round(el.getBoundingClientRect().right) }));
   }
@@ -1175,7 +1176,9 @@ function collectMeasure({ viewport, width, height, mobile, freezeId, cap }) {
   // ----- targets -----
   const TARGET_SEL = 'a[href], button, input:not([type="hidden"]), select, textarea, summary, [role="button"], [role="link"], [tabindex]:not([tabindex="-1"])';
   const targets = section('targets', () => {
-    const found = [...new Set(document.querySelectorAll(TARGET_SEL))].filter((el) => !el.parentElement || !el.parentElement.closest(TARGET_SEL));
+    // Skip controls nested in another control (a button inside a link); focusable containers don't count.
+    const CONTROL = 'a[href], button, summary, [role="button"], [role="link"]';
+    const found = [...document.querySelectorAll(TARGET_SEL)].filter((el) => !el.parentElement || !el.parentElement.closest(CONTROL));
     const items = [];
     let inlineExempt = 0;
     for (const el of found.slice(0, 1500)) {
@@ -1211,7 +1214,7 @@ function collectMeasure({ viewport, width, height, mobile, freezeId, cap }) {
       total: items.length,
       under24: under24.length,
       under24Spaced: under24.filter((t) => t.spaced).length,
-      under44: mobile ? under44.length + under24.length : null,
+      under44: mobile ? under44.length + under24.length : null, // all under 44; under44Items lists the 24-44 ones
       inlineExempt,
       under24Items: under24.slice(0, CAP),
       under44Items: mobile ? under44.slice(0, CAP) : undefined,

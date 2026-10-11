@@ -166,7 +166,15 @@ export function kbVersion(skillDir = SKILL_DIR) {
   return contentVersion(skillDir, skillDir, kbFiles(skillDir));
 }
 
-const samePath = (a, b) => path.resolve(a) === path.resolve(b);
+// Compare real paths so a symlinked --root can never make the kb copy onto itself.
+const realOrResolved = (p) => {
+  try {
+    return fs.realpathSync(p);
+  } catch {
+    return path.resolve(p);
+  }
+};
+const samePath = (a, b) => realOrResolved(a) === realOrResolved(b);
 
 /** Copy the skill's kb folders into <root>/.design-studio/kb when missing or stale. */
 export function syncKb(root, skillDir = SKILL_DIR) {
