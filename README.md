@@ -80,6 +80,8 @@ Things you can say in the request:
 | Crit rounds (cap) | 1 | 3 | 6 |
 | Approx. subagent runs | ~15 | ~50 | ~100 |
 
+For reference, a quick critique of `examples/flawed-landing` (4 role critics plus 1 panel critic) took 22 turns and about $1.55 on the `quality` profile in Claude Code. The panel scored it 3/10, and the report caught about 16 of the 18 planted flaws.
+
 Model profiles live in `.design-studio/config.json`:
 
 | Profile | Models |
