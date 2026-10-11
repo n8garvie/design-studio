@@ -1048,6 +1048,32 @@ function collectMeasure({ viewport, width, height, mobile, freezeId, cap }) {
   });
 
   // ----- measure (characters per line) -----
+  // Count the characters actually set on each line (one range rect per character), so the figure
+  // is the real measure. Large blocks past the character budget fall back to the spec estimate,
+  // text length / round(height / line-height).
+  const range = document.createRange();
+  let charBudget = 60000;
+  const lineCounts = (el, lineHeight) => {
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    const lines = [];
+    let lineTop = null;
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      const value = node.nodeValue;
+      for (let i = 0; i < value.length; i++) {
+        if (--charBudget < 0) return null;
+        range.setStart(node, i);
+        range.setEnd(node, i + 1);
+        const r = range.getBoundingClientRect();
+        if (!r.width && !r.height) continue; // collapsed whitespace
+        if (lineTop === null || r.top > lineTop + lineHeight * 0.6) {
+          lines.push(0);
+          lineTop = r.top;
+        }
+        lines[lines.length - 1]++;
+      }
+    }
+    return lines;
+  };
   const measure = section('measure', () => {
     const rows = [];
     for (const el of document.querySelectorAll('p, li, dd, blockquote')) {
@@ -1056,18 +1082,19 @@ function collectMeasure({ viewport, width, height, mobile, freezeId, cap }) {
       if (text.length < 80) continue;
       const cs = styleOf(el);
       const size = px(cs.fontSize);
-      const lineHeight = cs.lineHeight === 'normal' ? size * 1.2 : px(cs.lineHeight);
-      const r = el.getBoundingClientRect();
-      const height = r.height - px(cs.paddingTop) - px(cs.paddingBottom) - px(cs.borderTopWidth) - px(cs.borderBottomWidth);
-      const lines = Math.max(1, Math.round(height / (lineHeight || size * 1.2)));
-      // Several lines: full-line capacity from the content width and the average glyph width
-      // (the plain text/lines estimate undercounts because the last line is partial).
-      let cpl = Math.round(text.length / lines);
-      if (lines >= 2) {
-        ctx.font = `${cs.fontStyle} ${cs.fontWeight} ${cs.fontSize} ${cs.fontFamily}`;
-        const glyph = ctx.measureText(text).width / text.length + (cs.letterSpacing === 'normal' ? 0 : px(cs.letterSpacing));
-        const width = r.width - px(cs.paddingLeft) - px(cs.paddingRight) - px(cs.borderLeftWidth) - px(cs.borderRightWidth);
-        if (glyph > 0 && width > 0) cpl = Math.round(width / glyph);
+      const lineHeight = (cs.lineHeight === 'normal' ? size * 1.2 : px(cs.lineHeight)) || size * 1.2;
+      const counted = text.length <= 2500 ? lineCounts(el, lineHeight) : null;
+      let cpl;
+      let lines;
+      if (counted && counted.length) {
+        lines = counted.length;
+        // Full lines only: the last line of a paragraph is usually short.
+        cpl = Math.round(lines >= 2 ? median(counted.slice(0, -1)) : counted[0]);
+      } else {
+        const r = el.getBoundingClientRect();
+        const height = r.height - px(cs.paddingTop) - px(cs.paddingBottom) - px(cs.borderTopWidth) - px(cs.borderBottomWidth);
+        lines = Math.max(1, Math.round(height / lineHeight));
+        cpl = Math.round(text.length / lines);
       }
       rows.push({ el, cpl, lines, text });
     }
