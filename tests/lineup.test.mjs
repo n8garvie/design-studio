@@ -51,6 +51,20 @@ test('make copies a blind set and never prints which entry is ours', () => {
   assert.ok(fs.existsSync(path.join(root, 'lineup', 'set', `${jpg}.jpg`)), 'keeps the original extension');
 });
 
+test('make takes one shot per captured reference folder', () => {
+  const root = tempDir();
+  touch(path.join(root, 'ours.png'));
+  touch(path.join(root, 'refs', 'loose.png'));
+  for (const f of ['desktop-top.png', 'mobile-top.png', 'desktop-tile-1.png']) touch(path.join(root, 'refs', 'ref-01', f));
+  touch(path.join(root, 'refs', 'ref-02', 'shot.jpg'));
+  fs.mkdirSync(path.join(root, 'refs', 'empty'));
+  const res = lineup(['make', '--ours', 'ours.png', '--refs', 'refs', '--out', 'lineup'], root);
+  assert.equal(res.code, 0, res.stderr);
+  const key = JSON.parse(fs.readFileSync(path.join(root, 'lineup', '.key.json'), 'utf8'));
+  const sources = Object.values(key).filter((e) => !e.ours).map((e) => path.relative(root, e.source)).sort();
+  assert.deepEqual(sources, [path.join('refs', 'loose.png'), path.join('refs', 'ref-01', 'desktop-top.png'), path.join('refs', 'ref-02', 'shot.jpg')]);
+});
+
 test('score unblinds juror rankings and finds what beats us', () => {
   const root = tempDir();
   touch(path.join(root, 'ours.png'));

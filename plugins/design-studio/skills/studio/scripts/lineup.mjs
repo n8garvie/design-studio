@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {
-  IMAGE_EXTS, abs, filesIn, isDir, isFile, list, mean, median, parseArgs, printJson,
+  IMAGE_EXTS, abs, filesIn, isDir, isFile, list, mean, median, naturalCompare, parseArgs, printJson,
   readBlocks, readJson, readText, round, run, isMain, str, userError, writeJson,
 } from './_shared.mjs';
 
@@ -15,8 +15,10 @@ const HELP = `Usage: node lineup.mjs <command> [flags]
 Blind lineup (ours among references):
   make --ours <png> [--ours <png>…] [--label <name>…] --refs <dir|png...> --out <dir>
       Copies every image into <out>/set/ as A.png, B.png, … in random order and
-      writes <out>/.key.json. Repeat --ours for several candidates (e.g. one tile
-      per direction); --label names them in the same order (default: basename).
+      writes <out>/.key.json. A --refs folder contributes its images plus one shot
+      per subfolder (a captured URL: desktop-top preferred). Repeat --ours for
+      several candidates (e.g. one tile per direction); --label names them in
+      the same order (default: basename).
       Prints {set, n}. Never reveals which entries are ours.
   score --dir <out> [--json]
       Reads <out>/juror-*.md (a \`\`\`json studio-lineup block each:
@@ -64,12 +66,36 @@ function requireImage(p, flag) {
   return file;
 }
 
+/**
+ * One shot per captured reference folder (shoot.mjs writes references/ref-01/desktop-top.png,
+ * mobile-top.png, …): the widest top shot, else the first top shot, else the first image.
+ */
+function representative(dir) {
+  const all = filesIn(dir, isImage);
+  const named = (re) => all.find((f) => re.test(path.basename(f)));
+  return named(/(^|[-_])desktop-top\./i) ?? named(/(^|[-_])laptop-top\./i) ?? named(/(^|[-_])tablet-top\./i)
+    ?? named(/-top\./i) ?? all[0] ?? null;
+}
+
+function subdirsOf(dir) {
+  try {
+    return fs.readdirSync(dir, { withFileTypes: true })
+      .filter((d) => d.isDirectory() && !d.name.startsWith('.'))
+      .map((d) => path.join(dir, d.name))
+      .sort(naturalCompare);
+  } catch {
+    return [];
+  }
+}
+
 function collectRefs(args, exclude) {
   const seen = new Set(exclude);
   const refs = [];
   for (const arg of args) {
     const p = abs(arg);
-    const candidates = isDir(p) ? filesIn(p, isImage) : [requireImage(p, '--refs')];
+    const candidates = isDir(p)
+      ? [...filesIn(p, isImage), ...subdirsOf(p).map(representative).filter(Boolean)]
+      : [requireImage(p, '--refs')];
     for (const file of candidates) {
       const real = fs.realpathSync(file);
       if (seen.has(real)) continue;
