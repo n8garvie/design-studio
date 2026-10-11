@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 import {
   abs, fmtScore, isDir, num, parseArgs, printJson, readJson, readText, run, isMain, str, userError, writeJson,
 } from './_shared.mjs';
+import { buildGallery, scoreHistory } from './gallery.mjs';
 
 const HELP = `Usage: node overnight.mjs --session <dir> --host claude|codex [flags]
 
@@ -155,6 +156,7 @@ function options(flags) {
     steps: num(flags, 'steps', 30, { min: 1, integer: true }),
     hours: num(flags, 'hours', 8, { min: 0.01 }),
     maxUsd: num(flags, 'max-usd', 25, { min: 0 }),
+    maxUsdGiven: flags['max-usd'] !== undefined,
     plateau: num(flags, 'plateau', 5, { min: 1, integer: true }),
     dryRun: !!flags['dry-run'],
     json: !!flags.json,
@@ -226,7 +228,7 @@ async function loop(o) {
   process.on('SIGTERM', onSignal);
 
   setDiverge(files.next, false); // a hint left by an earlier run would bias the first step
-  if (o.host === 'codex' && o.maxUsd !== 25) say('note: Codex reports no cost; --max-usd is ignored');
+  if (o.host === 'codex' && o.maxUsdGiven) say('note: Codex reports no cost; --max-usd is ignored');
   say(`start: ${o.host}, up to ${o.steps} steps, ${o.hours} h${o.host === 'claude' ? `, $${o.maxUsd}` : ''}, plateau ${o.plateau}; cwd ${cwd}`);
   let prev = readJson(files.champion);
 
@@ -284,16 +286,15 @@ async function loop(o) {
   return finish(o, { files, stop, exitCode, ran, failed, cost: costKnown ? cost : null, elapsedSec: Math.round((Date.now() - started) / 1000), say });
 }
 
-async function finish(o, { files, stop, exitCode, ran, failed, cost, elapsedSec, say }) {
+function finish(o, { files, stop, exitCode, ran, failed, cost, elapsedSec, say }) {
   let gallery = null;
   try {
-    const { buildGallery } = await import('./gallery.mjs');
     gallery = buildGallery(o.session).file;
   } catch (err) {
     say(`warning: gallery build failed: ${String(err && err.message).split('\n')[0]}`);
   }
   const champion = readJson(files.champion);
-  const scores = scoreTrail(champion, readHistory(files.history));
+  const scores = scoreHistory(champion, readHistory(files.history));
   const summary = {
     stop,
     steps: ran,
@@ -316,16 +317,6 @@ async function finish(o, { files, stop, exitCode, ran, failed, cost, elapsedSec,
   if (o.json) printJson(summary);
   else console.log(lines.join('\n'));
   return exitCode;
-}
-
-/** Champion score trail from champion.json history, else from history.jsonl scores. */
-function scoreTrail(champion, history) {
-  const fromChampion = champion && Array.isArray(champion.history)
-    ? champion.history.map((h) => (typeof h === 'number' ? h : h && typeof h.score === 'number' ? h.score : null)).filter((n) => n !== null)
-    : [];
-  const trail = fromChampion.length ? fromChampion : history.map((h) => h.score).filter((n) => typeof n === 'number');
-  if (champion && typeof champion.score === 'number' && trail[trail.length - 1] !== champion.score) trail.push(champion.score);
-  return trail.filter((n, i) => i === 0 || n !== trail[i - 1]);
 }
 
 export async function main(argv) {
