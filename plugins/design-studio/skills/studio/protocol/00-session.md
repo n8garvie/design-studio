@@ -24,6 +24,8 @@ Read this once, at the start of every session.
 
 ## Scripts you run
 
+In every command in these protocol files, `SCRIPTS`, `SESSION`, `R` and `NN` are placeholders. Replace them with literal absolute paths before running anything. Never set shell variables, chain with `&&`, or use heredocs: one plain `node` command per call. After init, `SCRIPTS` is `<project>/.design-studio/bin`.
+
 | Command | Purpose |
 |---|---|
 | `node SCRIPTS/session.mjs init --slug s --mode m --depth d` | Create the session and refresh the kb snapshot |
