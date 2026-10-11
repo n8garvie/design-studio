@@ -100,6 +100,8 @@ Then read `KB/protocol/00-session.md` once.
 
 Choose the roster by surface type (`protocol/10-intake.md`). The user can add or remove roles.
 
+**Every role gives feedback.** Every core role critiques in every crit round, at every depth, whatever the roster did earlier, plus any guest that was invited. Depth trims who pitches and writes specs, how many directions are built, and how many panel critics and jurors run. It never trims who critiques. Cross-critique includes every critiquing role at standard and deep depth.
+
 **Divergent instances.** In Develop you may field the same role more than once (`visual-designer#a`, `#b`). Give each instance a different stance from `node SCRIPTS/seed.mjs stances` (refiner, provocateur, outsider, minimalist, maximalist) and its own seed roll. This is how the studio covers ground a single designer would never reach.
 
 ## Task cards
@@ -146,14 +148,15 @@ After every phase, update the `phase:` line and the notes in `state.md`. That wa
 
 | | quick | standard | deep |
 |---|---|---|---|
-| Roles | 3–4 most relevant | 5–7, plus guests if needed | all core, plus guests if needed |
+| Roles that pitch and write specs | 3–4 most relevant | 5–7, plus guests if needed | all core, plus guests if needed |
+| Roles that critique | all core, plus invited guests | all core, plus invited guests | all core, plus invited guests |
 | Divergent instances in Develop | none | 2 for visual and brand | 2–3 for visual, brand and one more |
 | Directions built as tiles | 1 | 2–3 | 3–4, one deliberately risky |
 | Panel critics per round | 1 | 3 | 3 |
 | Jurors (with refs) | 1 | 3 | 3 |
 | Crit rounds, cap | 1 | 3 | 6 |
-| Cross-crit | none | on conflicts only | full |
-| Approx. spawns | ~15 | ~50 | ~100 |
+| Cross-crit | none | every critiquing role, on its lane's findings and conflicts | every critiquing role, on all findings |
+| Approx. spawns | ~20 | ~60 | ~110 |
 
 State the estimate at checkpoint A. The user can lower or raise depth at any checkpoint.
 

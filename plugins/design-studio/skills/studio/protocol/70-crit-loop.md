@@ -37,7 +37,7 @@ node SCRIPTS/shoot.mjs <target> --out R/shots --viewports desktop,mobile --tiles
 
 | Who | TASK | INPUTS | OUTPUT |
 |---|---|---|---|
-| Each roster role | `crit` | `criticFiles`, `R/shots/measure.json`, `brief.md`, `discover/reference-brief.md`, `define.md` | `R/crit/<role>.md` |
+| Every core role, plus any invited guest (all depths) | `crit` | `criticFiles`, `R/shots/measure.json`, `brief.md`, `discover/reference-brief.md`, `define.md` | `R/crit/<role>.md` |
 | Studio critics: 1 at quick, 3 otherwise | `panel` | `criticFiles`, `brief.md`, `discover/reference-brief.md`. **Nothing else.** | `R/panel/P<k>.md` |
 | Jurors: 1 at quick, 3 otherwise, only when references exist | `lineup` | the lineup set paths only | `R/lineup/juror-J<k>.md` |
 
@@ -62,8 +62,8 @@ Read `R/ledger.md`. Don't read the critique files in full unless a conflict need
 
 Who takes part depends on depth:
 - **quick:** skip this wave.
-- **standard:** only the roles named in the ledger's "Conflicts to rule on", plus the owners of consensus findings that touch another lane.
-- **deep:** every roster role.
+- **standard:** every role that critiqued. Each answers the findings that touch its lane, the ledger's "Conflicts to rule on", and any peer finding it has grounds to dispute. Roles with nothing to add say so in one line.
+- **deep:** every role that critiqued, on every peer finding.
 
 `TASK: cross-crit`. INPUTS are `R/ledger.md` and `R/crit/*.md`. OUTPUT is `R/crosscrit/<role>.md`. When the wave is done, re-run `tally.mjs` so the ledger includes the responses.
 

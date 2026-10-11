@@ -61,7 +61,7 @@ Write `SESSION/brief.md` from `KB/templates/brief.md`, in 25 lines or fewer:
 
 ## 5. Roster
 
-Pick roles by surface type, then trim to the depth limit.
+Pick roles by surface type, then trim to the depth limit. This list decides who pitches and writes specs. It does not limit critique: every core role critiques every round (see SKILL.md, "Every role gives feedback").
 
 | Surface | Core roles, in priority order | Guests to consider |
 |---|---|---|
