@@ -16,7 +16,7 @@ Read this once, at the start of every session.
     develop/                  cards/ tiles/ shots/ reactions/ lineup/ board.html
     spec/                     <role>.md
     build/                    tiles promoted, system.html, screens, states.html, BUILD-NOTES.md
-    rounds/NN/                shots/ critic-view/ crit/ panel/ crosscrit/ lineup/ patches/ snapshot/
+    rounds/NN/                shots/ critic-view/ crit/ panel/ crosscrit/ debate/ lineup/ patches/ snapshot/
                               measure.json aria.yml ledger.md ledger.json rulings.md maker-brief.md
     deliver/                  cut-*.md tells-*.md states-*.md copy-handback.md DESIGN.md
     overnight/                champion.json history.jsonl next.json tried.md overnight.log pairs/

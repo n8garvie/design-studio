@@ -120,7 +120,7 @@ NOTE: <one optional line>
 First read KB/roles/<role>.md, then KB/roles/_contracts.md. Do the task. Write OUTPUT. Reply with the 5-line return block only.
 ```
 
-- **Task names:** `discover`, `reference-read`, `pitch`, `react`, `spec`, `build-tile`, `build-system`, `build-screens`, `apply`, `crit`, `panel`, `cross-crit`, `patch`, `lineup`, `pair`, `cut`, `tells`, `states`, `copy-handback`.
+- **Task names:** `discover`, `reference-read`, `pitch`, `react`, `spec`, `build-tile`, `build-system`, `build-screens`, `apply`, `crit`, `panel`, `cross-crit`, `debate`, `patch`, `lineup`, `pair`, `cut`, `tells`, `states`, `copy-handback`.
 - **Critic and juror cards** never include `SETTLED`, scores or history. Their only INPUTS are screenshot paths from a fresh `critic-view/` folder, `brief.md`, and `discover/reference-brief.md` when it exists.
 
 ## Phases
@@ -156,7 +156,8 @@ After every phase, update the `phase:` line and the notes in `state.md`. That wa
 | Jurors (with refs) | 1 | 3 | 3 |
 | Crit rounds, cap | 1 | 3 | 6 |
 | Cross-crit | none | every critiquing role, on its lane's findings and conflicts | every critiquing role, on all findings |
-| Approx. spawns | ~20 | ~60 | ~110 |
+| Debate on conflicts (top 5) | none | one reply from each side | up to two replies from each side |
+| Approx. spawns | ~20 | ~70 | ~130 |
 
 State the estimate at checkpoint A. The user can lower or raise depth at any checkpoint.
 

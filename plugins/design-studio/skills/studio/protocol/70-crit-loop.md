@@ -67,7 +67,23 @@ Who takes part depends on depth:
 
 `TASK: cross-crit`. INPUTS are `R/ledger.md` and `R/crit/*.md`. OUTPUT is `R/crosscrit/<role>.md`. When the wave is done, re-run `tally.mjs` so the ledger includes the responses.
 
-Cross-critique is peer review between people who have seen the work's history. It informs your rulings. It never changes the panel score.
+Cross-critique is peer review between people who have seen the work's history. It informs your rulings. It never changes the panel score. Where it exposes a real disagreement, the next wave lets the two sides answer each other.
+
+### 6b. Wave 3: debate (the roles argue it out)
+
+Cross-critique shows where roles disagree. Debate lets them answer each other before you rule.
+
+1. **Pick the conflicts.** Take every item under "Conflicts to rule on" in the ledger, plus any finding that got a `CHALLENGE` or `CONFLICT` response. Rank by severity and keep the top 5. Skip this wave when there are none, and always at quick depth.
+2. **Set up each conflict.** Create `R/debate/<finding-id>/`. The two sides are the role that raised the finding and the role that challenged it (the owner of the lane it touches). If several roles challenged, take the one whose response gives the strongest counter-proposal.
+3. **Exchange 1, in parallel.** Spawn both sides with `TASK: debate`.
+   - INPUTS: the finding (from `R/crit/<role>.md`), both `R/crosscrit/<role>.md` files, `brief.md`, `discover/reference-brief.md` and the `criticFiles`.
+   - OUTPUT: `R/debate/<finding-id>/<role>-1.md`.
+   Barrier: `session.mjs check --expect-glob 'rounds/NN/debate/*/*-1.md' --count <2 × conflicts>`.
+4. **Exchange 2, deep depth only.** Spawn both sides again with the same card, adding the other side's `-1.md` to INPUTS. OUTPUT is `<role>-2.md`.
+5. **Read the outcome.** Read only the `studio-debate` blocks and the first line of each reply.
+   - **Both sides concede or compromise on the same target:** record that target as settled by the roles in `decisions.md`. Skip the ruling unless it touches rung 1 or 2 of the ladder.
+   - **They still disagree:** you rule in step 8, using the ladder. Put both final positions and your reason in `decisions.md`.
+6. **Keep it cheap.** Debates run in parallel across conflicts, in waves if the host caps concurrency. A debate never changes the panel score.
 
 ### 7. Stop check
 Apply the stop rule from SKILL.md:
@@ -83,7 +99,7 @@ Plateau or RETHINK: follow SKILL.md.
 - **RETHINK: direction:** return to Develop with this direction marked as failed.
 
 ### 8. Rulings
-Write `R/rulings.md` from `KB/templates/rulings.md`. It has three lists:
+Write `R/rulings.md` from `KB/templates/rulings.md`, using any debate outcomes from step 6b. It has three lists:
 - **Accepted:** blockers, then majors, then the panel's top gaps, then consensus findings, then cheap minors. Cap it at about 12 items. Each item gets an owner and a target.
   - Structure comes before polish.
   - Protect every KEEP item.

@@ -182,6 +182,24 @@ INPUTS hold the round's `ledger.md` and the peers' findings files. For each peer
 ```
 ````
 
+### `debate` (the roles on both sides of a conflict)
+INPUTS name one conflict: the finding, both roles' `cross-crit` responses, and, from exchange 2, the other side's previous reply. You are arguing with a colleague, not scoring them. Write a short reply (at most 15 lines) that:
+1. States your position in one line.
+2. Argues from a named principle and evidence you can see or measure, and says which rung of the ruling ladder is at stake.
+3. Answers the other side's strongest point directly.
+4. Says what would change your mind.
+5. Proposes a target both lanes could accept, if you can find one.
+
+Concede when you are wrong. A colleague who is right in their lane, or who stands on a higher rung, wins. Never re-open anything in SETTLED, never argue for the sake of it, and never pad. End the file with exactly one fenced block:
+
+````
+```json studio-debate
+{"role":"<slug>","conflict":"<finding id>","exchange":1,"position":"HOLD | CONCEDE | COMPROMISE","proposal":"<the target you would accept, or empty>","rung":"<ladder rung at stake>"}
+```
+````
+
+The Head reads these blocks; no script parses them.
+
 ### `patch` (owner of an accepted finding)
 For each finding the Head assigned you in `rulings.md`, write the exact target the engineer needs. Examples:
 - final copy strings

@@ -16,7 +16,7 @@ roster     lens notes  the bar     blind lineup vs    system sheet      states  
 
 - **Your references set the bar.** The team reads them into a written brief: what to match, where to go further, and 3–5 rules a critic can check. Each round, jurors rank our screenshot blind among your references. "Done" means ranking first.
 - **Fresh eyes do the scoring.** Panel critics see only screenshots and the brief: no code, no history, no target score. They score against an anchored scale (3–4 = competent generic, 9 = studio-grade), and the median is the gate. This is the critic loop from Anshu Chimala's [How to turn your AI into a world-class designer](https://www.lennysnewsletter.com/p/how-to-turn-your-ai-into-a-world).
-- **The team critiques each other.** Every role critiques every round, whatever the depth. Each reviews the work through its own lens with measured evidence (contrast, measure, tap targets, type scale) and a cited principle. Then the roles challenge each other's findings, and the Head of Studio rules using a fixed ladder: accessibility → your decisions → clarity → user control → task completion → consistency → distinctiveness → delight.
+- **The team critiques each other.** Every role critiques every round, whatever the depth. Each reviews the work through its own lens with measured evidence (contrast, measure, tap targets, type scale) and a cited principle. Then the roles challenge each other's findings and argue the real disagreements out, answering each other directly, and the Head of Studio rules using a fixed ladder: accessibility → your decisions → clarity → user control → task completion → consistency → distinctiveness → delight.
 - **Divergence comes from outside the model.** Random seed strings and divergent stances (refiner, provocateur, outsider, minimalist) let several instances of the same role explore ground a single designer never would.
 - **Principles, not specs.** The knowledge base distils Refactoring UI, Müller-Brockmann, Bringhurst, Albers, About Face, Tidwell, Saffer, Johnson, Yablonski, Norman, Tufte and Rosenfeld/Morville. Each principle uses [Adam Hayes's](https://adamhayes.xyz/blog/the-ux-laws-in-my-claude-md/) shape (the law named, one sentence, four imperatives) plus a line a critic can check.
 - **One maker, many critics.** Only the design engineer writes code, and roles hand it problems and targets rather than prescriptions. Taste lives in the maker's weights and the critics' fresh eyes, so the orchestrator stays lean.
@@ -79,7 +79,7 @@ Things you can say in the request:
 | Directions | 1 | 2–3 | 3–4 (one risky) |
 | Panel critics and jurors per round | 1 + 1 | 3 + 3 | 3 + 3 |
 | Crit rounds (cap) | 1 | 3 | 6 |
-| Approx. subagent runs | ~20 | ~60 | ~110 |
+| Approx. subagent runs | ~20 | ~70 | ~130 |
 
 For reference, an early quick critique of `examples/flawed-landing` (4 role critics plus 1 panel critic) took 22 turns and about $1.55 on the `quality` profile in Claude Code. Every core role now critiques every round, so expect a quick critique to cost somewhat more. The panel scored it 3/10, and the report caught about 16 of the 18 planted flaws.
 
