@@ -1,0 +1,14 @@
+{
+  "profile": "quality",
+  "profiles": {
+    "quality":  { "roles": "inherit", "maker": "inherit", "juror": "inherit", "panel": 1 },
+    "balanced": { "roles": "sonnet",  "maker": "inherit", "juror": "sonnet",  "panel": 1 },
+    "overnight":{ "roles": "haiku",   "maker": "sonnet",  "juror": "haiku",   "panel": 3, "absolute_every": 5, "absolute_panel_model": "inherit" }
+  },
+  "codex": {
+    "quality":  { "roles": "inherit", "maker": "inherit", "juror": "inherit" },
+    "balanced": { "roles": { "model": "gpt-6-luna", "reasoning_effort": "high" }, "maker": "inherit", "juror": { "model": "gpt-6-luna", "reasoning_effort": "high" } },
+    "overnight":{ "roles": { "model": "gpt-6-luna", "reasoning_effort": "high" }, "maker": { "model": "gpt-6-luna", "reasoning_effort": "high" }, "juror": { "model": "gpt-6-luna", "reasoning_effort": "medium" }, "panel": 3, "absolute_every": 5 }
+  },
+  "notes": "Claude Code accepts sonnet|opus|haiku|fable|inherit per spawn. Cheap models are unreliable at absolute scores but reliable at pairwise comparison, so overnight uses pairwise juror panels and runs an absolute panel on a strong model every N steps."
+}

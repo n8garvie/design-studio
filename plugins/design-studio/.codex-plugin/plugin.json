@@ -1,0 +1,20 @@
+{
+  "name": "design-studio",
+  "version": "0.1.0",
+  "description": "A design studio in a skill. A Head of Studio runs a team of designer agents (visual, type, content, interaction, product, brand & marketing, emotion) who design together and critique each other's work in rounds.",
+  "keywords": ["design", "ui", "ux", "critique", "design-review", "multi-agent", "typography", "branding"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Design Studio",
+    "shortDescription": "Designer agents that make and critique UI together",
+    "longDescription": "A Head of Studio facilitates a visual designer, typographer, content strategist, interaction designer, product strategist, brand & marketing designer and emotion designer. They study your references, explore directions as quick prototypes, build a system and screens, critique each other's work from screenshots, and polish until it clears a studio-grade bar.",
+    "developerName": "n8garvie",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/n8garvie/design-studio",
+    "defaultPrompt": [
+      "Use $design-studio:studio to design a pricing page for my app",
+      "Use $design-studio:crit to critique localhost:3000"
+    ]
+  }
+}

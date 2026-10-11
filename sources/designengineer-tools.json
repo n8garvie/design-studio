@@ -1,0 +1,1069 @@
+{
+  "source": "https://designengineer.tools/",
+  "curator": "James Warner",
+  "capturedAt": "2026-10-11T22:29:18Z",
+  "note": "Snapshot for maintainers; the studio never fetches this at runtime. Curated fields: purpose, inToolbox. Refresh with node tools/refresh-sources.mjs.",
+  "categories": [
+    "Inspiration",
+    "AI Code",
+    "Components",
+    "Web Utility",
+    "Desktop Utility",
+    "Video & Capture",
+    "Whiteboard",
+    "Organization",
+    "Fonts",
+    "Visual",
+    "Interface",
+    "Motion",
+    "Audio",
+    "Volumetric",
+    "3D",
+    "glTF",
+    "Digital Fashion",
+    "Research",
+    "Browser",
+    "Emoji"
+  ],
+  "counts": {
+    "total": 127,
+    "Components": 9,
+    "Inspiration": 22,
+    "Organization": 6,
+    "Web Utility": 9,
+    "Browser": 4,
+    "Fonts": 5,
+    "3D": 5,
+    "Visual": 7,
+    "Video & Capture": 9,
+    "AI Code": 9,
+    "Motion": 5,
+    "Research": 3,
+    "Desktop Utility": 7,
+    "Digital Fashion": 3,
+    "Volumetric": 6,
+    "Audio": 3,
+    "Whiteboard": 5,
+    "Interface": 6,
+    "glTF": 3,
+    "Emoji": 1
+  },
+  "items": [
+    {
+      "id": "21st.dev",
+      "name": "21st.dev",
+      "url": "https://21st.dev/",
+      "category": "Components",
+      "purpose": "Registry of community React and Tailwind components and themes; inspect, never paste unread.",
+      "inToolbox": true
+    },
+    {
+      "id": "60fps.design",
+      "name": "60fps",
+      "url": "https://60fps.design/",
+      "category": "Inspiration",
+      "purpose": "Recorded UI animation and interaction details from mobile and web apps; study timing and choreography frame by frame.",
+      "inToolbox": true
+    },
+    {
+      "id": "affine.pro",
+      "name": "AFFiNE",
+      "url": "https://affine.pro/",
+      "category": "Organization",
+      "purpose": "Docs, whiteboards and databases in one workspace.",
+      "inToolbox": false
+    },
+    {
+      "id": "animejs.com/easing-editor",
+      "name": "Easing Editor",
+      "url": "https://animejs.com/easing-editor",
+      "category": "Web Utility",
+      "purpose": "Visual editor for easing curves and springs; export CSS or JS.",
+      "inToolbox": true
+    },
+    {
+      "id": "arc.net",
+      "name": "Arc",
+      "url": "https://arc.net/",
+      "category": "Browser",
+      "purpose": "Browser; a reference for spatial tab design.",
+      "inToolbox": false
+    },
+    {
+      "id": "are.na",
+      "name": "Are.na",
+      "url": "https://www.are.na/",
+      "category": "Organization",
+      "purpose": "Collect and connect references into channels.",
+      "inToolbox": true
+    },
+    {
+      "id": "awwwards.com",
+      "name": "Awwwards",
+      "url": "https://www.awwwards.com/",
+      "category": "Inspiration",
+      "purpose": "Award gallery of expressive marketing and portfolio sites; useful for ambition, risky as a source of trends.",
+      "inToolbox": false
+    },
+    {
+      "id": "bestfreefonts.com",
+      "name": "Best Free Fonts",
+      "url": "https://bestfreefonts.com/",
+      "category": "Fonts",
+      "purpose": "Curated free fonts for branding and editorial work.",
+      "inToolbox": false
+    },
+    {
+      "id": "bezi.com",
+      "name": "Bezi",
+      "url": "https://www.bezi.com/",
+      "category": "3D",
+      "purpose": "AI assistant for Unity development.",
+      "inToolbox": false
+    },
+    {
+      "id": "bitspace.sh",
+      "name": "Bitspace",
+      "url": "https://bitspace.sh/",
+      "category": "Visual",
+      "purpose": "Visual node tool for creative coding.",
+      "inToolbox": false
+    },
+    {
+      "id": "blackmagicdesign.com/products/davinciresolve",
+      "name": "DaVinci Resolve",
+      "url": "https://www.blackmagicdesign.com/products/davinciresolve",
+      "category": "Video & Capture",
+      "purpose": "Video editing and colour grading for product films.",
+      "inToolbox": false
+    },
+    {
+      "id": "blender.org",
+      "name": "Blender",
+      "url": "https://www.blender.org/",
+      "category": "3D",
+      "purpose": "Free 3D modelling, rendering and animation; renders for brand objects.",
+      "inToolbox": false
+    },
+    {
+      "id": "bolt.new",
+      "name": "Bolt.new",
+      "url": "https://bolt.new/",
+      "category": "AI Code",
+      "purpose": "Prompt-to-app builder in the browser.",
+      "inToolbox": false
+    },
+    {
+      "id": "brave.com",
+      "name": "Brave",
+      "url": "https://brave.com/",
+      "category": "Browser",
+      "purpose": "Privacy browser.",
+      "inToolbox": false
+    },
+    {
+      "id": "cables.gl",
+      "name": "cables",
+      "url": "https://cables.gl/",
+      "category": "Visual",
+      "purpose": "Node-based real-time visuals for the web.",
+      "inToolbox": false
+    },
+    {
+      "id": "cavalry.scenegroup.co",
+      "name": "Cavalry",
+      "url": "https://cavalry.scenegroup.co/",
+      "category": "Motion",
+      "purpose": "Procedural 2D motion design.",
+      "inToolbox": false
+    },
+    {
+      "id": "chatgpt.com",
+      "name": "ChatGPT",
+      "url": "https://chatgpt.com/",
+      "category": "Research",
+      "purpose": "General assistant for research.",
+      "inToolbox": false
+    },
+    {
+      "id": "claude.com/product/claude-code",
+      "name": "Claude Code",
+      "url": "https://claude.com/product/claude-code",
+      "category": "AI Code",
+      "purpose": "Anthropic's agentic coding tool in the terminal and IDE.",
+      "inToolbox": false
+    },
+    {
+      "id": "claude.com/product/cowork",
+      "name": "Claude Cowork",
+      "url": "https://claude.com/product/cowork",
+      "category": "Desktop Utility",
+      "purpose": "Anthropic's desktop agent for documents and tasks.",
+      "inToolbox": false
+    },
+    {
+      "id": "cline.bot",
+      "name": "Cline",
+      "url": "https://cline.bot/",
+      "category": "AI Code",
+      "purpose": "Open-source coding agent with plan and act modes.",
+      "inToolbox": false
+    },
+    {
+      "id": "clo3d.com",
+      "name": "CLO",
+      "url": "https://www.clo3d.com/",
+      "category": "Digital Fashion",
+      "purpose": "3D garment design.",
+      "inToolbox": false
+    },
+    {
+      "id": "codeium.com/windsurf",
+      "name": "Windsurf",
+      "url": "https://codeium.com/windsurf",
+      "category": "AI Code",
+      "purpose": "AI code editor (now listed as Devin Desktop).",
+      "inToolbox": false
+    },
+    {
+      "id": "color.review",
+      "name": "Color.review",
+      "url": "https://color.review/",
+      "category": "Web Utility",
+      "purpose": "Check text and background pairs for contrast and see readable alternatives.",
+      "inToolbox": true
+    },
+    {
+      "id": "component.gallery",
+      "name": "Component Gallery",
+      "url": "https://component.gallery/",
+      "category": "Components",
+      "purpose": "Components across real design systems, by name; check naming, anatomy and states before inventing.",
+      "inToolbox": true
+    },
+    {
+      "id": "cosmos.so",
+      "name": "Cosmos",
+      "url": "https://www.cosmos.so/",
+      "category": "Inspiration",
+      "purpose": "Visual bookmarking and moodboards; collect references with their sources.",
+      "inToolbox": true
+    },
+    {
+      "id": "curated.design",
+      "name": "Curated Design",
+      "url": "https://www.curated.design/",
+      "category": "Inspiration",
+      "purpose": "Live websites reviewed one at a time and filterable by style and industry.",
+      "inToolbox": true
+    },
+    {
+      "id": "cursify.vercel.app",
+      "name": "Cursify",
+      "url": "https://cursify.vercel.app/",
+      "category": "Components",
+      "purpose": "Custom cursor animations for React.",
+      "inToolbox": false
+    },
+    {
+      "id": "cursor.com",
+      "name": "Cursor",
+      "url": "https://www.cursor.com/",
+      "category": "AI Code",
+      "purpose": "AI code editor.",
+      "inToolbox": false
+    },
+    {
+      "id": "depthkit.tv",
+      "name": "Depthkit",
+      "url": "https://www.depthkit.tv/",
+      "category": "Volumetric",
+      "purpose": "Volumetric video capture.",
+      "inToolbox": false
+    },
+    {
+      "id": "derivative.ca",
+      "name": "TouchDesigner",
+      "url": "https://derivative.ca/",
+      "category": "Visual",
+      "purpose": "TouchDesigner for real-time installations and visuals.",
+      "inToolbox": false
+    },
+    {
+      "id": "designspells.com",
+      "name": "Design Spells",
+      "url": "https://www.designspells.com/",
+      "category": "Inspiration",
+      "purpose": "Micro-interactions and easter eggs that add personality; references for delight placement.",
+      "inToolbox": true
+    },
+    {
+      "id": "deskflow.org",
+      "name": "Deskflow",
+      "url": "https://deskflow.org",
+      "category": "Desktop Utility",
+      "purpose": "Share one keyboard and mouse across computers.",
+      "inToolbox": false
+    },
+    {
+      "id": "easings.net",
+      "name": "Easing Functions",
+      "url": "https://easings.net/",
+      "category": "Web Utility",
+      "purpose": "Cheat sheet of named easing curves with cubic-bezier values.",
+      "inToolbox": true
+    },
+    {
+      "id": "elevenlabs.io",
+      "name": "ElevenLabs",
+      "url": "https://elevenlabs.io/",
+      "category": "Audio",
+      "purpose": "AI voice generation.",
+      "inToolbox": false
+    },
+    {
+      "id": "en.eagle.cool",
+      "name": "Eagle",
+      "url": "https://en.eagle.cool/",
+      "category": "Organization",
+      "purpose": "Organise local design files and references.",
+      "inToolbox": false
+    },
+    {
+      "id": "excalidraw.com",
+      "name": "Excalidraw",
+      "url": "https://excalidraw.com/",
+      "category": "Whiteboard",
+      "purpose": "Hand-drawn style diagrams and flows.",
+      "inToolbox": false
+    },
+    {
+      "id": "fancycomponents.dev",
+      "name": "Fancy Components",
+      "url": "https://www.fancycomponents.dev/",
+      "category": "Components",
+      "purpose": "Playful open-source React components (text effects, physics).",
+      "inToolbox": true
+    },
+    {
+      "id": "figma.com",
+      "name": "Figma",
+      "url": "https://figma.com",
+      "category": "Interface",
+      "purpose": "Design canvas; source of tokens and frames for the build.",
+      "inToolbox": false
+    },
+    {
+      "id": "figma.com/figjam",
+      "name": "FigJam",
+      "url": "https://www.figma.com/figjam/",
+      "category": "Whiteboard",
+      "purpose": "Collaborative whiteboard for flows and workshops.",
+      "inToolbox": false
+    },
+    {
+      "id": "fmod.com",
+      "name": "FMOD",
+      "url": "https://www.fmod.com/",
+      "category": "Audio",
+      "purpose": "Interactive audio engine for games.",
+      "inToolbox": false
+    },
+    {
+      "id": "fontshare.com",
+      "name": "Fontshare",
+      "url": "https://www.fontshare.com/",
+      "category": "Fonts",
+      "purpose": "Free quality fonts from Indian Type Foundry.",
+      "inToolbox": true
+    },
+    {
+      "id": "fontsinuse.com",
+      "name": "Fonts In Use",
+      "url": "https://fontsinuse.com/",
+      "category": "Fonts",
+      "purpose": "Archive of typefaces in real use, by face and format; check what a face says in context.",
+      "inToolbox": true
+    },
+    {
+      "id": "framer.com",
+      "name": "Framer",
+      "url": "https://www.framer.com/",
+      "category": "Interface",
+      "purpose": "Design-to-site builder with motion.",
+      "inToolbox": false
+    },
+    {
+      "id": "framer.university/resources",
+      "name": "Framer University Resources",
+      "url": "https://framer.university/resources",
+      "category": "Components",
+      "purpose": "Free Framer components, overrides and effects.",
+      "inToolbox": false
+    },
+    {
+      "id": "freefaces.gallery",
+      "name": "Free Faces",
+      "url": "https://www.freefaces.gallery/",
+      "category": "Fonts",
+      "purpose": "Curated free typefaces with display character.",
+      "inToolbox": true
+    },
+    {
+      "id": "gameuidatabase.com",
+      "name": "Game UI Database",
+      "url": "https://www.gameuidatabase.com/",
+      "category": "Inspiration",
+      "purpose": "Searchable game interface screenshots; HUDs, menus and inventory patterns.",
+      "inToolbox": false
+    },
+    {
+      "id": "gemini.google.com",
+      "name": "Google Gemini",
+      "url": "https://gemini.google.com/",
+      "category": "Research",
+      "purpose": "General assistant for research.",
+      "inToolbox": false
+    },
+    {
+      "id": "getsharex.com",
+      "name": "ShareX",
+      "url": "https://getsharex.com/",
+      "category": "Video & Capture",
+      "purpose": "Screenshot and capture utility for Windows.",
+      "inToolbox": false
+    },
+    {
+      "id": "github.com/pmndrs/gltfjsx",
+      "name": "gltfjsx",
+      "url": "https://github.com/pmndrs/gltfjsx",
+      "category": "glTF",
+      "purpose": "Turn glTF models into React Three Fiber components.",
+      "inToolbox": false
+    },
+    {
+      "id": "github.com/zeux/meshoptimizer/blob/master/gltf/README.md",
+      "name": "gltfpack",
+      "url": "https://github.com/zeux/meshoptimizer/blob/master/gltf/README.md",
+      "category": "glTF",
+      "purpose": "gltfpack: compress glTF models for the web.",
+      "inToolbox": false
+    },
+    {
+      "id": "godly.website",
+      "name": "Godly",
+      "url": "https://godly.website/",
+      "category": "Inspiration",
+      "purpose": "Gallery of animated, high-craft web design with video previews.",
+      "inToolbox": true
+    },
+    {
+      "id": "granola.ai",
+      "name": "Granola",
+      "url": "https://www.granola.ai/",
+      "category": "Desktop Utility",
+      "purpose": "AI meeting notes.",
+      "inToolbox": false
+    },
+    {
+      "id": "hudsandguis.com",
+      "name": "HUDS+GUIS",
+      "url": "https://www.hudsandguis.com/",
+      "category": "Inspiration",
+      "purpose": "Film and game interface design (HUDs, futuristic UI) for world-building references.",
+      "inToolbox": false
+    },
+    {
+      "id": "interfaceingame.com",
+      "name": "Interface In Game",
+      "url": "https://interfaceingame.com/",
+      "category": "Inspiration",
+      "purpose": "Video game UI screenshots and videos.",
+      "inToolbox": false
+    },
+    {
+      "id": "jakearchibald.github.io/svgomg",
+      "name": "SVGOMG",
+      "url": "https://jakearchibald.github.io/svgomg/",
+      "category": "Web Utility",
+      "purpose": "Minify and clean SVG exports before shipping icons and illustrations.",
+      "inToolbox": true
+    },
+    {
+      "id": "jitter.video",
+      "name": "Jitter",
+      "url": "https://jitter.video/",
+      "category": "Motion",
+      "purpose": "Fast web tool for motion design and UI animation mockups.",
+      "inToolbox": true
+    },
+    {
+      "id": "kiriengine.app",
+      "name": "KIRI Engine",
+      "url": "https://www.kiriengine.app/",
+      "category": "Volumetric",
+      "purpose": "Phone photogrammetry and Gaussian splat scanning.",
+      "inToolbox": false
+    },
+    {
+      "id": "larsenwork.com/easing-gradients",
+      "name": "Easing Gradients",
+      "url": "https://larsenwork.com/easing-gradients/",
+      "category": "Web Utility",
+      "purpose": "Gradients with eased colour stops so ramps have no hard edges.",
+      "inToolbox": true
+    },
+    {
+      "id": "layers.to/explore",
+      "name": "Layers",
+      "url": "https://layers.to/explore",
+      "category": "Inspiration",
+      "purpose": "Community feed of designers' work in progress.",
+      "inToolbox": false
+    },
+    {
+      "id": "linctex.com",
+      "name": "Style3D",
+      "url": "https://www.linctex.com/",
+      "category": "Digital Fashion",
+      "purpose": "Style3D fashion design.",
+      "inToolbox": false
+    },
+    {
+      "id": "linear.app",
+      "name": "Linear",
+      "url": "https://linear.app/",
+      "category": "Organization",
+      "purpose": "Issue tracking; also a reference for fast, quiet product UI.",
+      "inToolbox": false
+    },
+    {
+      "id": "loadmo.re",
+      "name": "loadmo.re",
+      "url": "https://loadmo.re/",
+      "category": "Inspiration",
+      "purpose": "Archive of distinctive mobile websites and unconventional mobile layouts.",
+      "inToolbox": false
+    },
+    {
+      "id": "localsend.org",
+      "name": "LocalSend",
+      "url": "https://localsend.org/",
+      "category": "Desktop Utility",
+      "purpose": "Send files to nearby devices; test on real phones.",
+      "inToolbox": false
+    },
+    {
+      "id": "lottiefiles.com/lottie-creator",
+      "name": "Lottie Creator",
+      "url": "https://lottiefiles.com/lottie-creator",
+      "category": "Motion",
+      "purpose": "Make Lottie animations in the browser with state machines.",
+      "inToolbox": true
+    },
+    {
+      "id": "lottielab.com",
+      "name": "Lottielab",
+      "url": "https://www.lottielab.com/",
+      "category": "Motion",
+      "purpose": "Edit and ship Lottie animations.",
+      "inToolbox": false
+    },
+    {
+      "id": "lumalabs.ai/interactive-scenes",
+      "name": "Luma AI",
+      "url": "https://lumalabs.ai/interactive-scenes",
+      "category": "Volumetric",
+      "purpose": "AI generation and capture for creative work.",
+      "inToolbox": false
+    },
+    {
+      "id": "makeemoji.com",
+      "name": "MakeEmoji",
+      "url": "https://makeemoji.com/",
+      "category": "Emoji",
+      "purpose": "Make custom emoji.",
+      "inToolbox": false
+    },
+    {
+      "id": "marvelousdesigner.com",
+      "name": "Marvelous Designer",
+      "url": "https://www.marvelousdesigner.com/",
+      "category": "Digital Fashion",
+      "purpose": "Cloth simulation.",
+      "inToolbox": false
+    },
+    {
+      "id": "mifi.no/losslesscut",
+      "name": "LosslessCut",
+      "url": "https://mifi.no/losslesscut/",
+      "category": "Video & Capture",
+      "purpose": "Trim video without re-encoding.",
+      "inToolbox": false
+    },
+    {
+      "id": "minimal.gallery",
+      "name": "Minimal Gallery",
+      "url": "https://minimal.gallery/",
+      "category": "Inspiration",
+      "purpose": "Hand-picked minimal web design.",
+      "inToolbox": false
+    },
+    {
+      "id": "miro.com",
+      "name": "Miro",
+      "url": "https://miro.com/",
+      "category": "Whiteboard",
+      "purpose": "Collaborative whiteboard.",
+      "inToolbox": false
+    },
+    {
+      "id": "mnmm.xyz",
+      "name": "Minimum",
+      "url": "https://mnmm.xyz/",
+      "category": "Inspiration",
+      "purpose": "Minimal website inspiration.",
+      "inToolbox": false
+    },
+    {
+      "id": "mobbin.com",
+      "name": "Mobbin",
+      "url": "https://mobbin.com/",
+      "category": "Inspiration",
+      "purpose": "Large searchable library of real app screens and flows; check how others solved the same flow.",
+      "inToolbox": true
+    },
+    {
+      "id": "motion-primitives.com",
+      "name": "Motion Primitives",
+      "url": "https://motion-primitives.com/",
+      "category": "Components",
+      "purpose": "Open-source animated UI kit for React and Tailwind.",
+      "inToolbox": true
+    },
+    {
+      "id": "mozilla.org/firefox/new",
+      "name": "Firefox",
+      "url": "https://www.mozilla.org/firefox/new/",
+      "category": "Browser",
+      "purpose": "Test cross-browser rendering (text-box-trim and other gaps).",
+      "inToolbox": false
+    },
+    {
+      "id": "museapp.com",
+      "name": "Muse",
+      "url": "https://museapp.com/",
+      "category": "Whiteboard",
+      "purpose": "Spatial boards for thinking (now Allume).",
+      "inToolbox": false
+    },
+    {
+      "id": "nodes.io",
+      "name": "Nodes",
+      "url": "https://nodes.io/",
+      "category": "Visual",
+      "purpose": "Node-based creative coding environment.",
+      "inToolbox": false
+    },
+    {
+      "id": "nodetoy.co",
+      "name": "NodeToy",
+      "url": "https://nodetoy.co/",
+      "category": "Visual",
+      "purpose": "Node-based shader editor.",
+      "inToolbox": false
+    },
+    {
+      "id": "notebooklm.google",
+      "name": "NotebookLM",
+      "url": "https://notebooklm.google/",
+      "category": "Research",
+      "purpose": "Research over your own sources.",
+      "inToolbox": false
+    },
+    {
+      "id": "number-flow.barvian.me",
+      "name": "NumberFlow",
+      "url": "https://number-flow.barvian.me/",
+      "category": "Components",
+      "purpose": "Accessible animated number component (React, Vue, Svelte); digits roll with tabular figures.",
+      "inToolbox": true
+    },
+    {
+      "id": "nvidia.com/en-us/software/nvidia-app",
+      "name": "NVIDIA ShadowPlay",
+      "url": "https://www.nvidia.com/en-us/software/nvidia-app/#shadowplay",
+      "category": "Video & Capture",
+      "purpose": "GPU screen capture (ShadowPlay).",
+      "inToolbox": false
+    },
+    {
+      "id": "obsidian.md",
+      "name": "Obsidian",
+      "url": "https://obsidian.md/",
+      "category": "Organization",
+      "purpose": "Local markdown notes.",
+      "inToolbox": false
+    },
+    {
+      "id": "obsproject.com",
+      "name": "OBS Studio",
+      "url": "https://obsproject.com/",
+      "category": "Video & Capture",
+      "purpose": "Screen recording and streaming.",
+      "inToolbox": false
+    },
+    {
+      "id": "oklch.com",
+      "name": "OKLCH Color Picker",
+      "url": "https://oklch.com/",
+      "category": "Web Utility",
+      "purpose": "OKLCH colour picker and converter with gamut warnings.",
+      "inToolbox": true
+    },
+    {
+      "id": "openai.com/codex",
+      "name": "OpenAI Codex",
+      "url": "https://openai.com/codex/",
+      "category": "AI Code",
+      "purpose": "OpenAI's coding agent.",
+      "inToolbox": false
+    },
+    {
+      "id": "opencut.app",
+      "name": "OpenCut",
+      "url": "https://opencut.app/",
+      "category": "Video & Capture",
+      "purpose": "Simple browser video editor.",
+      "inToolbox": false
+    },
+    {
+      "id": "paper.design",
+      "name": "Paper",
+      "url": "https://paper.design/",
+      "category": "Interface",
+      "purpose": "Design tool built on real web layout and shaders.",
+      "inToolbox": false
+    },
+    {
+      "id": "parsec.app",
+      "name": "Parsec",
+      "url": "https://parsec.app/",
+      "category": "Video & Capture",
+      "purpose": "Low-latency remote desktop.",
+      "inToolbox": false
+    },
+    {
+      "id": "penpot.app",
+      "name": "Penpot",
+      "url": "https://penpot.app/",
+      "category": "Interface",
+      "purpose": "Open-source design tool.",
+      "inToolbox": false
+    },
+    {
+      "id": "pinterest.com",
+      "name": "Pinterest",
+      "url": "https://pinterest.com/",
+      "category": "Inspiration",
+      "purpose": "General visual inspiration; use for mood, verify sources before citing.",
+      "inToolbox": false
+    },
+    {
+      "id": "poly.cam",
+      "name": "Polycam",
+      "url": "https://poly.cam/",
+      "category": "Volumetric",
+      "purpose": "3D scanning from a phone.",
+      "inToolbox": false
+    },
+    {
+      "id": "ray.so",
+      "name": "Ray.so",
+      "url": "https://ray.so/",
+      "category": "Web Utility",
+      "purpose": "Images of code snippets for docs and marketing.",
+      "inToolbox": false
+    },
+    {
+      "id": "raycast.com",
+      "name": "Raycast",
+      "url": "https://www.raycast.com/",
+      "category": "Desktop Utility",
+      "purpose": "Extendable launcher; also a reference for instant, unanimated command UI.",
+      "inToolbox": false
+    },
+    {
+      "id": "reactbits.dev",
+      "name": "React Bits",
+      "url": "https://www.reactbits.dev/",
+      "category": "Components",
+      "purpose": "Animated React components: text, backgrounds, interactive cards.",
+      "inToolbox": true
+    },
+    {
+      "id": "rebrand.gallery",
+      "name": "Rebrand",
+      "url": "https://www.rebrand.gallery/",
+      "category": "Inspiration",
+      "purpose": "Rebrand reveals with logos, colours and type broken down.",
+      "inToolbox": true
+    },
+    {
+      "id": "recordly.dev",
+      "name": "Recordly",
+      "url": "https://recordly.dev/",
+      "category": "Video & Capture",
+      "purpose": "Open-source screen recorder with auto-zoom and cursor smoothing.",
+      "inToolbox": true
+    },
+    {
+      "id": "regexr.com",
+      "name": "RegExr",
+      "url": "https://regexr.com/",
+      "category": "Web Utility",
+      "purpose": "Regular expression tester.",
+      "inToolbox": false
+    },
+    {
+      "id": "rive.app",
+      "name": "Rive",
+      "url": "https://rive.app",
+      "category": "Interface",
+      "purpose": "Interactive vector animation with state machines, shipped as a runtime.",
+      "inToolbox": true
+    },
+    {
+      "id": "saaspo.com",
+      "name": "Saaspo",
+      "url": "https://saaspo.com/",
+      "category": "Inspiration",
+      "purpose": "SaaS landing page gallery; shows the category default to depart from.",
+      "inToolbox": false
+    },
+    {
+      "id": "same.energy",
+      "name": "Same Energy",
+      "url": "https://same.energy/",
+      "category": "Inspiration",
+      "purpose": "Visual search engine: find images with the same feel as a reference.",
+      "inToolbox": true
+    },
+    {
+      "id": "screen.studio",
+      "name": "Screen Studio",
+      "url": "https://screen.studio/",
+      "category": "Video & Capture",
+      "purpose": "Polished screen recordings with zoom and smooth cursor; record interactions to review them slowed down.",
+      "inToolbox": true
+    },
+    {
+      "id": "searchsystem.co",
+      "name": "SearchSystem",
+      "url": "https://searchsystem.co/",
+      "category": "Inspiration",
+      "purpose": "Curated references and tools for designers.",
+      "inToolbox": false
+    },
+    {
+      "id": "seesaw.website",
+      "name": "SEESAW",
+      "url": "https://www.seesaw.website/",
+      "category": "Inspiration",
+      "purpose": "Daily web design inspiration.",
+      "inToolbox": false
+    },
+    {
+      "id": "shadertoy.com",
+      "name": "ShaderToy",
+      "url": "https://www.shadertoy.com/",
+      "category": "Visual",
+      "purpose": "Shader community and playground; learn and test GLSL effects.",
+      "inToolbox": true
+    },
+    {
+      "id": "sidefx.com",
+      "name": "Houdini",
+      "url": "https://www.sidefx.com/",
+      "category": "3D",
+      "purpose": "Houdini procedural 3D and VFX.",
+      "inToolbox": false
+    },
+    {
+      "id": "skills.sh",
+      "name": "Skills",
+      "url": "https://skills.sh/",
+      "category": "AI Code",
+      "purpose": "Directory of installable agent skills.",
+      "inToolbox": false
+    },
+    {
+      "id": "spiral.soot.com/spiral",
+      "name": "SOOT SPIRAL",
+      "url": "https://spiral.soot.com/spiral",
+      "category": "Inspiration",
+      "purpose": "Associative image exploration from Soot.",
+      "inToolbox": false
+    },
+    {
+      "id": "splice.com/features/sounds",
+      "name": "Splice",
+      "url": "https://splice.com/features/sounds",
+      "category": "Audio",
+      "purpose": "Royalty-free samples and one-shots for UI sounds.",
+      "inToolbox": false
+    },
+    {
+      "id": "spline.design",
+      "name": "Spline",
+      "url": "https://spline.design/",
+      "category": "3D",
+      "purpose": "Browser 3D design with web export for interactive scenes.",
+      "inToolbox": false
+    },
+    {
+      "id": "stitch.withgoogle.com",
+      "name": "Stitch by Google Labs",
+      "url": "https://stitch.withgoogle.com/",
+      "category": "Interface",
+      "purpose": "Google's AI UI generator.",
+      "inToolbox": false
+    },
+    {
+      "id": "supahero.io",
+      "name": "Supahero",
+      "url": "https://www.supahero.io/",
+      "category": "Inspiration",
+      "purpose": "Library of website hero sections; useful to see the hero default before departing from it.",
+      "inToolbox": false
+    },
+    {
+      "id": "superspl.at/editor",
+      "name": "SuperSplat Editor",
+      "url": "https://superspl.at/editor",
+      "category": "Volumetric",
+      "purpose": "Browser editor for Gaussian splats.",
+      "inToolbox": false
+    },
+    {
+      "id": "theatrejs.com",
+      "name": "Theatre.js",
+      "url": "https://www.theatrejs.com/",
+      "category": "Motion",
+      "purpose": "Timeline editor for web animation and 3D scenes.",
+      "inToolbox": false
+    },
+    {
+      "id": "tldraw.com",
+      "name": "tldraw",
+      "url": "https://www.tldraw.com/",
+      "category": "Whiteboard",
+      "purpose": "Instant whiteboard; also an SDK for canvas interfaces.",
+      "inToolbox": false
+    },
+    {
+      "id": "trello.com",
+      "name": "Trello",
+      "url": "https://trello.com/",
+      "category": "Organization",
+      "purpose": "Boards for tasks.",
+      "inToolbox": false
+    },
+    {
+      "id": "ui.camera",
+      "name": "ui.camera",
+      "url": "https://ui.camera/",
+      "category": "Web Utility",
+      "purpose": "Product photographs and videos of your UI in the browser.",
+      "inToolbox": true
+    },
+    {
+      "id": "ui.shadcn.com",
+      "name": "shadcn/ui",
+      "url": "https://ui.shadcn.com/",
+      "category": "Components",
+      "purpose": "Composable, accessible components you own as code, with OKLCH theming and a registry.",
+      "inToolbox": true
+    },
+    {
+      "id": "uncut.wtf",
+      "name": "UNCUT",
+      "url": "https://uncut.wtf/",
+      "category": "Fonts",
+      "purpose": "Contemporary free and open typefaces, many display faces.",
+      "inToolbox": true
+    },
+    {
+      "id": "unicorn.studio",
+      "name": "Unicorn.studio",
+      "url": "https://www.unicorn.studio/",
+      "category": "Visual",
+      "purpose": "No-code WebGL effects (shaders, media, motion) exported as components.",
+      "inToolbox": true
+    },
+    {
+      "id": "unrealengine.com/en-US/realityscan",
+      "name": "RealityScan",
+      "url": "https://www.unrealengine.com/en-US/realityscan",
+      "category": "Volumetric",
+      "purpose": "Photogrammetry scanning app.",
+      "inToolbox": false
+    },
+    {
+      "id": "v0.dev",
+      "name": "v0 by Vercel",
+      "url": "https://v0.dev/",
+      "category": "AI Code",
+      "purpose": "Vercel's prompt-to-UI and app builder.",
+      "inToolbox": false
+    },
+    {
+      "id": "viewer.needle.tools",
+      "name": "Needle Viewer",
+      "url": "https://viewer.needle.tools/",
+      "category": "glTF",
+      "purpose": "Inspect and edit 3D files on the web.",
+      "inToolbox": false
+    },
+    {
+      "id": "warp.dev",
+      "name": "Warp",
+      "url": "https://www.warp.dev/",
+      "category": "Desktop Utility",
+      "purpose": "Terminal and agent platform.",
+      "inToolbox": false
+    },
+    {
+      "id": "wisprflow.ai",
+      "name": "Wispr Flow",
+      "url": "https://wisprflow.ai/",
+      "category": "Desktop Utility",
+      "purpose": "Voice dictation.",
+      "inToolbox": false
+    },
+    {
+      "id": "womp.com",
+      "name": "Womp",
+      "url": "https://womp.com/",
+      "category": "3D",
+      "purpose": "Browser 3D modelling.",
+      "inToolbox": false
+    },
+    {
+      "id": "zed.dev/agentic",
+      "name": "Zed",
+      "url": "https://zed.dev/agentic",
+      "category": "AI Code",
+      "purpose": "Fast open-source code editor with agent features.",
+      "inToolbox": false
+    },
+    {
+      "id": "zen-browser.app",
+      "name": "Zen",
+      "url": "https://zen-browser.app/",
+      "category": "Browser",
+      "purpose": "Firefox-based browser.",
+      "inToolbox": false
+    }
+  ]
+}

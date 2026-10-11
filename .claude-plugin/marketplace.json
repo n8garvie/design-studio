@@ -1,0 +1,25 @@
+{
+  "name": "design-studio",
+  "owner": {
+    "name": "n8garvie",
+    "url": "https://github.com/n8garvie"
+  },
+  "description": "A design studio in a skill: a Head of Studio runs seven designer agents who make work together and critique each other's work.",
+  "plugins": [
+    {
+      "name": "design-studio",
+      "source": "./plugins/design-studio",
+      "description": "Head of Studio + visual designer, typographer, content strategist, interaction designer, product strategist, brand & marketing designer and emotion designer. Make mode designs with critique built into every round; crit mode reviews existing work.",
+      "category": "design",
+      "tags": [
+        "design",
+        "ui",
+        "ux",
+        "critique",
+        "multi-agent",
+        "typography",
+        "brand"
+      ]
+    }
+  ]
+}
