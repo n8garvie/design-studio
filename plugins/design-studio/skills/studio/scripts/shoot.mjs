@@ -390,8 +390,27 @@ function settleViewport() {
   });
 }
 
-async function scrollTo(page, y) {
+const viewportTop = (page) =>
+  page.evaluate(() => ({
+    top: window.visualViewport ? window.visualViewport.pageTop : window.scrollY,
+    docHeight: Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0),
+  }));
+
+async function scrollTo(page, y, vp) {
   await page.evaluate((top) => window.scrollTo({ top, left: 0, behavior: 'instant' }), y);
+  // A mobile page that overflows sideways is zoomed out: its layout viewport stops scrolling early,
+  // so move the visual viewport the rest of the way with the wheel (it scrolls the visual one first).
+  let { top, docHeight } = await viewportTop(page);
+  const room = y > top ? top + vp.height < docHeight - 1 : top > 0;
+  if (Math.abs(top - y) > 2 && room) {
+    await page.mouse.move(vp.width / 2, vp.height / 2);
+    await page.mouse.wheel(0, y - top);
+    for (let i = 0, last = NaN; i < 20 && top !== last; i++) {
+      await page.waitForTimeout(50);
+      last = top;
+      ({ top } = await viewportTop(page));
+    }
+  }
   await page.evaluate(settleViewport).catch(() => {});
 }
 
@@ -424,7 +443,7 @@ async function captureViewport(browser, vp, ctx) {
   try {
     await loadPage(page, url, opts, warn);
 
-    await scrollTo(page, 0);
+    await scrollTo(page, 0, vp);
     shots.push(await snap(page, name(`${vp.name}-top.png`), opts));
 
     // Tiles: one viewport at a time; stop when less than 15% of a viewport of new content remains.
@@ -433,10 +452,10 @@ async function captureViewport(browser, vp, ctx) {
     for (let k = 1; k <= opts.tiles; k++) {
       const docHeight = await page.evaluate(() => Math.max(document.documentElement.scrollHeight, document.body ? document.body.scrollHeight : 0));
       if (docHeight - k * vh < vh * 0.15) break;
-      await scrollTo(page, k * vh);
+      await scrollTo(page, k * vh, vp);
       shots.push(await snap(page, name(`${vp.name}-tile-${k}.png`), opts));
     }
-    await scrollTo(page, 0);
+    await scrollTo(page, 0, vp);
 
     if (opts.measure) {
       const args = { viewport: vp.name, width: vp.width, height: vp.height, mobile: Boolean(vp.hasTouch), freezeId: FREEZE_ID, cap: LIST_CAP };
@@ -459,7 +478,7 @@ async function captureViewport(browser, vp, ctx) {
         s.textContent = 'html{filter:grayscale(1)!important}';
         document.documentElement.appendChild(s);
       });
-      await scrollTo(page, 0);
+      await scrollTo(page, 0, vp);
       shots.push(await snap(page, name(`${vp.name}-gray-top.png`), opts));
       await page.evaluate(() => document.getElementById('__studio_gray')?.remove());
     }
@@ -467,7 +486,7 @@ async function captureViewport(browser, vp, ctx) {
     for (const state of opts.states) {
       await page.goto('about:blank').catch(() => {});
       await loadPage(page, withSuffix(url, state.suffix), opts, warn);
-      await scrollTo(page, 0);
+      await scrollTo(page, 0, vp);
       shots.push(await snap(page, name(`${vp.name}-state-${state.name}.png`), opts));
     }
 
@@ -475,7 +494,7 @@ async function captureViewport(browser, vp, ctx) {
       await page.emulateMedia({ colorScheme: 'dark' });
       await page.goto('about:blank').catch(() => {});
       await loadPage(page, url, opts, warn);
-      await scrollTo(page, 0);
+      await scrollTo(page, 0, vp);
       const file = await snap(page, name(`${vp.name}-dark-top.png`), opts);
       if (fs.readFileSync(file).equals(fs.readFileSync(shots[0]))) {
         fs.rmSync(file);

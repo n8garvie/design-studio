@@ -367,9 +367,9 @@ section { margin-top: var(--s8); padding-top: var(--s3); border-top: 1px solid v
 .brief { display: grid; grid-template-columns: minmax(160px, 240px) minmax(0, 72ch); gap: var(--s1) var(--s4); }
 .brief dt { color: var(--muted); }
 .prose { max-width: 72ch; display: grid; gap: var(--s1); }
-.masonry { columns: 4 220px; column-gap: var(--s3); }
-.masonry figure { break-inside: avoid; margin-bottom: var(--s3); }
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); gap: var(--s3); }
+.groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr)); gap: var(--s4) var(--s3); align-items: start; }
+.groups.wide { grid-template-columns: repeat(auto-fill, minmax(min(100%, 520px), 1fr)); }
+.prose + .groups { margin-top: var(--s4); }
 .directions { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr)); gap: var(--s6) var(--s4); }
 .direction { display: grid; gap: var(--s2); align-content: start; }
 .direction-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: var(--s1) var(--s2); }
@@ -405,17 +405,39 @@ function ratioOf(file) {
   return /mobile/i.test(path.basename(file)) ? 0.462 : 1.6;
 }
 
-function figure(file, caption, base) {
+function figure(file, caption, base, visible = caption) {
   const size = imageSize(file);
   const dims = size ? ` width="${size.w}" height="${size.h}"` : '';
   const href = rel(base, file);
   return `<figure><a href="${href}" target="_blank" rel="noopener"><img src="${href}" alt="${esc(caption)}"${dims} loading="lazy" decoding="async"></a>`
-    + `<figcaption>${esc(caption)}</figcaption></figure>`;
+    + `<figcaption>${esc(visible)}</figcaption></figure>`;
 }
 
-function pair(files, caption, base) {
-  return `<div class="pair">${files.map((f) => figure(f, caption(f), base).replace('<figure>', `<figure style="--r: ${ratioOf(f)}">`)).join('')}</div>`;
+/** Shots side by side at equal height. `caption` gives alt text; `visible` the shorter caption shown. */
+function pair(files, caption, base, visible = caption) {
+  // A lone portrait shot would fill the whole column; keep it phone-sized.
+  const lone = files.length === 1 && ratioOf(files[0]) < 1 ? '; max-width: 280px' : '';
+  return `<div class="pair">${files.map((f) => figure(f, caption(f), base, visible(f)).replace('<figure>', `<figure style="--r: ${ratioOf(f)}${lone}">`)).join('')}</div>`;
 }
+
+/** Caption a grouped shot: "ref-01 · mobile", or just the group label for a lone file. */
+function groupCaption(group) {
+  return (f) => {
+    const vp = viewportOf(f);
+    return group.files.length > 1 && vp ? `${group.label} · ${vp}` : group.label;
+  };
+}
+
+/** Visible caption in a group: the full label under the first shot, the viewport under the rest. */
+function groupVisible(group) {
+  return (f) => (f === group.files[0] ? groupCaption(group)(f) : viewportOf(f) ?? groupCaption(group)(f));
+}
+
+function renderGroups(groups, base, wide = false) {
+  return `<div class="groups${wide ? ' wide' : ''}">${groups.map((g) => pair(g.files, groupCaption(g), base, groupVisible(g))).join('')}</div>`;
+}
+
+const countFiles = (groups) => groups.reduce((n, g) => n + g.files.length, 0);
 
 const docLinks = (docs, base) => (docs.length
   ? `<p class="links">${docs.map(([label, file]) => `<a href="${rel(base, file)}">${esc(label)}</a>`).join('')}</p>`
@@ -441,9 +463,9 @@ function renderBrief(brief, docs, base) {
 
 function renderReferences(refs, sources, base) {
   if (!refs.length) return '';
-  const aside = `<p class="links"><span class="num">${plural(refs.length, 'image')}</span>${sources ? `<a href="${rel(base, sources)}">sources.md</a>` : ''}</p>`;
+  const aside = `<p class="links"><span class="num">${plural(countFiles(refs), 'image')}</span>${sources ? `<a href="${rel(base, sources)}">sources.md</a>` : ''}</p>`;
   return `<section id="references" aria-labelledby="references-title">${sectionHead('references', 'References', aside)}`
-    + `<div class="masonry">${refs.map((r) => figure(r.file, r.caption, base)).join('')}</div></section>`;
+    + `${renderGroups(refs, base)}</section>`;
 }
 
 function renderDirections(dirs, board, base) {
@@ -456,16 +478,16 @@ function renderDirections(dirs, board, base) {
       d.all ? `<a href="${rel(base, d.all)}/">all shots</a>` : '',
     ].filter(Boolean).join('');
     return `<article class="direction"><div class="direction-head"><h3>${esc(d.id)}</h3>${meta ? `<p class="links">${meta}</p>` : ''}</div>`
-      + `${pair(d.shots, (f) => `${d.id} · ${shotLabel(f)}`, base)}</article>`;
+      + `${pair(d.shots, (f) => `${d.id} · ${shotLabel(f)}`, base, shotLabel)}</article>`;
   }).join('');
   return `<section id="directions" aria-labelledby="directions-title">${sectionHead('directions', 'Directions', docLinks(boardLinks, base))}`
     + `<div class="directions">${items}</div></section>`;
 }
 
-function renderSystem(files, docs, base) {
-  if (!files.length) return '';
+function renderSystem(groups, docs, base) {
+  if (!groups.length) return '';
   return `<section id="system" aria-labelledby="system-title">${sectionHead('system', 'System sheet', docLinks(docs, base))}`
-    + `<div class="grid">${files.map((f) => figure(f, path.basename(f, path.extname(f)).replace(/[-_]+/g, ' '), base)).join('')}</div></section>`;
+    + `${renderGroups(groups, base)}</section>`;
 }
 
 function renderRound(r, base) {
@@ -487,7 +509,7 @@ function renderRound(r, base) {
   const links = [...r.docs];
   if (r.shotsDir) links.push(['all shots', r.shotsDir]);
   const linkHtml = links.length ? `<p class="links">${links.map(([label, f]) => `<a href="${rel(base, f)}${label === 'all shots' ? '/' : ''}">${esc(label)}</a>`).join('')}</p>` : '';
-  const shots = r.shots.length ? pair(r.shots, (f) => `${r.label} · ${shotLabel(f)}`, base) : '<p class="empty">No shots.</p>';
+  const shots = r.shots.length ? pair(r.shots, (f) => `${r.label} · ${shotLabel(f)}`, base, shotLabel) : '<p class="empty">No shots.</p>';
   return `<article class="round" id="round-${esc(r.name)}"><div class="round-meta">`
     + `<div><h3>${esc(r.label)}</h3>${marks ? `<p class="mark">${marks}</p>` : ''}</div>${score}`
     + (facts.length ? `<dl class="facts num">${facts.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join('')}</dl>` : '')
@@ -521,7 +543,7 @@ function renderFinal(final, base) {
   if (!final.shots.length && !final.excerpt.length && !final.docs.length) return '';
   return `<section id="final" aria-labelledby="final-title">${sectionHead('final', 'Final', docLinks(final.docs, base))}`
     + (final.excerpt.length ? `<div class="prose">${final.excerpt.map((l) => `<p>${inline(l)}</p>`).join('')}</div>` : '')
-    + (final.shots.length ? `<div class="grid" style="margin-top: var(--s4)">${final.shots.map((s) => figure(s.file, s.caption, base)).join('')}</div>` : '')
+    + (final.shots.length ? renderGroups(final.shots, base, true) : '')
     + '</section>';
 }
 
@@ -610,12 +632,12 @@ ${sections.filter(Boolean).join('\n') || '<section><p class="empty">Nothing to s
   const roundShots = rounds.reduce((n, r) => n + r.shots.length, 0);
   const dirShots = directions.reduce((n, d) => n + d.shots.length, 0);
   const counts = {
-    references: refs.length,
+    references: countFiles(refs),
     directions: directions.length,
-    system: system.length,
+    system: countFiles(system),
     rounds: rounds.length,
-    final: final.shots.length,
-    images: refs.length + dirShots + system.length + roundShots + final.shots.length,
+    final: countFiles(final.shots),
+    images: countFiles(refs) + dirShots + countFiles(system) + roundShots + countFiles(final.shots),
   };
   return { file, counts };
 }
