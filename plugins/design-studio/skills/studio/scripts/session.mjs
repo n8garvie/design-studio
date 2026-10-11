@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
+import { skillDir as findSkillDir } from './_shared.mjs';
 
 const HELP = `session.mjs — studio session folders and barriers
 
@@ -21,8 +22,10 @@ Usage:
 
 init     creates .design-studio/sessions/<YYYY-MM-DD>-<slug>/ (adds -2, -3… if taken; --resume
          reuses the newest session with that slug), snapshots roles/ knowledge/ protocol/
-         templates/ into .design-studio/kb/ when missing or out of date, writes state.md and
-         .design-studio/config.json (if missing). Prints JSON {session, kb, created, resumed, version}.
+         templates/ into .design-studio/kb/ and the scripts into .design-studio/bin/ when missing
+         or out of date, writes state.md and .design-studio/config.json (if missing).
+         Prints JSON {session, kb, bin, created, resumed, version}.
+         From a terminal: node .design-studio/bin/<script>.mjs … works like the skill's copy.
 round    --next creates rounds/NN/ with its subfolders; without it prints the latest round (JSON).
 check    exits 0 when every expected file exists and has at least --min-bytes bytes, else lists
          the problems and exits 2. --expect-glob patterns support * ? and **; --count N (default 1).
@@ -32,7 +35,9 @@ latest   the most recently active session dir.
 --session accepts a path, a session folder name, or "latest".
 Exit codes: 0 ok · 2 missing inputs or files.`;
 
-const SKILL_DIR = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+// From the project copy (.design-studio/bin/) the kb snapshot stands in for the skill dir.
+const SKILL_DIR = findSkillDir(import.meta.url);
+const SCRIPTS_DIR = path.dirname(fileURLToPath(import.meta.url));
 const KB_FOLDERS = ['roles', 'knowledge', 'protocol', 'templates'];
 const SESSION_DIRS = [
   'references',
@@ -86,6 +91,14 @@ export function slugify(input) {
     .replace(/-+$/g, '');
 }
 
+function readText(file) {
+  try {
+    return fs.readFileSync(file, 'utf8');
+  } catch {
+    return null;
+  }
+}
+
 function readJson(file) {
   try {
     return JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -127,41 +140,67 @@ export function pluginVersion(skillDir = SKILL_DIR) {
     const manifest = readJson(path.join(skillDir, '..', '..', host, 'plugin.json'));
     if (manifest?.version) return String(manifest.version);
   }
+  // A kb snapshot (when running from .design-studio/bin/) carries the version in its VERSION file.
+  const snapshot = readText(path.join(skillDir, 'VERSION'));
+  if (snapshot) return snapshot.trim().split('+')[0];
   return '0.0.0';
 }
 
-/** "<plugin version>+<8-hex hash of the kb folders' contents>". */
-export function kbVersion(skillDir = SKILL_DIR) {
+/** "<plugin version>+<8-hex hash>" of the given files (relative to `base`). */
+function contentVersion(skillDir, base, rels) {
   const hash = crypto.createHash('sha256');
-  for (const folder of KB_FOLDERS) {
-    for (const rel of walkFiles(path.join(skillDir, folder))) {
-      hash.update(`${folder}/${rel.split(path.sep).join('/')}\0`);
-      hash.update(fs.readFileSync(path.join(skillDir, folder, rel)));
-      hash.update('\0');
-    }
+  for (const rel of rels) {
+    hash.update(`${rel.split(path.sep).join('/')}\0`);
+    hash.update(fs.readFileSync(path.join(base, rel)));
+    hash.update('\0');
   }
   return `${pluginVersion(skillDir)}+${hash.digest('hex').slice(0, 8)}`;
 }
 
+function kbFiles(skillDir) {
+  return KB_FOLDERS.flatMap((folder) => walkFiles(path.join(skillDir, folder)).map((rel) => path.join(folder, rel)));
+}
+
+/** "<plugin version>+<8-hex hash of the kb folders' contents>". */
+export function kbVersion(skillDir = SKILL_DIR) {
+  return contentVersion(skillDir, skillDir, kbFiles(skillDir));
+}
+
+const samePath = (a, b) => path.resolve(a) === path.resolve(b);
+
 /** Copy the skill's kb folders into <root>/.design-studio/kb when missing or stale. */
 export function syncKb(root, skillDir = SKILL_DIR) {
   const kb = path.join(studioDir(root), 'kb');
+  // Running from this project's own bin/: the kb is the source, never copy it onto itself.
+  if (samePath(kb, skillDir)) return { kb, version: readText(path.join(kb, 'VERSION'))?.trim() ?? kbVersion(skillDir), updated: false };
   const version = kbVersion(skillDir);
-  const current = fs.existsSync(path.join(kb, 'VERSION')) ? fs.readFileSync(path.join(kb, 'VERSION'), 'utf8').trim() : null;
-  if (current === version) return { kb, version, updated: false };
+  if (readText(path.join(kb, 'VERSION'))?.trim() === version) return { kb, version, updated: false };
 
   fs.rmSync(kb, { recursive: true, force: true });
-  for (const folder of KB_FOLDERS) {
-    const src = path.join(skillDir, folder);
-    const dest = path.join(kb, folder);
-    fs.mkdirSync(dest, { recursive: true });
-    for (const rel of walkFiles(src)) {
-      fs.mkdirSync(path.dirname(path.join(dest, rel)), { recursive: true });
-      fs.copyFileSync(path.join(src, rel), path.join(dest, rel));
-    }
+  for (const rel of kbFiles(skillDir)) {
+    fs.mkdirSync(path.dirname(path.join(kb, rel)), { recursive: true });
+    fs.copyFileSync(path.join(skillDir, rel), path.join(kb, rel));
   }
   fs.writeFileSync(path.join(kb, 'VERSION'), `${version}\n`);
   return { kb, version, updated: true };
+}
+
+/**
+ * Copy the scripts (*.mjs, which import each other relatively) into <root>/.design-studio/bin
+ * when missing or stale, so `node .design-studio/bin/<script>.mjs` works from a terminal.
+ */
+export function syncBin(root, scriptsDir = SCRIPTS_DIR, skillDir = SKILL_DIR) {
+  const bin = path.join(studioDir(root), 'bin');
+  const scripts = () => fs.readdirSync(scriptsDir).filter((f) => f.endsWith('.mjs')).sort();
+  if (samePath(bin, scriptsDir)) return { bin, updated: false };
+  const version = contentVersion(skillDir, scriptsDir, scripts());
+  if (readText(path.join(bin, 'VERSION'))?.trim() === version) return { bin, version, updated: false };
+
+  fs.mkdirSync(bin, { recursive: true });
+  for (const stale of fs.readdirSync(bin).filter((f) => f.endsWith('.mjs'))) fs.rmSync(path.join(bin, stale));
+  for (const file of scripts()) fs.copyFileSync(path.join(scriptsDir, file), path.join(bin, file));
+  fs.writeFileSync(path.join(bin, 'VERSION'), `${version}\n`);
+  return { bin, version, updated: true };
 }
 
 // ---------- session resolution ----------
@@ -263,6 +302,7 @@ export function init({ slug, mode = 'make', depth = 'standard', root = process.c
   for (const sub of SESSION_DIRS) fs.mkdirSync(path.join(session, sub), { recursive: true });
 
   const { kb, version, updated } = syncKb(root);
+  const { bin, updated: binUpdated } = syncBin(root);
 
   const stateFile = path.join(session, 'state.md');
   if (!fs.existsSync(stateFile)) {
@@ -278,10 +318,12 @@ export function init({ slug, mode = 'make', depth = 'standard', root = process.c
   return {
     session,
     kb,
+    bin,
     created,
     resumed: Boolean(existing),
     version,
     kbUpdated: updated,
+    binUpdated,
     config: fs.existsSync(config) ? config : null,
     gitignoreUpdated,
   };

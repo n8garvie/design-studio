@@ -155,6 +155,28 @@ test('without panel files the studio score falls back to role overall scores', (
   assert.equal(l.lineup, null);
 });
 
+test('missing subfolders are fine: crit only, or panel only', () => {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'studio-tally-'));
+  const critOnly = path.join(root, 'crit-only');
+  write(path.join(critOnly, 'crit', 'typographer.md'), block('studio-findings', {
+    role: 'typographer', scores: { lens: 7, overall: 7 }, verdict: 'SHIP', findings: [],
+  }));
+  let res = tally(['--round', critOnly, '--json'], root);
+  assert.equal(res.code, 0, res.stderr);
+  let l = JSON.parse(res.stdout);
+  assert.deepEqual([l.studio.source, l.studio.score, l.conflicts.length, l.lineup], ['roles', 7, 0, null]);
+  assert.deepEqual(l.lanes[0], { critic: 'typographer', role: 'typographer', instance: null, raw: 7, capped: 7, cap: null });
+
+  const panelOnly = path.join(root, 'panel-only');
+  write(path.join(panelOnly, 'panel', 'P1.md'), block('studio-score', { critic: 'P1', score: 5, gaps: ['Hero is generic'] }));
+  res = tally(['--round', panelOnly], root);
+  assert.equal(res.code, 0, res.stderr);
+  l = JSON.parse(fs.readFileSync(path.join(panelOnly, 'ledger.json'), 'utf8'));
+  assert.deepEqual([l.studio.source, l.studio.score, l.studio.spread, l.critics.length], ['panel', 5, 0, 0]);
+  assert.equal(l.panelGaps[0].gap, 'Hero is generic', 'string gaps are accepted');
+  assert.match(fs.readFileSync(path.join(panelOnly, 'ledger.md'), 'utf8'), /no role critiques/);
+});
+
 test('plateau needs this delta and the previous delta both under 1.0', () => {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'studio-tally-'));
   const round = path.join(root, 'rounds', '04');

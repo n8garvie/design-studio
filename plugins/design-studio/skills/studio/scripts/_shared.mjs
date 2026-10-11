@@ -171,6 +171,23 @@ export function printJson(data) {
   process.stdout.write(JSON.stringify(data, null, 2) + '\n');
 }
 
+/**
+ * The skill dir for a script at `metaUrl` (pass `import.meta.url`): normally the
+ * parent of scripts/. When the script runs from the project copy at
+ * `<root>/.design-studio/bin/`, the kb snapshot next to it stands in for the
+ * skill dir (it holds the same roles/ knowledge/ protocol/ templates/).
+ */
+export function skillDir(metaUrl) {
+  const here = path.dirname(fileURLToPath(metaUrl));
+  if (isBinCopy(here)) return path.resolve(here, '..', 'kb');
+  return path.resolve(here, '..');
+}
+
+/** True when `dir` is a project copy of the scripts: `<root>/.design-studio/bin`. */
+export function isBinCopy(dir) {
+  return path.basename(dir) === 'bin' && path.basename(path.dirname(dir)) === '.design-studio';
+}
+
 /** True when the module at `metaUrl` is the script node was asked to run. */
 export function isMain(metaUrl) {
   if (!process.argv[1]) return false;
