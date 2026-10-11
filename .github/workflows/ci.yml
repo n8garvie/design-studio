@@ -14,4 +14,4 @@ jobs:
       - name: Repo checks
         run: node tools/check.mjs
       - name: Tests (browser tests skip without Playwright)
-        run: node --test tests/
+        run: node --test 'tests/*.test.mjs'

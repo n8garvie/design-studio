@@ -33,7 +33,7 @@ This file is for anyone maintaining this repo, human or agent. To *use* the stud
 
 ```
 node tools/check.mjs
-node --test tests/
+node --test 'tests/*.test.mjs'
 claude plugin validate --strict .
 claude plugin validate --strict plugins/design-studio
 ```
