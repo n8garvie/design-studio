@@ -73,7 +73,7 @@ Cross-critique is peer review between people who have seen the work's history. I
 
 Cross-critique shows where roles disagree. Debate lets them answer each other before you rule.
 
-1. **Pick the conflicts.** Take every item under "Conflicts to rule on" in the ledger, plus any finding that got a `CHALLENGE` or `CONFLICT` response. Rank by severity and keep the top 5. Skip this wave when there are none, and always at quick depth.
+1. **Pick the conflicts.** Take every item under "Conflicts to rule on" in the ledger, plus any finding that got a `CHALLENGE` or `CONFLICT` response. Rank by severity and keep the top 5. Skip this wave only when there are none, or at quick depth. A conflict that cross-critique seems to have resolved still gets its debate; you do not decide on the roles' behalf that they agree.
 2. **Set up each conflict.** Create `R/debate/<finding-id>/`. The two sides are the role that raised the finding and the role that challenged it (the owner of the lane it touches). If several roles challenged, take the one whose response gives the strongest counter-proposal.
 3. **Exchange 1, in parallel.** Spawn both sides with `TASK: debate`.
    - INPUTS: the finding (from `R/crit/<role>.md`), both `R/crosscrit/<role>.md` files, `brief.md`, `discover/reference-brief.md` and the `criticFiles`.

@@ -42,15 +42,16 @@ You are glue and quality control. Taste lives in the team's work and in the crit
 - **KB** is `<project>/.design-studio/kb`. Session init copies roles, knowledge, protocol and templates into it, so every agent reads local files. Once the session exists, read protocol files from `KB/protocol/`.
 - **Never `cd` or `ls` into SKILL_DIR.** The host may block access outside the project. Run scripts by their absolute path (`node <SKILL_DIR>/scripts/session.mjs ...`). After init, read everything from KB and run scripts from `<project>/.design-studio/bin/`.
 - **Write files with your file tools (Write and Edit), not shell heredocs, `sed` or `echo >`.** Use the shell only to run `node` scripts, one plain command per call, with no variables and no `&&` chains. That keeps every step approvable by the host's permission rules.
+- **Never prefix a script with `cd` or chain commands.** Pass absolute paths to `node`.
 - **SESSION** is `<project>/.design-studio/sessions/<YYYY-MM-DD>-<slug>`. Always hand agents absolute paths.
 
 ## Host adapter
 
 | Action | Claude Code | Codex | Solo (no subagent tool) |
 |---|---|---|---|
-| Spawn a role | Agent tool, `subagent_type: design-studio:<role>`. Use `general-purpose` only if that type is missing. Never fork. Launch a whole wave in one message. | `spawn_agent` with the task card as the message; omit `agent_type`. v2: `fork_turns: "none"`. v1: no `fork_context`. | Play each role yourself in turn. Write each output before reading any peer's file. |
+| Spawn a role | Agent tool, `subagent_type: design-studio:<role>`. Use `general-purpose` only if that type is missing. Never fork. Launch a whole wave in one message. Spawn in the foreground (`run_in_background: false`) so the call blocks until the wave returns. | `spawn_agent` with the task card as the message; omit `agent_type`. v2: `fork_turns: "none"`. v1: no `fork_context`. | Play each role yourself in turn. Write each output before reading any peer's file. |
 | Concurrency | About 10 at once | Waves of 3 (v2) or 5 (v1). `close_agent` finished agents on v1. | n/a |
-| Wait | Completion notices, then `session.mjs check` | `wait_agent` until all complete, then `session.mjs check` | n/a |
+| Wait | The foreground Agent calls return when the wave is done. Never end your turn while any subagent is still running, or the session stops early (in headless `-p` runs it does). Then `session.mjs check`. | `wait_agent` until all complete, then `session.mjs check` | n/a |
 | Ask the user | AskUserQuestion | `request_user_input` where allowed. Otherwise ask in chat, save `state.md`, and end the turn. | Chat |
 | See an image | Read | `view_image` | Read or view the image |
 | Continue the design engineer | SendMessage to its name or id | `send_input` / `followup_task` | n/a |
