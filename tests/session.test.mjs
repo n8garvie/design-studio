@@ -163,3 +163,20 @@ test('the .design-studio/bin copy runs on its own and never clobbers the kb', ()
   assert.ok(fs.existsSync(path.join(copied.kb, 'templates', 'state.md')));
   assert.ok(fs.existsSync(path.join(copied.bin, 'shoot.mjs')));
 });
+
+test('round --next and state keep state.md current', () => {
+  const root = tempRoot();
+  json(session(['init', '--slug', 'st', '--mode', 'crit'], root));
+  json(session(['round', '--session', 'latest', '--next'], root));
+  const res = session(['state', '--session', 'latest', '--set', 'phase=report', '--set', 'roster=visual-designer, typographer', '--set', 'newkey=x', '--note', 'rulings written'], root);
+  assert.equal(res.code, 0, res.stderr);
+  const state = res.stdout;
+  assert.match(state, /^phase: report$/m);
+  assert.match(state, /^round: 1$/m);
+  assert.match(state, /^roster: visual-designer, typographer$/m);
+  assert.match(state, /^newkey: x$/m);
+  assert.match(state, /round 1 opened\n- .* rulings written/);
+  assert.ok(state.indexOf('newkey') < state.indexOf('## notes'), 'new keys go above the notes');
+  assert.equal(session(['state', '--session', 'latest'], root).code, 2, 'nothing to set');
+  assert.equal(session(['state', '--session', 'latest', '--set', 'nokey'], root).code, 2, 'bad pair');
+});

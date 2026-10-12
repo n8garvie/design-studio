@@ -662,7 +662,12 @@ export function summarize(m, vpName = '') {
     flags.push(`body text line-height ${lh} at ${t.bodyLineHeight.px}px`);
   }
   const c = m.contrast ?? {};
-  if (c.failCount) flags.push(`${plural(c.failCount, 'contrast failure')} (min ${c.minRatio}:1)`);
+  if (c.failCount) {
+    const worst = (c.failures ?? [])[0];
+    const where = c.patternCount > 1 ? ` in ${plural(c.patternCount, 'pattern')}` : '';
+    const eg = worst ? `; worst: "${worst.text}" ${worst.fg} on ${worst.bg}${worst.count > 1 ? ` ×${worst.count}` : ''}` : '';
+    flags.push(`${plural(c.failCount, 'contrast failure')}${where} (min ${c.minRatio}:1${eg})`);
+  }
   if (c.overImage) flags.push(`${plural(c.overImage, 'text element')} over images (contrast not computed)`);
   const ms = m.measure ?? {};
   if (ms.offenderCount) flags.push(`${plural(ms.offenderCount, 'text block')} outside 30–80 characters per line (max ${ms.max})`);
@@ -676,7 +681,11 @@ export function summarize(m, vpName = '') {
     const notes = [small && `smallest ${small.w}×${small.h}`, tg.under24Spaced && `${tg.under24Spaced} ${tg.under24Spaced === 1 ? 'meets' : 'meet'} the WCAG spacing exception`].filter(Boolean);
     flags.push(`${plural(tg.under24, 'target')} under 24px${notes.length ? ` (${notes.join('; ')})` : ''}`);
   }
-  if (tg.under44) flags.push(`${plural(tg.under44, 'touch target')} under 44px`);
+  if (tg.under44) {
+    const big = (tg.under44Items ?? [])[0];
+    const eg = big && big.count > 1 ? ` (${big.count} are ${big.w}×${big.h} "${big.label}"-style)` : '';
+    flags.push(`${plural(tg.under44, 'touch target')} under 44px${eg}`);
+  }
   const a = m.a11y ?? {};
   if (a.focusVisibleRule === false) {
     flags.push(a.outlineNoneCount ? `no :focus-visible rule; outline removed in ${plural(a.outlineNoneCount, 'rule')}` : 'no :focus-visible rule');
@@ -767,6 +776,17 @@ function collectMeasure({ viewport, width, height, mobile, freezeId, cap }) {
   };
   const top = (map, n = CAP) =>
     [...map.entries()].sort((a, b) => b[1] - a[1]).slice(0, n);
+  // Collapse repeats (300 identical table rows) into one row with a count, so a capped list still shows every distinct problem.
+  const grouped = (rows, keyOf) => {
+    const groups = new Map();
+    for (const row of rows) {
+      const k = keyOf(row);
+      const g = groups.get(k);
+      if (g) g.count++;
+      else groups.set(k, { ...row, count: 1 });
+    }
+    return [...groups.values()];
+  };
 
   // ----- colors -----
   const canvas = document.createElement('canvas');
@@ -1189,14 +1209,15 @@ function collectMeasure({ viewport, width, height, mobile, freezeId, cap }) {
         failures.push(row);
       }
     }
-    failures.sort((a, b) => a.ratio - b.ratio);
+    const patterns = grouped(failures, (f) => [f.selector, f.fg, f.bg, f.px].join('|')).sort((a, b) => a.ratio - b.ratio || b.count - a.count);
     return {
       checked,
       failCount: failures.length,
+      patternCount: patterns.length,
       minRatio: Number.isFinite(minRatio) ? Math.floor(minRatio * 100) / 100 : null,
       overImage,
       overGradient,
-      failures: failures.slice(0, CAP),
+      failures: patterns.slice(0, CAP),
     };
   });
 
@@ -1236,12 +1257,15 @@ function collectMeasure({ viewport, width, height, mobile, freezeId, cap }) {
       });
     const describe = (t) => ({ selector: selectorOf(t.el), label: snippet(accName(t.el), 40), w: Math.round(t.r.width), h: Math.round(t.r.height) });
     const under24 = items.filter((t) => t.small24).map((t) => ({ ...describe(t), spaced: spaced(t) }));
-    const under44 = items.filter((t) => t.small44 && !t.small24).map(describe);
+    const under44 = grouped(
+      items.filter((t) => t.small44 && !t.small24).map(describe),
+      (t) => [t.selector, t.w, t.h].join('|'),
+    ).sort((a, b) => b.count - a.count);
     return {
       total: items.length,
       under24: under24.length,
       under24Spaced: under24.filter((t) => t.spaced).length,
-      under44: mobile ? under44.length + under24.length : null, // all under 44; under44Items lists the 24-44 ones
+      under44: mobile ? items.filter((t) => t.small44).length : null, // all under 44; under44Items groups the 24-44 ones, each with a count
       inlineExempt,
       under24Items: under24.slice(0, CAP),
       under44Items: mobile ? under44.slice(0, CAP) : undefined,

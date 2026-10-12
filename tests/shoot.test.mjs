@@ -70,6 +70,13 @@ test('helpers: state suffixes, compact JSON and summary flags', () => {
   assert.ok(flags.includes('no :focus-visible rule'));
   assert.ok(flags.some((f) => f.startsWith('no prefers-reduced-motion rule')));
   assert.ok(flags.includes('heading levels skip h1→h3'));
+
+  const grouped = summarize({
+    contrast: { failCount: 78, patternCount: 3, minRatio: 1.55, failures: [{ text: '/', fg: '#363633', bg: '#111110', count: 25 }] },
+    targets: { under44: 316, under44Items: [{ label: 'Select player', w: 196, h: 40, count: 300 }] },
+  });
+  assert.ok(grouped.includes('78 contrast failures in 3 patterns (min 1.55:1; worst: "/" #363633 on #111110 ×25)'));
+  assert.ok(grouped.includes('316 touch targets under 44px (300 are 196×40 "Select player"-style)'));
 });
 
 test('bad input exits 2 with a one-line message', () => {

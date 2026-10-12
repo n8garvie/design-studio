@@ -31,6 +31,7 @@ In every command in these protocol files, `SCRIPTS`, `SESSION`, `R` and `NN` are
 | `node SCRIPTS/session.mjs init --slug s --mode m --depth d` | Create the session and refresh the kb snapshot |
 | `node SCRIPTS/session.mjs round --session S --next` | Open the next `rounds/NN/` |
 | `node SCRIPTS/session.mjs check --session S --expect <rel>... \| --expect-glob '<glob>' --count n` | Barrier: exit 0 only when every output exists |
+| `node SCRIPTS/session.mjs state --session S --set phase=p --note "text"` | Record a phase change or event in `state.md` |
 | `node SCRIPTS/session.mjs status --session S` | Where are we? |
 | `node SCRIPTS/shoot.mjs <file\|url> --out <dir> [--measure] [--critic-copy <dir>] ...` | Screenshots, `measure.json`, `aria.yml` |
 | `node SCRIPTS/lineup.mjs make\|score\|pair\|pair-score ...` | Blind lineups and pairwise comparisons |
@@ -44,7 +45,7 @@ Each script prints `--help`. Run only these scripts. Never ask a role to run the
 
 ## state.md
 
-Keep it current; it is how a resumed or compacted session finds its place. Fields:
+Keep it current; it is how a resumed or compacted session finds its place. Update it with `session.mjs state` (`--set key=value`, repeatable, and `--note "…"`), never by hand. `round --next` records `round:` and `phase: crit` for you. Fields:
 - `phase:`
 - `mode:`
 - `depth:`

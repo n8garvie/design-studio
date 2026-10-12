@@ -73,12 +73,12 @@ Cross-critique is peer review between people who have seen the work's history. I
 
 Cross-critique shows where roles disagree. Debate lets them answer each other before you rule.
 
-1. **Pick the conflicts.** Take every item under "Conflicts to rule on" in the ledger, plus any finding that got a `CHALLENGE` or `CONFLICT` response. Rank by severity and keep the top 5. Skip this wave only when there are none, or at quick depth. A conflict that cross-critique seems to have resolved still gets its debate; you do not decide on the roles' behalf that they agree.
-2. **Set up each conflict.** Create `R/debate/<finding-id>/`. The two sides are the role that raised the finding and the role that challenged it (the owner of the lane it touches). If several roles challenged, take the one whose response gives the strongest counter-proposal.
+1. **Take the list from the ledger.** After the cross-critique re-tally, `ledger.md` has a "Debates to run" section: up to 5 challenged findings, each with its two sides and its folder, plus the barrier command. Run exactly those. Don't drop one because cross-critique seems to have settled it; only the two roles can concede. Skip this wave only when the section says "none", and always at quick depth.
+2. **Set up each conflict.** Its folder is `R/debate/<folder>/`. The sides are the two roles the ledger names (the role that raised the finding, then the challenger with the fullest counter-proposal). Challenges to a KEEP line have no owner and are not debated; rule on those yourself in step 8.
 3. **Exchange 1, in parallel.** Spawn both sides with `TASK: debate`.
    - INPUTS: the finding (from `R/crit/<role>.md`), both `R/crosscrit/<role>.md` files, `brief.md`, `discover/reference-brief.md` and the `criticFiles`.
    - OUTPUT: `R/debate/<finding-id>/<role>-1.md`.
-   Barrier: `session.mjs check --expect-glob 'rounds/NN/debate/*/*-1.md' --count <2 × conflicts>`.
+   Barrier: `session.mjs check --session SESSION --expect-glob 'rounds/NN/debate/*/*-1.md' --count <2 × debates>`. Never write rulings before it passes.
 4. **Exchange 2, deep depth only.** Spawn both sides again with the same card, adding the other side's `-1.md` to INPUTS. OUTPUT is `<role>-2.md`.
 5. **Read the outcome.** Read only the `studio-debate` blocks and the first line of each reply.
    - **Both sides concede or compromise on the same target:** record that target as settled by the roles in `decisions.md`. Skip the ruling unless it touches rung 1 or 2 of the ladder.
@@ -130,7 +130,7 @@ It contains no code and no technical opinions.
 Continue the design engineer (see `60-build.md`) with `TASK: apply`. INPUTS are `R/maker-brief.md` and `R/patches/*`. Wait for its return block.
 
 ### 12. Next round
-Update `state.md`: `round:` and one note line. Then start the next round at step 1.
+`round --next` records the round in `state.md`; add one note with `session.mjs state --note`. Then start the next round at step 1.
 
 Regression check: if the next round's panel median drops by 2 or more, restore `R/snapshot/` and rule again, choosing differently.
 
@@ -141,10 +141,12 @@ Run one round, steps 1–8, with the user's work as the target:
 - **Only images supplied:** copy them into `R/critic-view/` and skip `measure.json`. Roles note "no measurements".
 
 Then, instead of patching and applying:
+- Run `session.mjs state --session SESSION --set phase=report`.
 - Write `report.md` from `KB/templates/report.md`, in crit-mode form:
   - the verdict and panel score
   - the lineup rank
   - a ranked fix list: blockers → majors → panel gaps → consensus. Each item has an owner, a target and the principle behind it.
   - what works (KEEP)
   - the disagreements and how you ruled on each
+- Run `session.mjs state --session SESSION --set phase=done --note "report written"`.
 - Offer to continue in make mode. The studio can apply the fixes (spec any missing sections, then the design engineer works in the user's code) and keep critiquing until the bar is met.

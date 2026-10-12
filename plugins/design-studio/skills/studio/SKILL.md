@@ -51,7 +51,7 @@ You are glue and quality control. Taste lives in the team's work and in the crit
 |---|---|---|---|
 | Spawn a role | Agent tool, `subagent_type: design-studio:<role>`. Use `general-purpose` only if that type is missing. Never fork. Launch a whole wave in one message. Spawn in the foreground (`run_in_background: false`) so the call blocks until the wave returns. | `spawn_agent` with the task card as the message; omit `agent_type`. v2: `fork_turns: "none"`. v1: no `fork_context`. | Play each role yourself in turn. Write each output before reading any peer's file. |
 | Concurrency | About 10 at once | Waves of 3 (v2) or 5 (v1). `close_agent` finished agents on v1. | n/a |
-| Wait | The foreground Agent calls return when the wave is done. Never end your turn while any subagent is still running, or the session stops early (in headless `-p` runs it does). Then `session.mjs check`. | `wait_agent` until all complete, then `session.mjs check` | n/a |
+| Wait | The foreground Agent calls return when the wave is done. Don't end your turn to wait for completion notices or poll with other tools: each turn end reads as a finished run to whatever drives a headless session. Then `session.mjs check`. | `wait_agent` until all complete, then `session.mjs check` | n/a |
 | Ask the user | AskUserQuestion | `request_user_input` where allowed. Otherwise ask in chat, save `state.md`, and end the turn. | Chat |
 | See an image | Read | `view_image` | Read or view the image |
 | Continue the design engineer | SendMessage to its name or id | `send_input` / `followup_task` | n/a |
@@ -139,11 +139,11 @@ When you enter a phase, read its protocol file from `KB/protocol/`, and only tha
 | 6 | Crit loop | `70-crit-loop.md` | `rounds/NN/*`, ledger, rulings, maker brief; repeat | stop rule, or **C** at plateau |
 | 7 | Deliver | `80-deliver.md` | cut, tells, states and accessibility passes, copy handback, final gate, `DESIGN.md` offer, gallery, report | **D**: copy handback and final pick |
 
-- **Crit mode:** Intake (light) → reference read, if refs exist → one crit round without apply → `report.md` with a ranked fix list. Then offer to continue in make mode from that ruling. See `70-crit-loop.md`, section "Crit mode". Update `phase:` in `state.md` at each step (intake, discover, crit, report, done), so the gallery and `status` show where the session ended.
+- **Crit mode:** Intake (light) → reference read, if refs exist → one crit round without apply → `report.md` with a ranked fix list. Then offer to continue in make mode from that ruling. See `70-crit-loop.md`, section "Crit mode". Record each step with `session.mjs state --set phase=<intake|discover|crit|report|done>`, so the gallery and `status` show where the session ended.
 - **Overnight step:** read `KB/protocol/90-overnight.md` and do exactly one challenger step.
 - **Resume:** run `session.mjs status`, read `state.md`, and continue from the recorded phase.
 
-After every phase, update the `phase:` line and the notes in `state.md`. That way a resumed or compacted session can continue.
+After every phase, run `node SCRIPTS/session.mjs state --session SESSION --set phase=<next> --note "<one line>"`. That way a resumed or compacted session can continue. Never edit `state.md` by hand.
 
 ## Depth
 

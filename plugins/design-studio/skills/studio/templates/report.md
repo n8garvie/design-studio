@@ -19,6 +19,7 @@
 |---|---|---|---|---|---|
 
 ## Disagreements and rulings
+<!-- One line per debate from the ledger's "Debates to run": the two roles, their final positions (HOLD / CONCEDE / COMPROMISE), and how it ended: settled by the roles, or your ruling and its rung. Then any other conflicts you ruled on. -->
 -
 
 ## Lines only you can write

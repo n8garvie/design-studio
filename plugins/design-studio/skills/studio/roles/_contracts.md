@@ -6,6 +6,7 @@ Every role reads this file after its own role brief. It defines how each task wo
 
 1. **Write only to your OUTPUT path.** The design engineer is the only role that edits product files. Everyone else writes their own output file and nothing more.
 2. **Read your INPUTS. Don't go looking for other files.**
+   - Open files with your file tools (Read, or view_image for images), one path at a time. Don't use the shell to `cd`, `cat` or loop over files; hosts often block it.
    - Critics and jurors open only the screenshot paths they were given, plus the brief files named in INPUTS.
    - Never open source code, earlier rounds, or other critics' files unless INPUTS lists them.
 3. **Respect SETTLED.** Decisions logged in `decisions.md` are closed. You may disagree once, briefly, in a `DISSENT:` line. You may not re-litigate.

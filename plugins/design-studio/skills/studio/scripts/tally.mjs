@@ -255,6 +255,38 @@ function conflictsOf(findings, crosscrit) {
   return out;
 }
 
+const DEBATE_CAP = 5;
+
+/**
+ * The debates the Head must run after cross-critique: one per challenged finding, top 5 by severity.
+ * Sides are the role that raised the finding and the challenger with the fullest counter-proposal.
+ * Challenges to something that is not a finding (a KEEP line) have no owner, so they stay with the Head.
+ */
+export function debatesOf(findings, conflicts) {
+  const byFinding = new Map();
+  for (const c of conflicts) {
+    let id, raised, challenger, title, severity, counter;
+    if (c.kind === 'crosscrit') {
+      if (!c.finding || !c.from) continue;
+      const f = findings.find((x) => x.id === c.finding.id && x.critic === c.finding.critic);
+      if (!f || f.role === c.from) continue;
+      [id, raised, challenger, title, severity, counter] = [f.id, f.critic, c.from, f.title, f.severity, c.counter];
+    } else {
+      const f = findings.find((x) => x.id === c.a.id && x.critic === c.a.critic);
+      [id, raised, challenger, title, severity, counter] = [c.a.id, c.a.critic, c.b.critic, c.a.title, f ? f.severity : 'minor', c.b.target];
+    }
+    const prev = byFinding.get(id);
+    const challengers = (prev ? prev.challengers : 0) + 1;
+    if (!prev || (counter || '').length > (prev.counter || '').length) {
+      byFinding.set(id, { id, folder: id.replace(/[^A-Za-z0-9._-]+/g, '-'), severity, title, sides: [raised, challenger], counter, challengers });
+    } else prev.challengers = challengers;
+  }
+  return [...byFinding.values()]
+    .sort((a, b) => severityRank(a.severity) - severityRank(b.severity) || b.challengers - a.challengers)
+    .slice(0, DEBATE_CAP)
+    .map(({ counter: _c, ...d }) => d);
+}
+
 /** Union of strings, deduped case- and punctuation-insensitively, first spelling wins. */
 function union(lists) {
   const seen = new Map();
@@ -352,6 +384,7 @@ export function buildLedger(roundDir, prevArg) {
   if (prev && prev.studio && prev.studio.source && studio.source && prev.studio.source !== studio.source) {
     warnings.push({ file: '(prev)', reason: `previous score came from ${prev.studio.source}, this one from ${studio.source}; delta mixes sources` });
   }
+  const conflicts = conflictsOf(findings, crosscrit);
   const ledger = {
     round: labelFor(roundDir),
     path: roundDir,
@@ -374,7 +407,9 @@ export function buildLedger(roundDir, prevArg) {
     panel: panel.map(({ gaps: _g, keep: _k, tells: _t, ...p }) => p),
     panelGaps: panelGapsOf(panel, studio.score),
     consensus: consensusOf(findings),
-    conflicts: conflictsOf(findings, crosscrit),
+    conflicts,
+    crosscritDone: crosscrit.length > 0,
+    debates: crosscrit.length > 0 ? debatesOf(findings, conflicts) : [],
     keep: union([...critics.map((c) => c.keep), ...panel.map((p) => p.keep)]),
     tells: union([...critics.map((c) => c.tells), ...panel.map((p) => p.tells)]),
     a11y: union(panel.map((p) => p.a11y)),
@@ -434,6 +469,14 @@ export function renderMarkdown(l) {
     ? `- ${c.to}${c.finding ? ` (${c.finding.critic}: ${clip(c.finding.title, 50)})` : ''} ${c.stance} by ${c.from ?? '?'}: ${clip(c.reason, 70)}${c.counter ? ` → ${clip(c.counter, 50)}` : ''}`
     : `- ${c.a.id} (${c.a.critic}) vs ${c.b.id} (${c.b.critic}) at ${clip(c.where, 40)}: "${clip(c.a.title, 40)}" vs "${clip(c.b.title, 40)}"`)));
 
+  out.push('', '## Debates to run');
+  if (!l.crosscritDone) out.push('- after cross-critique (re-run tally once crosscrit/ is in)');
+  else if (!l.debates.length) out.push('- none: no finding was challenged');
+  else {
+    for (const d of l.debates) out.push(`- ${d.id} (${d.severity}): ${d.sides[0]} vs ${d.sides[1]} · "${clip(d.title, 60)}" → debate/${d.folder}/`);
+    out.push(`Barrier: --expect-glob 'debate/*/*-1.md' --count ${l.debates.length * 2}`);
+  }
+
   out.push('', '## Keep');
   out.push(...capped(l.keep, 5, (k) => `- ${clip(k, 110)}`));
   out.push('', '## Tells seen');
@@ -467,7 +510,7 @@ export async function main(argv) {
   const lines = [
     mdPath,
     `Studio ${fmtScore(s.score)} (${s.source ?? 'none'}, n ${s.n}, spread ${fmtScore(s.spread)}) · delta ${signed(ledger.delta)} · plateau ${ledger.plateau ? 'yes' : 'no'}${ledger.lineup ? ` · lineup ${fmtScore(ledger.lineup.ourMedianRank)}${ledger.lineup.size ? `/${ledger.lineup.size}` : ''}` : ''}`,
-    `Findings: ${sev.blocker} blocker, ${sev.major} major, ${sev.minor} minor, ${sev.polish} polish · ${ledger.consensus.length} consensus · ${ledger.conflicts.length} conflicts`,
+    `Findings: ${sev.blocker} blocker, ${sev.major} major, ${sev.minor} minor, ${sev.polish} polish · ${ledger.consensus.length} consensus · ${ledger.conflicts.length} conflicts${ledger.crosscritDone ? ` · ${ledger.debates.length} debates to run` : ''}`,
   ];
   if (ledger.warnings.length) lines.push(`Skipped ${ledger.warnings.length}: ${clip(ledger.warnings.join('; '), 200)}`);
   console.log(lines.join('\n'));

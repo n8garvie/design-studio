@@ -17,6 +17,7 @@ Usage:
   node session.mjs round --session <dir> [--next]
   node session.mjs check --session <dir> --expect <relpath>... [--min-bytes 200]
                          [--expect-glob '<pattern>' [--count N]] [--json]
+  node session.mjs state --session <dir> [--set key=value]... [--note "text"]
   node session.mjs status --session <dir> [--json]
   node session.mjs latest [--root <dir>] [--json]
 
@@ -26,7 +27,10 @@ init     creates .design-studio/sessions/<YYYY-MM-DD>-<slug>/ (adds -2, -3… if
          or out of date, writes state.md and .design-studio/config.json (if missing).
          Prints JSON {session, kb, bin, created, resumed, version}.
          From a terminal: node .design-studio/bin/<script>.mjs … works like the skill's copy.
-round    --next creates rounds/NN/ with its subfolders; without it prints the latest round (JSON).
+round    --next creates rounds/NN/ with its subfolders and records round and phase in state.md;
+         without it prints the latest round (JSON).
+state    updates state.md: --set replaces a field (phase=deliver, roster="a, b", maker=id),
+         --note appends a dated line under ## notes. Use it at every phase change.
 check    exits 0 when every expected file exists and has at least --min-bytes bytes, else lists
          the problems and exits 2. --expect-glob patterns support * ? and **; --count N (default 1).
 status   mode, depth, phase, latest round, latest ledger summary and overnight champion.
@@ -359,7 +363,35 @@ export function nextRound(session) {
   const n = (rounds(session).at(-1)?.n ?? 0) + 1;
   const name = String(n).padStart(2, '0');
   for (const sub of ROUND_DIRS) fs.mkdirSync(path.join(session, 'rounds', name, sub), { recursive: true });
+  updateState(session, { set: { phase: 'crit', round: String(n) }, note: `round ${n} opened` });
   return roundInfo(session, { name, n });
+}
+
+// ---------- state.md ----------
+
+/** Replace `key: value` lines in state.md (adding missing keys before ## notes) and append a note. */
+export function updateState(session, { set = {}, note = '' } = {}) {
+  const file = path.join(session, 'state.md');
+  if (!fs.existsSync(file)) return null;
+  let text = fs.readFileSync(file, 'utf8');
+  for (const [key, value] of Object.entries(set)) {
+    const re = new RegExp(`^(${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}):.*$`, 'm');
+    if (re.test(text)) text = text.replace(re, () => `${key}: ${value}`);
+    else if (/^## notes/m.test(text)) text = text.replace(/^## notes/m, () => `${key}: ${value}\n\n## notes`);
+    else text += `\n${key}: ${value}\n`;
+  }
+  if (note) {
+    const line = `- ${new Date().toISOString().slice(0, 16).replace('T', ' ')} ${note.replace(/\s+/g, ' ').trim()}`;
+    if (/^## notes\s*$/m.test(text)) {
+      // Append after the last line of the notes section.
+      const parts = text.split(/^(?=## )/m);
+      const i = parts.findIndex((p) => p.startsWith('## notes'));
+      parts[i] = parts[i].replace(/\s*$/, '') + `\n${line}\n\n`;
+      text = parts.join('');
+    } else text += `\n## notes\n${line}\n`;
+  }
+  fs.writeFileSync(file, text.replace(/\n{3,}/g, '\n\n'));
+  return file;
 }
 
 // ---------- check (barrier) ----------
@@ -515,6 +547,8 @@ export function main(argv = process.argv.slice(2)) {
       gitignore: { type: 'boolean', default: false },
       session: { type: 'string' },
       next: { type: 'boolean', default: false },
+      set: { type: 'string', multiple: true, default: [] },
+      note: { type: 'string' },
       expect: { type: 'string', multiple: true, default: [] },
       'expect-glob': { type: 'string', multiple: true, default: [] },
       count: { type: 'string' },
@@ -539,6 +573,20 @@ export function main(argv = process.argv.slice(2)) {
     case 'round': {
       const session = resolveSession(values.session);
       console.log(JSON.stringify(values.next ? nextRound(session) : latestRound(session), null, 2));
+      return 0;
+    }
+    case 'state': {
+      const session = resolveSession(values.session);
+      const set = {};
+      for (const pair of values.set) {
+        const eq = pair.indexOf('=');
+        if (eq < 1) throw new UserError(`--set needs key=value, got "${pair}"`);
+        set[pair.slice(0, eq).trim()] = pair.slice(eq + 1).trim();
+      }
+      if (!Object.keys(set).length && !values.note) throw new UserError('state needs --set key=value or --note "text"');
+      const file = updateState(session, { set, note: values.note ?? '' });
+      if (!file) throw new UserError(`no state.md in ${session}`);
+      console.log(fs.readFileSync(file, 'utf8'));
       return 0;
     }
     case 'check': {
@@ -570,7 +618,7 @@ export function main(argv = process.argv.slice(2)) {
       return 0;
     }
     default:
-      throw new UserError(`unknown subcommand "${cmd}" (init, round, check, status, latest)`);
+      throw new UserError(`unknown subcommand "${cmd}" (init, round, state, check, status, latest)`);
   }
 }
 
