@@ -41,7 +41,7 @@ You are glue and quality control. Taste lives in the team's work and in the crit
 - **SCRIPTS** is `SKILL_DIR/scripts`. Run each script with `node`.
 - **KB** is `<project>/.design-studio/kb`. Session init copies roles, knowledge, protocol and templates into it, so every agent reads local files. Once the session exists, read protocol files from `KB/protocol/`.
 - **Never `cd` or `ls` into SKILL_DIR.** The host may block access outside the project. Run scripts by their absolute path (`node <SKILL_DIR>/scripts/session.mjs ...`). After init, read everything from KB and run scripts from `<project>/.design-studio/bin/`.
-- **Write files with your file tools (Write and Edit), not shell heredocs, `sed` or `echo >`.** Use the shell only to run `node` scripts, one plain command per call, with no variables and no `&&` chains. That keeps every step approvable by the host's permission rules.
+- **Read and write files with your file tools (Read, Grep, Glob, Write, Edit), never `cat`, `head`, `sed`, heredocs or `echo >`.** Use the shell only to run `node` scripts, one plain command per call, with no variables and no `&&` chains. That keeps every step approvable by the host's permission rules.
 - **Never prefix a script with `cd` or chain commands.** Pass absolute paths to `node`.
 - **SESSION** is `<project>/.design-studio/sessions/<YYYY-MM-DD>-<slug>`. Always hand agents absolute paths.
 
