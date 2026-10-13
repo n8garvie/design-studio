@@ -1,6 +1,6 @@
 # Motion and sound
 
-> Used by: interaction designer (behavior), emotion designer (feel), design engineer; motion designer (guest, owns motion tokens and choreography when invited). Distilled from: Craft (Gustavo Fior: hover restraint, novelty budget, the Craft video's timeline), Critly (Kausthubh's completed and extended Craft concepts: easings, springs, button press, interruptibility, exit animations, scale entrances, stagger, shared layout, liquid motion, clip-path, icon morph, momentum, living charts, smooth animation, reduced motion, product feel, interface SFX, layering sounds), NumberFlow (Maxwell Barvian), Anthropic's frontend-design skill, world-class-designer (Lammertsma), Anshu Chimala (Lenny's Newsletter, technique 5), Remotion, and the desengs.com reading list and inspiration corpus (Benji Taylor's Family Values, Rauno Freiberg's Invisible Details of Interaction Design, Emil Kowalski). Written in our own words; see CREDITS.md.
+> Used by: interaction designer (behavior), emotion designer (feel), design engineer; motion designer (guest, owns motion tokens and choreography when invited). Distilled from: Craft (Gustavo Fior: hover restraint, novelty budget, the Craft video's timeline), Critly (Kausthubh's completed and extended Craft concepts: easings, springs, button press, interruptibility, exit animations, scale entrances, stagger, shared layout, liquid motion, clip-path, icon morph, momentum, living charts, smooth animation, reduced motion, product feel, interface SFX, layering sounds), NumberFlow (Maxwell Barvian), Anthropic's frontend-design skill, world-class-designer (Lammertsma), Anshu Chimala (Lenny's Newsletter, technique 5), Remotion, Jakub Antalik's transitions.dev skills (transitions-dev, transitions-polish, transitions-ui-generation: the usage-matched token scale, open/close asymmetry, delay rules and pattern choice), and the desengs.com reading list and inspiration corpus (Benji Taylor's Family Values, Rauno Freiberg's Invisible Details of Interaction Design, Emil Kowalski). Written in our own words; see CREDITS.md.
 
 Motion is behavior first and feel second: the interaction designer owns when something moves and whether it explains a change, the emotion designer owns how it feels. Values are defaults to beat, not ceilings; most come from Critly's demos and are studio defaults unless a product reference says otherwise. Screenshots cannot show motion, so many checks read the motion table in direction.md, the system sheet's replayable motion section, or the code. Never apply mechanically: a launcher and a celebration screen want opposite answers from the same rule.
 
@@ -95,7 +95,7 @@ The more often something happens, the less animation it can afford, and hover ha
 - Decide by frequency and intent, not by device: a once-a-session modal may animate, a panel flipped forty times a day may not.
 
 Check: hover screenshots show color change only, with no change in element size or position; Check (code): no transition on hover backgrounds, no `translateY` hover lift.
-Values: hover 0ms; first tooltip 400–700ms, neighbors 0ms; preview cards 500–700ms rest; no hover-opens on touch.
+Values: hover 0ms; first tooltip 400–700ms, neighbors 0ms; preview cards 500–700ms rest; no hover-opens on touch. Where a playful surface does lift on hover (an avatar stack), the return is softer and slower than the rise, settling on a springy curve instead of snapping back (transitions.dev).
 
 ## 9. Press down a little: Button press (Critly: button press)
 
@@ -120,17 +120,17 @@ People change their minds mid-animation, so anything that can be triggered again
 
 Check (code): open and close each overlay ten times as fast as possible; nothing flashes, jumps or finishes the old animation first.
 
-## 11. Leave faster and quieter than you came: Exit animations (Critly: exit animations)
+## 11. Leave faster and quieter than you came: Exit animations (Critly: exit animations; transitions.dev)
 
 An entrance has a job, showing where something came from; an exit has none, because the person has already moved on.
 
 - Run exits at about half the entrance duration with less movement, and use ease-in, since nobody needs to watch the element settle.
 - Fade with a touch of blur and no travel instead of reversing the entrance.
 - Collapse a removed list row's height while it fades, so the rows below slide up instead of jumping.
-- Don't make anyone wait for something they dismissed.
+- Never delay a close, and don't split reversible pairs: tabs, accordions, page slides and icon or text swaps are one motion going back and forth, so they run at one speed both ways.
 
-Check: the motion table shows every exit shorter than its entrance; the after-delete screenshot shows no gap or overlap.
-Values: enter rise 12px over 240ms ease-out; exit 120ms ease-in, 2px blur, no travel; list row collapse 160ms.
+Check: the motion table shows every exit shorter than its entrance, except reversible pairs, which match; no exit has a delay; the after-delete screenshot shows no gap or overlap.
+Values: enter rise 12px over 240ms ease-out; exit 120ms ease-in, 2px blur, no travel; list row collapse 160ms; menu or dialog 250ms open, 150ms close; panel 400ms open, 350ms close; reversible pairs 250ms both ways (transitions.dev).
 
 ## 12. Grow from the trigger, not from zero: Scale entrances (Critly: scale entrances)
 
@@ -139,10 +139,10 @@ A menu that starts at zero scale is a cartoon zoom; one that starts near full si
 - Start between 0.9 and 0.97, always combined with an opacity fade.
 - Set the transform origin to the trigger: a menu under a right-aligned button grows from its top-right corner; a centered dialog grows from center.
 - Close faster than you open.
-- Don't go below 0.8 (it reads as a zoom); above 0.98, drop the scale and keep the fade.
+- Don't go below about 0.9 on interface chrome (it reads as a zoom); above 0.98, drop the scale and keep the fade.
 
 Check: the open-state screenshot shows the menu attached to its trigger; Check (code): `transform-origin` points at the trigger.
-Values: `scale(0.95)` to 1 with opacity, 200ms `--ease-out`; close 120ms.
+Values: `scale(0.95)` to 1 with opacity, 200ms `--ease-out`; close 120ms. Bigger surfaces start further away: dialog 0.96, menu 0.97, tooltip 0.98, a closing menu 0.99 (transitions.dev).
 
 ## 13. Stagger lists, briefly: Stagger (Critly: stagger)
 
@@ -335,6 +335,30 @@ A gesture feels direct when the interface follows from the first pixel, and corr
 
 Check: the motion table marks each gesture's commit point (mid-gesture or on release) and every destructive gesture commits on release. Check (code): handlers update on pointer move and commit destructive actions on pointer up; interrupting a gesture-driven animation reverses it from its current position.
 Values: light-action threshold at the element's resting position; destructive commit on release plus the velocity rules of principle 17.
+
+## 29. Judge a value by the job it does: Usage before number (transitions.dev: transitions-polish)
+
+A motion value is wrong when it suits a different job, not when it is a few milliseconds off a token, so name what each motion does before reading its number.
+
+- Name the job first (menu close, toast entrance, text swap, error shake, page slide), then compare the value with the token for that job; a 300ms menu close is wrong because closes are quick, not because 300 is off the grid.
+- Leave a value alone when its job matches no token, instead of forcing it to the nearest number.
+- Scale travel and blur with ceremony: an in-place swap barely moves, a page slide travels a readable few pixels, and only a one-off celebration sweeps further. Blur softens swaps and slides, never a plain fade or a theme change.
+- Trim the duration before adding a delay; use delay only to filter accidental triggers or to sequence two things.
+
+Check: every row of the motion table names its job, and its duration and easing are the tokens for that job; no travel over about 40px except panels and drawers; blur appears only on swaps and slides. Check (code): `transitions review` from the transitions-polish skill, when installed, reports no mismatched values.
+Values: text swap 4px and 150ms; page slide 8px, 3px blur, 250ms; text reveal 12px with a 40ms stagger; icon or text swap blur 2px; intent delay about 80ms (studio first-tooltip delay stays at principle 8).
+
+## 30. Pick the lightest pattern that fits: Pattern choice (transitions.dev: transitions-dev, transitions-ui-generation)
+
+Most motion problems are solved by choosing the right existing pattern for the element, and the lighter of two fitting patterns almost always reads better.
+
+- Name the element before the verb: a surface growing from its trigger is a menu, a centered surface is a dialog, a region filling in is a panel, two screens side by side are a page slide.
+- When two patterns fit, use the lighter one: a resize over a panel reveal, a menu over a dialog, a check mark over a celebration screen.
+- Swap values that change because the data behind them changed (a period, a unit, a currency) in place with a short cross-blur and no travel, so the eye reads "updated", not "arrived".
+- Never use an "AI is generating this" reveal as a loading state: it is a one-off moment for output an agent produced, never for small or frequent UI such as rows, badges or route changes.
+
+Check: the motion table names a pattern per element and no pattern heavier than the element needs; a generation reveal appears at most once per screen and never on a list row. Check (code): data-driven value changes have no translate.
+Values: generation reveal about 2.6s, one element at a time, never under about 120px wide; several results at once start about 260ms apart (transitions.dev).
 
 ## When these conflict
 

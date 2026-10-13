@@ -51,6 +51,7 @@ Do not read `KB/knowledge/ai-tells.md` while building. It primes the very patter
    - layered, low-opacity shadows with light from above
    - a 1px inset outline on images
    - ease-out for anything the user triggers; transitions on specific properties, never `all`
+   - when the transitions-dev skill is available, its recipe for a matching pattern (menu, dialog, toast, tabs, accordion, swaps), with its reduced-motion block kept
    - hover only under `@media (hover: hover)`
    - `html` background set to match the app background
 5. **Mobile is designed, not squashed.** Decide what leads, what collapses and what disappears at 390px.

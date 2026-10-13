@@ -260,7 +260,7 @@ Motion and easing
 - Easing Graphs and easings.net — https://www.easing.dev, https://easings.net — pick and compare curves with their cubic-bezier values.
 - Anime.js easing editor — https://animejs.com/easing-editor — shape a curve or spring visually and export it.
 - DialKit — https://joshpuckett.me/dialkit — live sliders and spring editors wired to UI values while tuning (principle 21).
-- Transitions.dev — https://transitions.dev — reference implementations of common transitions (menus, modals, badges, number pops).
+- Transitions.dev skills — https://transitions.dev, https://github.com/Jakubantalik/transitions.dev — 35 tuned CSS transitions on one motion-token scale, plus a polish pass that audits existing motion by usage. When the user has installed them (`npx skills add Jakubantalik/transitions.dev`), install the matching recipe instead of hand-rolling one, keep its reduced-motion block, and map its tokens to ours in BUILD-NOTES. Its license allows use in the user's product but not redistribution of the library, so never copy recipes into the studio's own files.
 - interior.dev — https://www.interior.dev — micro-interactions for the half-second after a click.
 - morphicons and Morphrig — https://www.morphicons.com, https://morphrig.dev — icon morphs and how point correspondence works.
 - Rive, Lottie Creator, Jitter — https://rive.app, https://lottiefiles.com/lottie-creator, https://jitter.video — authored animation that must ship as an asset, with state machines in Rive.
