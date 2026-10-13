@@ -29,7 +29,8 @@ In every command in these protocol files, `SCRIPTS`, `SESSION`, `R` and `NN` are
 | Command | Purpose |
 |---|---|
 | `node SCRIPTS/session.mjs init --slug s --mode m --depth d` | Create the session and refresh the kb snapshot |
-| `node SCRIPTS/session.mjs round --session S --next` | Open the next `rounds/NN/` |
+| `node SCRIPTS/session.mjs refs --session S` | The reference gate: exit 0 only when `references/` holds an image |
+| `node SCRIPTS/session.mjs round --session S --next` | Open the next `rounds/NN/` (refuses until the reference gate passes) |
 | `node SCRIPTS/session.mjs check --session S --expect <rel>... \| --expect-glob '<glob>' --count n` | Barrier: exit 0 only when every output exists |
 | `node SCRIPTS/session.mjs state --session S --set phase=p --note "text"` | Record a phase change or event in `state.md` |
 | `node SCRIPTS/session.mjs status --session S` | Where are we? |

@@ -17,6 +17,7 @@ Usage:
   node session.mjs round --session <dir> [--next]
   node session.mjs check --session <dir> --expect <relpath>... [--min-bytes 200]
                          [--expect-glob '<pattern>' [--count N]] [--json]
+  node session.mjs refs --session <dir> [--json]
   node session.mjs state --session <dir> [--set key=value]... [--note "text"]
   node session.mjs status --session <dir> [--json]
   node session.mjs latest [--root <dir>] [--json]
@@ -27,7 +28,9 @@ init     creates .design-studio/sessions/<YYYY-MM-DD>-<slug>/ (adds -2, -3… if
          or out of date, writes state.md and .design-studio/config.json (if missing).
          Prints JSON {session, kb, bin, created, resumed, version}.
          From a terminal: node .design-studio/bin/<script>.mjs … works like the skill's copy.
-round    --next creates rounds/NN/ with its subfolders and records round and phase in state.md;
+refs     the reference gate: exits 0 when references/ holds at least one image (png, jpg,
+         webp, gif or avif, captured URLs included), else exits 2. Nothing starts without it.
+round    --next refuses (exit 2) until the reference gate passes; then it creates rounds/NN/ with its subfolders and records round and phase in state.md;
          without it prints the latest round (JSON).
 state    updates state.md: --set replaces a field (phase=deliver, roster="a, b", maker=id),
          --note appends a dated line under ## notes. Use it at every phase change.
@@ -359,7 +362,23 @@ export function latestRound(session) {
   return roundInfo(session, rounds(session).at(-1));
 }
 
+const REF_IMAGE = /\.(png|jpe?g|webp|gif|avif)$/i;
+
+/** The reference gate: the images in references/ (captured URLs land there as PNGs). */
+export function referenceImages(session) {
+  return walkFiles(path.join(session, 'references')).filter((rel) => REF_IMAGE.test(rel));
+}
+
+function requireReferences(session) {
+  if (referenceImages(session).length) return;
+  throw new UserError(
+    `reference gate: no reference images in ${path.join(session, 'references')}. `
+    + 'Ask the user for references (images, URLs, Figma frames or named sites), save or capture them there, then retry.',
+  );
+}
+
 export function nextRound(session) {
+  requireReferences(session);
   const n = (rounds(session).at(-1)?.n ?? 0) + 1;
   const name = String(n).padStart(2, '0');
   for (const sub of ROUND_DIRS) fs.mkdirSync(path.join(session, 'rounds', name, sub), { recursive: true });
@@ -575,6 +594,14 @@ export function main(argv = process.argv.slice(2)) {
       console.log(JSON.stringify(values.next ? nextRound(session) : latestRound(session), null, 2));
       return 0;
     }
+    case 'refs': {
+      const session = resolveSession(values.session);
+      const images = referenceImages(session);
+      const res = { ok: images.length > 0, count: images.length, images: images.map((rel) => path.join(session, 'references', rel)) };
+      if (values.json) console.log(JSON.stringify(res, null, 2));
+      else console.log(res.ok ? `reference gate open: ${images.length} reference image(s)` : `reference gate closed: no images in ${path.join(session, 'references')}`);
+      return res.ok ? 0 : 2;
+    }
     case 'state': {
       const session = resolveSession(values.session);
       const set = {};
@@ -618,7 +645,7 @@ export function main(argv = process.argv.slice(2)) {
       return 0;
     }
     default:
-      throw new UserError(`unknown subcommand "${cmd}" (init, round, state, check, status, latest)`);
+      throw new UserError(`unknown subcommand "${cmd}" (init, refs, round, state, check, status, latest)`);
   }
 }
 

@@ -57,6 +57,20 @@ You are glue and quality control. Taste lives in the team's work and in the crit
 | Continue the design engineer | SendMessage to its name or id | `send_input` / `followup_task` | n/a |
 | Model per spawn | `model` from the config profile (`inherit` by default) | `model` and `reasoning_effort` from the config profile | n/a |
 
+## Reference gate: before anything else
+
+**Nothing starts without references.** Before you scan the project, start a session, ask any other question or spawn anyone, you need at least one visual reference from the user. This is a blocking gate. `auto` does not skip it, and neither does crit mode, quick depth or a request that names everything else.
+
+1. **The request already names references** (after `refs:`, or as image paths, URLs, Figma frames or named sites to match): the gate is open. Go on.
+2. **It doesn't:** ask one question and stop. Do nothing else in that turn: no scan, no session, no spawns.
+   > Before the studio starts: what are 3–5 references whose craft you want this to match and beat? Images, URLs, Figma frames or named sites, and a line on what you love in each.
+
+   Use the host's question tool if it has one; otherwise ask in chat and end your turn.
+3. **The user has none:** propose 3–5 named, real references for this category yourself, each with the mechanism worth borrowing, and ask again. Wait until they accept at least one. Never choose references on their behalf, even in `auto`.
+4. **After `session.mjs init`:** save or capture every reference into `SESSION/references/` (see `KB/protocol/10-intake.md`), then run `node SCRIPTS/session.mjs refs --session SESSION`. It exits 0 only when at least one reference image is on disk. If a capture fails, ask the user for a screenshot instead. `session.mjs round --next` refuses to open a round until this passes.
+
+Resume and overnight steps reuse the session's references; run `session.mjs refs` to confirm them, and if an older session has none, ask before continuing.
+
 ## Read the request
 
 Parse the user's words. These are not command-line flags.
@@ -68,12 +82,12 @@ Parse the user's words. These are not command-line flags.
 - **target:** a description of what to design, a file, a URL, a running dev server, or a Figma link.
 - **depth:** `quick`, `standard` (the default) or `deep`.
 - **roles:** "with the art director", "only type and visual", and similar.
-- **auto:** no checkpoints. Take the recommended defaults and log each assumption in `decisions.md`.
-- **refs:** image paths, URLs, Figma frames, or named sites.
+- **auto:** no checkpoints after the reference gate. Take the recommended defaults and log each assumption in `decisions.md`.
+- **refs:** image paths, URLs, Figma frames, or named sites. Required: see the reference gate above.
 - **resume:** the word "resume", or an existing session path.
 - **profile:** `quality` (the default), `balanced` or `overnight`. It sets model tiers; see `.design-studio/config.json`.
 
-Start every session with:
+Once the reference gate is open, start every session with:
 
 ```
 node SCRIPTS/session.mjs init --slug <short-slug> --mode <make|crit> --depth <depth>   # or --resume
@@ -97,7 +111,7 @@ Then read `KB/protocol/00-session.md` once.
 | `ux-researcher` | UX researcher (guest) | walkthroughs, personas, real-data stress tests | flows, forms, onboarding, complex tools |
 | `design-engineer` | Design engineer | builds tiles, the system sheet and screens; the only writer of code | every make session |
 | `critic` | Studio critic | screenshot-only scoring on the anchored scale; the gate | every crit round |
-| `juror` | Juror | blind lineup and pairwise rankings | when references exist, and overnight |
+| `juror` | Juror | blind lineup and pairwise rankings | every crit round and Develop lineup, and overnight |
 
 Choose the roster by surface type (`protocol/10-intake.md`). The user can add or remove roles.
 
@@ -139,7 +153,7 @@ When you enter a phase, read its protocol file from `KB/protocol/`, and only tha
 | 6 | Crit loop | `70-crit-loop.md` | `rounds/NN/*`, ledger, rulings, maker brief; repeat | stop rule, or **C** at plateau |
 | 7 | Deliver | `80-deliver.md` | cut, tells, states and accessibility passes, copy handback, final gate, `DESIGN.md` offer, gallery, report | **D**: copy handback and final pick |
 
-- **Crit mode:** Intake (light) → reference read, if refs exist → one crit round without apply → `report.md` with a ranked fix list. Then offer to continue in make mode from that ruling. See `70-crit-loop.md`, section "Crit mode". Record each step with `session.mjs state --set phase=<intake|discover|crit|report|done>`, so the gallery and `status` show where the session ended.
+- **Crit mode:** reference gate → Intake (light) → reference read → one crit round without apply → `report.md` with a ranked fix list. Then offer to continue in make mode from that ruling. See `70-crit-loop.md`, section "Crit mode". Record each step with `session.mjs state --set phase=<intake|discover|crit|report|done>`, so the gallery and `status` show where the session ended.
 - **Overnight step:** read `KB/protocol/90-overnight.md` and do exactly one challenger step.
 - **Resume:** run `session.mjs status`, read `state.md`, and continue from the recorded phase.
 
@@ -168,7 +182,7 @@ State the estimate at checkpoint A. The user can lower or raise depth at any che
 
 The work is done when all of these hold on the same round:
 1. Panel median ≥ 9 on the anchored scale, with spread ≤ 2.
-2. When references exist, the jurors rank our work first by majority. It must match the references and beat them.
+2. The jurors rank our work first by majority against the references. It must match the references and beat them.
 3. No open blocker or major in the ledger.
 4. The accessibility floor holds in `measure.json`:
    - no text contrast failures

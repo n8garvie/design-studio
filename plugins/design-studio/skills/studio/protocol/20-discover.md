@@ -4,7 +4,7 @@ The goal is to see the problem clearly through every lens, and to turn the refer
 
 ## Wave 1, in parallel
 
-- **When references exist:** spawn `visual-designer` and `brand-designer` with `TASK: reference-read`.
+- **Always** (the reference gate guarantees at least one): spawn `visual-designer` and `brand-designer` with `TASK: reference-read`.
   - INPUTS: every reference image in `references/`, plus `references/sources.md` and `brief.md`.
   - OUTPUT: `discover/reference-read-<role>.md`.
 - **Every other roster role:** `TASK: discover`.

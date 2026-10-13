@@ -16,7 +16,7 @@ For diagrams of the phases, one crit round and how the agents pass work to each 
 
 ## Why it works
 
-- **Your references set the bar.** The team reads them into a written brief: what to match, where to go further, and 3–5 rules a critic can check. Each round, jurors rank our screenshot blind among your references. "Done" means ranking first.
+- **Your references set the bar, and nothing starts without them.** The studio asks for references before it does anything else, in every mode, `auto` included, and waits until you give at least one. If you have none, it proposes candidates for you to accept. The team reads them into a written brief: what to match, where to go further, and 3–5 rules a critic can check. Each round, jurors rank our screenshot blind among your references. "Done" means ranking first.
 - **Fresh eyes do the scoring.** Panel critics see only screenshots and the brief: no code, no history, no target score. They score against an anchored scale (3–4 = competent generic, 9 = studio-grade), and the median is the gate. This is the critic loop from Anshu Chimala's [How to turn your AI into a world-class designer](https://www.lennysnewsletter.com/p/how-to-turn-your-ai-into-a-world).
 - **The team critiques each other.** Every role critiques every round, whatever the depth. Each reviews the work through its own lens with measured evidence (contrast, measure, tap targets, type scale) and a cited principle. Then the roles challenge each other's findings and argue the real disagreements out, answering each other directly, and the Head of Studio rules using a fixed ladder: accessibility → your decisions → clarity → user control → task completion → consistency → distinctiveness → delight.
 - **Divergence comes from outside the model.** Random seed strings and divergent stances (refiner, provocateur, outsider, minimalist) let several instances of the same role explore ground a single designer never would.
@@ -50,7 +50,7 @@ You need Node 18+. For screenshots, Playwright with Chromium must be available t
 | Claude Code | Codex | What happens |
 |---|---|---|
 | `/design-studio:studio design a pricing page for Tempo, refs: ./refs/*.png https://linear.app` | `$design-studio:studio …` | Full make mode at standard depth |
-| `/design-studio:studio redesign src/app/settings quick` | `$design-studio:studio …` | Quick pass on an existing screen |
+| `/design-studio:studio redesign src/app/settings quick, refs: ./refs/settings-*.png` | `$design-studio:studio …` | Quick pass on an existing screen |
 | `/design-studio:crit http://localhost:3000 refs: stripe.com/pricing` | `$design-studio:crit …` | One critique round, with a ranked fix list |
 | `/design-studio:studio resume` | `$design-studio:studio resume` | Continue the last session |
 
@@ -60,7 +60,7 @@ Things you can say in the request:
 - `with the art director`, or `only type and visual`
 - `profile balanced`
 
-**Checkpoints.** You confirm the brief, references and roster. You pick a direction from a comparison board of prototypes. At the end you rewrite the four lines only you can write: the H1, the primary button, the empty state and the error.
+**Checkpoints.** First, the reference gate: no references, no session. Then you confirm the brief, references and roster. You pick a direction from a comparison board of prototypes. At the end you rewrite the four lines only you can write: the H1, the primary button, the empty state and the error.
 
 **What you get.** Everything lands in `.design-studio/sessions/<date>-<slug>/`:
 - the brief and reference brief

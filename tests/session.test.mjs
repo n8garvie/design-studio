@@ -20,6 +20,12 @@ function json(res) {
   return JSON.parse(res.stdout);
 }
 
+// The reference gate: rounds need at least one reference image on disk.
+const addRef = (sessionDir, name = 'ref-01.png') => {
+  fs.mkdirSync(path.join(sessionDir, 'references'), { recursive: true });
+  fs.writeFileSync(path.join(sessionDir, 'references', name), 'png');
+};
+
 const tempRoot = () => fs.mkdtempSync(path.join(os.tmpdir(), 'studio-session-'));
 const today = () => {
   const d = new Date();
@@ -91,6 +97,7 @@ test('round --next increments and round prints the latest', () => {
   const root = tempRoot();
   const { session: dir } = json(session(['init', '--slug', 'r'], root));
   assert.equal(json(session(['round', '--session', dir])).n, 0);
+  addRef(dir);
   const r1 = json(session(['round', '--session', dir, '--next']));
   assert.equal(r1.round, 'rounds/01');
   assert.equal(r1.n, 1);
@@ -150,6 +157,7 @@ test('the .design-studio/bin copy runs on its own and never clobbers the kb', ()
   assert.equal(again.version, first.version, 'version read from the kb snapshot');
   assert.ok(fs.existsSync(path.join(first.kb, 'roles', 'marker.txt')), 'kb not recopied onto itself');
   assert.match(fs.readFileSync(path.join(first.session, 'state.md'), 'utf8'), /slug: bin/);
+  addRef(first.session);
   assert.equal(json(session(['round', '--session', first.session, '--next'], root, binSession)).round, 'rounds/01');
 
   const contrast = spawnSync(process.execPath, [path.join(first.bin, 'contrast.mjs'), '#000', '#fff'], { encoding: 'utf8' });
@@ -166,7 +174,7 @@ test('the .design-studio/bin copy runs on its own and never clobbers the kb', ()
 
 test('round --next and state keep state.md current', () => {
   const root = tempRoot();
-  json(session(['init', '--slug', 'st', '--mode', 'crit'], root));
+  addRef(json(session(['init', '--slug', 'st', '--mode', 'crit'], root)).session);
   json(session(['round', '--session', 'latest', '--next'], root));
   const res = session(['state', '--session', 'latest', '--set', 'phase=report', '--set', 'roster=visual-designer, typographer', '--set', 'newkey=x', '--note', 'rulings written'], root);
   assert.equal(res.code, 0, res.stderr);
@@ -179,4 +187,24 @@ test('round --next and state keep state.md current', () => {
   assert.ok(state.indexOf('newkey') < state.indexOf('## notes'), 'new keys go above the notes');
   assert.equal(session(['state', '--session', 'latest'], root).code, 2, 'nothing to set');
   assert.equal(session(['state', '--session', 'latest', '--set', 'nokey'], root).code, 2, 'bad pair');
+});
+
+test('the reference gate blocks rounds until a reference image exists', () => {
+  const root = tempRoot();
+  const { session: dir } = json(session(['init', '--slug', 'gate', '--mode', 'crit'], root));
+  const closed = session(['refs', '--session', dir], root);
+  assert.equal(closed.code, 2);
+  assert.match(closed.stdout, /reference gate closed/);
+  const blocked = session(['round', '--session', dir, '--next'], root);
+  assert.equal(blocked.code, 2, 'no round without references');
+  assert.match(blocked.stderr, /reference gate/);
+  assert.ok(!fs.existsSync(path.join(dir, 'rounds', '01')), 'nothing created');
+
+  fs.writeFileSync(path.join(dir, 'references', 'sources.md'), 'notes only');
+  assert.equal(session(['refs', '--session', dir], root).code, 2, 'notes alone do not open the gate');
+  fs.mkdirSync(path.join(dir, 'references', 'ref-01'), { recursive: true });
+  fs.writeFileSync(path.join(dir, 'references', 'ref-01', 'desktop-top.png'), 'png');
+  const open = json(session(['refs', '--session', dir, '--json'], root));
+  assert.deepEqual([open.ok, open.count], [true, 1], 'a captured URL counts');
+  assert.equal(json(session(['round', '--session', dir, '--next'], root)).round, 'rounds/01');
 });
