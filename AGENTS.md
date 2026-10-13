@@ -10,7 +10,7 @@ This file is for anyone maintaining this repo, human or agent. To *use* the stud
   - `knowledge/` is the distilled canon. Roles read it before every task.
   - `protocol/` has one file per phase. The Head reads each when it enters that phase.
   - `templates/` holds the session files and `config.json`.
-  - `scripts/` holds the zero-dependency Node scripts (session, shoot, tally, lineup, contrast, seed, gallery, overnight).
+  - `scripts/` holds the zero-dependency Node scripts (session, refs, shoot, tally, lineup, contrast, seed, gallery, overnight).
 - `plugins/design-studio/agents/` contains Claude Code only: **thin shells** that point a named subagent at `roles/<slug>.md`. Codex plugins can't ship agents, so there the Head spawns generic subagents with the same task card.
 - `.claude-plugin/` and `.codex-plugin/` hold the two manifests. Keep `name` and `version` identical in both.
 

@@ -160,7 +160,7 @@ function cmdMake(flags) {
   const refArgs = list(flags, 'refs');
   if (!refArgs.length) throw userError('--refs needs at least one directory or image');
   const refs = collectRefs(refArgs, oursReal);
-  if (!refs.length) throw userError('no reference images found in --refs (png, jpg, jpeg, webp)');
+  if (!refs.length) throw userError('no reference images found in --refs (png, jpg, jpeg, webp). Board tiles never enter a lineup on their own: pick anchors with refs.mjs pick.');
 
   const setDir = path.join(out, 'set');
   fs.rmSync(setDir, { recursive: true, force: true });

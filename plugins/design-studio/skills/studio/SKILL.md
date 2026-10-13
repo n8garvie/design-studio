@@ -68,7 +68,7 @@ You are glue and quality control. Taste lives in the team's work and in the crit
 
    Use the host's question tool if it has one; otherwise ask in chat and end your turn.
 4. **The user has none:** propose 3–5 named, real references for this category yourself, each with the mechanism worth borrowing, and ask again. Wait until they accept at least one. Never choose references on their behalf, even in `auto`.
-5. **After `session.mjs init`:** save or capture every reference into `SESSION/references/` (see `KB/protocol/10-intake.md`), then run `node SCRIPTS/session.mjs refs --session SESSION`. It exits 0 only when at least one PNG, JPEG or WebP reference is on disk (the formats the lineup reads). Convert other formats with a capture or screenshot. If a capture fails, ask the user for a screenshot instead. `session.mjs round --next` refuses to open a round until this passes.
+5. **After `session.mjs init`:** collect every reference with `node SCRIPTS/refs.mjs add --session SESSION --note "<what they love>" <source>...`. It handles images, folders, websites, mood boards and galleries (Cosmos, Are.na, a1.gallery and the like: every tile plus a contact sheet) and social posts (see `KB/protocol/10-intake.md`). If a board won't open (private, login wall), ask the user to make it public or export its images. Then run `node SCRIPTS/session.mjs refs --session SESSION`. It exits 0 only when at least one PNG, JPEG or WebP reference is on disk (the formats the lineup reads). Convert other formats with a capture or screenshot. If a capture fails, ask the user for a screenshot instead. `session.mjs round --next` refuses to open a round until this passes.
 
 ## Read the request
 
