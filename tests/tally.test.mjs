@@ -122,6 +122,10 @@ test('tally builds a ledger with caps, panel median, consensus and conflicts', (
   const touches = l.conflicts.find((c) => c.kind === 'touches');
   assert.deepEqual([touches.a.id, touches.b.id], ['TYP-02', 'VIS-01'], 'bigger vs smaller at the same place');
 
+  assert.equal(l.crosscritDone, true);
+  assert.deepEqual(l.debates, [{ id: 'TYP-02', folder: 'TYP-02', severity: 'major', title: 'Headline is too small for the hero', sides: ['typographer[a]', 'visual-designer'], challengers: 2 }],
+    'one debate per challenged finding, raiser first');
+
   assert.deepEqual(l.keep, ['The timer card mock'], 'keep is deduped case-insensitively');
   assert.equal(l.tells.filter((t) => /purple gradient hero/i.test(t)).length, 1);
 
@@ -138,7 +142,9 @@ test('tally builds a ledger with caps, panel median, consensus and conflicts', (
   assert.match(md, /\*\*Studio 6\*\* \(panel median/);
   assert.match(md, /\| typographer\[a\] \| 6→5 \|/);
   assert.match(md, /\| visual-designer \| 8→7 \|/);
-  for (const h of ['## Critics', '## Panel gaps', '## Consensus', '## Conflicts to rule on', '## Keep', '## Tells seen']) assert.ok(md.includes(h), h);
+  for (const h of ['## Critics', '## Panel gaps', '## Consensus', '## Conflicts to rule on', '## Debates to run', '## Keep', '## Tells seen']) assert.ok(md.includes(h), h);
+  assert.match(md, /- TYP-02 \(major\): typographer\[a\] vs visual-designer .* → debate\/TYP-02\//);
+  assert.match(md, /--count 2/);
 });
 
 test('without panel files the studio score falls back to role overall scores', () => {

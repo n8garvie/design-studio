@@ -41,16 +41,17 @@ You are glue and quality control. Taste lives in the team's work and in the crit
 - **SCRIPTS** is `SKILL_DIR/scripts`. Run each script with `node`.
 - **KB** is `<project>/.design-studio/kb`. Session init copies roles, knowledge, protocol and templates into it, so every agent reads local files. Once the session exists, read protocol files from `KB/protocol/`.
 - **Never `cd` or `ls` into SKILL_DIR.** The host may block access outside the project. Run scripts by their absolute path (`node <SKILL_DIR>/scripts/session.mjs ...`). After init, read everything from KB and run scripts from `<project>/.design-studio/bin/`.
-- **Write files with your file tools (Write and Edit), not shell heredocs, `sed` or `echo >`.** Use the shell only to run `node` scripts, one plain command per call, with no variables and no `&&` chains. That keeps every step approvable by the host's permission rules.
+- **Read and write files with your file tools (Read, Grep, Glob, Write, Edit), never `cat`, `head`, `sed`, heredocs or `echo >`.** Use the shell only to run `node` scripts, one plain command per call, with no variables and no `&&` chains. That keeps every step approvable by the host's permission rules.
+- **Never prefix a script with `cd` or chain commands.** Pass absolute paths to `node`.
 - **SESSION** is `<project>/.design-studio/sessions/<YYYY-MM-DD>-<slug>`. Always hand agents absolute paths.
 
 ## Host adapter
 
 | Action | Claude Code | Codex | Solo (no subagent tool) |
 |---|---|---|---|
-| Spawn a role | Agent tool, `subagent_type: design-studio:<role>`. Use `general-purpose` only if that type is missing. Never fork. Launch a whole wave in one message. | `spawn_agent` with the task card as the message; omit `agent_type`. v2: `fork_turns: "none"`. v1: no `fork_context`. | Play each role yourself in turn. Write each output before reading any peer's file. |
+| Spawn a role | Agent tool, `subagent_type: design-studio:<role>`. Use `general-purpose` only if that type is missing. Never fork. Launch a whole wave in one message. Spawn in the foreground (`run_in_background: false`) so the call blocks until the wave returns. | `spawn_agent` with the task card as the message; omit `agent_type`. v2: `fork_turns: "none"`. v1: no `fork_context`. | Play each role yourself in turn. Write each output before reading any peer's file. |
 | Concurrency | About 10 at once | Waves of 3 (v2) or 5 (v1). `close_agent` finished agents on v1. | n/a |
-| Wait | Completion notices, then `session.mjs check` | `wait_agent` until all complete, then `session.mjs check` | n/a |
+| Wait | The foreground Agent calls return when the wave is done. Don't end your turn to wait for completion notices or poll with other tools: each turn end reads as a finished run to whatever drives a headless session. Then `session.mjs check`. | `wait_agent` until all complete, then `session.mjs check` | n/a |
 | Ask the user | AskUserQuestion | `request_user_input` where allowed. Otherwise ask in chat, save `state.md`, and end the turn. | Chat |
 | See an image | Read | `view_image` | Read or view the image |
 | Continue the design engineer | SendMessage to its name or id | `send_input` / `followup_task` | n/a |
@@ -100,6 +101,8 @@ Then read `KB/protocol/00-session.md` once.
 
 Choose the roster by surface type (`protocol/10-intake.md`). The user can add or remove roles.
 
+**Every role gives feedback.** Every core role critiques in every crit round, at every depth, whatever the roster did earlier, plus any guest that was invited. Depth trims who pitches and writes specs, how many directions are built, and how many panel critics and jurors run. It never trims who critiques. Cross-critique includes every critiquing role at standard and deep depth.
+
 **Divergent instances.** In Develop you may field the same role more than once (`visual-designer#a`, `#b`). Give each instance a different stance from `node SCRIPTS/seed.mjs stances` (refiner, provocateur, outsider, minimalist, maximalist) and its own seed roll. This is how the studio covers ground a single designer would never reach.
 
 ## Task cards
@@ -118,7 +121,7 @@ NOTE: <one optional line>
 First read KB/roles/<role>.md, then KB/roles/_contracts.md. Do the task. Write OUTPUT. Reply with the 5-line return block only.
 ```
 
-- **Task names:** `discover`, `reference-read`, `pitch`, `react`, `spec`, `build-tile`, `build-system`, `build-screens`, `apply`, `crit`, `panel`, `cross-crit`, `patch`, `lineup`, `pair`, `cut`, `tells`, `states`, `copy-handback`.
+- **Task names:** `discover`, `reference-read`, `pitch`, `react`, `spec`, `build-tile`, `build-system`, `build-screens`, `apply`, `crit`, `panel`, `cross-crit`, `debate`, `patch`, `lineup`, `pair`, `cut`, `tells`, `states`, `copy-handback`.
 - **Critic and juror cards** never include `SETTLED`, scores or history. Their only INPUTS are screenshot paths from a fresh `critic-view/` folder, `brief.md`, and `discover/reference-brief.md` when it exists.
 
 ## Phases
@@ -136,24 +139,26 @@ When you enter a phase, read its protocol file from `KB/protocol/`, and only tha
 | 6 | Crit loop | `70-crit-loop.md` | `rounds/NN/*`, ledger, rulings, maker brief; repeat | stop rule, or **C** at plateau |
 | 7 | Deliver | `80-deliver.md` | cut, tells, states and accessibility passes, copy handback, final gate, `DESIGN.md` offer, gallery, report | **D**: copy handback and final pick |
 
-- **Crit mode:** Intake (light) → reference read, if refs exist → one crit round without apply → `report.md` with a ranked fix list. Then offer to continue in make mode from that ruling. See `70-crit-loop.md`, section "Crit mode". Update `phase:` in `state.md` at each step (intake, discover, crit, report, done), so the gallery and `status` show where the session ended.
+- **Crit mode:** Intake (light) → reference read, if refs exist → one crit round without apply → `report.md` with a ranked fix list. Then offer to continue in make mode from that ruling. See `70-crit-loop.md`, section "Crit mode". Record each step with `session.mjs state --set phase=<intake|discover|crit|report|done>`, so the gallery and `status` show where the session ended.
 - **Overnight step:** read `KB/protocol/90-overnight.md` and do exactly one challenger step.
 - **Resume:** run `session.mjs status`, read `state.md`, and continue from the recorded phase.
 
-After every phase, update the `phase:` line and the notes in `state.md`. That way a resumed or compacted session can continue.
+After every phase, run `node SCRIPTS/session.mjs state --session SESSION --set phase=<next> --note "<one line>"`. That way a resumed or compacted session can continue. Never edit `state.md` by hand.
 
 ## Depth
 
 | | quick | standard | deep |
 |---|---|---|---|
-| Roles | 3–4 most relevant | 5–7, plus guests if needed | all core, plus guests if needed |
+| Roles that pitch and write specs | 3–4 most relevant | 5–7, plus guests if needed | all core, plus guests if needed |
+| Roles that critique | all core, plus invited guests | all core, plus invited guests | all core, plus invited guests |
 | Divergent instances in Develop | none | 2 for visual and brand | 2–3 for visual, brand and one more |
 | Directions built as tiles | 1 | 2–3 | 3–4, one deliberately risky |
 | Panel critics per round | 1 | 3 | 3 |
 | Jurors (with refs) | 1 | 3 | 3 |
 | Crit rounds, cap | 1 | 3 | 6 |
-| Cross-crit | none | on conflicts only | full |
-| Approx. spawns | ~15 | ~50 | ~100 |
+| Cross-crit | none | every critiquing role, on its lane's findings and conflicts | every critiquing role, on all findings |
+| Debate on conflicts (top 5) | none | one reply from each side | up to two replies from each side |
+| Approx. spawns | ~20 | ~70 | ~130 |
 
 State the estimate at checkpoint A. The user can lower or raise depth at any checkpoint.
 
