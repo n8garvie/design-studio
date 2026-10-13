@@ -61,15 +61,14 @@ You are glue and quality control. Taste lives in the team's work and in the crit
 
 **Nothing starts without references.** Before you scan the project, start a session, ask any other question or spawn anyone, you need at least one visual reference from the user. This is a blocking gate. `auto` does not skip it, and neither does crit mode, quick depth or a request that names everything else.
 
-1. **The request already names references** (after `refs:`, or as image paths, URLs, Figma frames or named sites to match): the gate is open. Go on.
-2. **It doesn't:** ask one question and stop. Do nothing else in that turn: no scan, no session, no spawns.
+1. **An existing session** (`resume`, a session path, or `overnight-step`): find the session first (`session.mjs status` or `latest`), then run `node SCRIPTS/session.mjs refs --session SESSION`. If it exits 0, the gate is open: the session's references stand. If it exits 2 on a resume, ask as in step 3. If it exits 2 on an `overnight-step`, never ask: append "reference gate closed" to `overnight/overnight.log`, change nothing, and end the step.
+2. **A new request that names references** (after `refs:`, or as image paths, URLs, Figma frames or named sites to match): the gate is open. Go on.
+3. **A new request that doesn't:** ask one question and stop. Do nothing else in that turn: no scan, no session, no spawns.
    > Before the studio starts: what are 3–5 references whose craft you want this to match and beat? Images, URLs, Figma frames or named sites, and a line on what you love in each.
 
    Use the host's question tool if it has one; otherwise ask in chat and end your turn.
-3. **The user has none:** propose 3–5 named, real references for this category yourself, each with the mechanism worth borrowing, and ask again. Wait until they accept at least one. Never choose references on their behalf, even in `auto`.
-4. **After `session.mjs init`:** save or capture every reference into `SESSION/references/` (see `KB/protocol/10-intake.md`), then run `node SCRIPTS/session.mjs refs --session SESSION`. It exits 0 only when at least one reference image is on disk. If a capture fails, ask the user for a screenshot instead. `session.mjs round --next` refuses to open a round until this passes.
-
-Resume and overnight steps reuse the session's references; run `session.mjs refs` to confirm them, and if an older session has none, ask before continuing.
+4. **The user has none:** propose 3–5 named, real references for this category yourself, each with the mechanism worth borrowing, and ask again. Wait until they accept at least one. Never choose references on their behalf, even in `auto`.
+5. **After `session.mjs init`:** save or capture every reference into `SESSION/references/` (see `KB/protocol/10-intake.md`), then run `node SCRIPTS/session.mjs refs --session SESSION`. It exits 0 only when at least one PNG, JPEG or WebP reference is on disk (the formats the lineup reads). Convert other formats with a capture or screenshot. If a capture fails, ask the user for a screenshot instead. `session.mjs round --next` refuses to open a round until this passes.
 
 ## Read the request
 

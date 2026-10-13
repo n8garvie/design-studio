@@ -202,6 +202,9 @@ test('the reference gate blocks rounds until a reference image exists', () => {
 
   fs.writeFileSync(path.join(dir, 'references', 'sources.md'), 'notes only');
   assert.equal(session(['refs', '--session', dir], root).code, 2, 'notes alone do not open the gate');
+  fs.writeFileSync(path.join(dir, 'references', 'ref-00.gif'), 'gif');
+  fs.writeFileSync(path.join(dir, 'references', 'ref-00.avif'), 'avif');
+  assert.equal(session(['refs', '--session', dir], root).code, 2, 'formats the lineup cannot read do not count');
   fs.mkdirSync(path.join(dir, 'references', 'ref-01'), { recursive: true });
   fs.writeFileSync(path.join(dir, 'references', 'ref-01', 'desktop-top.png'), 'png');
   const open = json(session(['refs', '--session', dir, '--json'], root));

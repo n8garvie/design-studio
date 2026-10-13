@@ -7,7 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
-import { skillDir as findSkillDir } from './_shared.mjs';
+import { referenceImages, skillDir as findSkillDir } from './_shared.mjs';
 
 const HELP = `session.mjs — studio session folders and barriers
 
@@ -28,8 +28,8 @@ init     creates .design-studio/sessions/<YYYY-MM-DD>-<slug>/ (adds -2, -3… if
          or out of date, writes state.md and .design-studio/config.json (if missing).
          Prints JSON {session, kb, bin, created, resumed, version}.
          From a terminal: node .design-studio/bin/<script>.mjs … works like the skill's copy.
-refs     the reference gate: exits 0 when references/ holds at least one image (png, jpg,
-         webp, gif or avif, captured URLs included), else exits 2. Nothing starts without it.
+refs     the reference gate: exits 0 when references/ holds at least one PNG, JPEG or WebP
+         image (captured URLs included; the formats the lineup reads), else exits 2. Nothing starts without it.
 round    --next refuses (exit 2) until the reference gate passes; then it creates rounds/NN/ with its subfolders and records round and phase in state.md;
          without it prints the latest round (JSON).
 state    updates state.md: --set replaces a field (phase=deliver, roster="a, b", maker=id),
@@ -362,12 +362,7 @@ export function latestRound(session) {
   return roundInfo(session, rounds(session).at(-1));
 }
 
-const REF_IMAGE = /\.(png|jpe?g|webp|gif|avif)$/i;
-
-/** The reference gate: the images in references/ (captured URLs land there as PNGs). */
-export function referenceImages(session) {
-  return walkFiles(path.join(session, 'references')).filter((rel) => REF_IMAGE.test(rel));
-}
+export { referenceImages };
 
 function requireReferences(session) {
   if (referenceImages(session).length) return;

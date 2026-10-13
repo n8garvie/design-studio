@@ -7,7 +7,7 @@ import path from 'node:path';
 import { spawn } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import {
-  abs, fmtScore, isDir, num, parseArgs, printJson, readJson, readText, run, isMain, str, userError, writeJson,
+  abs, fmtScore, isDir, num, parseArgs, referenceImages, printJson, readJson, readText, run, isMain, str, userError, writeJson,
 } from './_shared.mjs';
 import { buildGallery, scoreHistory } from './gallery.mjs';
 
@@ -149,6 +149,8 @@ function options(flags) {
   if (host !== 'claude' && host !== 'codex') throw userError(`--host must be claude or codex, got "${host}"`);
   const session = abs(str(flags, 'session', { required: true }));
   if (!isDir(session)) throw userError(`session dir not found: ${session}`);
+  // Steps never ask the user anything, so a session without references would stop at the gate every step.
+  if (!referenceImages(session).length) throw userError(`reference gate closed: no PNG, JPEG or WebP reference in ${path.join(session, 'references')}`);
   return {
     host,
     session,
