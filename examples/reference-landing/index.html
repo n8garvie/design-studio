@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hourglass: a quiet focus timer</title>
+  <!-- A reference fixture for the smoke test: a restrained, well-set landing page in the same
+       category as examples/flawed-landing. Our own design; use it only as a reference. -->
+  <style>
+    :root {
+      --ink: oklch(0.22 0.01 70);
+      --ink-2: oklch(0.45 0.01 70);
+      --paper: oklch(0.975 0.008 85);
+      --rule: oklch(0.88 0.01 85);
+      --accent: oklch(0.55 0.13 45);
+      --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+      --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; }
+    body { background: var(--paper); color: var(--ink); font: 17px/1.55 var(--sans); }
+    .wrap { max-width: 1120px; margin: 0 auto; padding: 0 32px; }
+    header { display: flex; justify-content: space-between; align-items: baseline; padding: 28px 0; border-bottom: 1px solid var(--rule); }
+    .mark { font: 600 18px/1 var(--serif); letter-spacing: -0.01em; }
+    nav a { color: var(--ink-2); text-decoration: none; margin-left: 28px; font-size: 15px; }
+    nav a:hover { color: var(--ink); }
+    .hero { display: grid; grid-template-columns: 7fr 5fr; gap: 64px; padding: 112px 0 96px; align-items: end; }
+    h1 { font: 400 clamp(44px, 6vw, 76px)/1.02 var(--serif); letter-spacing: -0.025em; text-wrap: balance; }
+    .lede { color: var(--ink-2); max-width: 34ch; margin-bottom: 28px; }
+    .cta { display: inline-block; background: var(--ink); color: var(--paper); padding: 14px 22px; text-decoration: none; font-weight: 500; }
+    .cta:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    .timer { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 56px 0; display: grid; grid-template-columns: repeat(3, 1fr); }
+    .timer div { padding-right: 32px; }
+    .num { font: 400 64px/1 var(--serif); font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+    .num span { color: var(--accent); }
+    .label { color: var(--ink-2); font-size: 14px; margin-top: 10px; max-width: 26ch; }
+    .notes { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; padding: 96px 0; }
+    h2 { font: 400 32px/1.15 var(--serif); letter-spacing: -0.015em; }
+    .notes p { max-width: 58ch; margin-bottom: 18px; }
+    footer { border-top: 1px solid var(--rule); padding: 28px 0 48px; color: var(--ink-2); font-size: 14px; }
+    @media (max-width: 720px) {
+      .hero, .notes { grid-template-columns: 1fr; gap: 28px; padding: 64px 0; }
+      .timer { grid-template-columns: 1fr; gap: 32px; padding: 40px 0; }
+      nav a:not(:last-child) { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="mark">Hourglass</span>
+      <nav><a href="#how">How it works</a><a href="#notes">Notes</a><a href="#start">Start a session</a></nav>
+    </header>
+    <section class="hero">
+      <h1>Ninety minutes, one task, nothing else.</h1>
+      <div>
+        <p class="lede">Hourglass holds your calendar, mutes your team and keeps one task on screen until the sand runs out.</p>
+        <a class="cta" id="start" href="#start">Start a 90-minute session</a>
+      </div>
+    </section>
+    <section class="timer" id="how" aria-label="How a session runs">
+      <div><p class="num">90<span>′</span></p><p class="label">One block, long enough for real work. Shorter blocks are allowed, never encouraged.</p></div>
+      <div><p class="num">0</p><p class="label">Notifications during a session. Your team sees a quiet "back at 11:30".</p></div>
+      <div><p class="num">1</p><p class="label">Task on screen. Everything else waits in a list you can't open until the end.</p></div>
+    </section>
+    <section class="notes" id="notes">
+      <h2>Why ninety</h2>
+      <div>
+        <p>Most focus timers cut the day into 25-minute pieces. That suits chores. Writing, design and code need longer, so Hourglass starts at ninety and lets you come down from there.</p>
+        <p>When the block ends, you get the list back, a two-line summary of what you finished, and a nudge to stand up.</p>
+      </div>
+    </section>
+    <footer>Hourglass, made for people who would rather finish one thing.</footer>
+  </div>
+</body>
+</html>

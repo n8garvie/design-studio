@@ -7,6 +7,27 @@ import { fileURLToPath } from 'node:url';
 
 export const IMAGE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.webp']);
 
+/**
+ * The reference gate: reference images under <session>/references (captured URLs land in
+ * subfolders). Only IMAGE_EXTS count, the formats the lineup reads. Relative paths, sorted.
+ */
+export function referenceImages(session) {
+  const root = path.join(session, 'references');
+  const out = [];
+  const walk = (dir) => {
+    let entries = [];
+    try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return; }
+    for (const e of entries) {
+      if (e.name.startsWith('.')) continue;
+      const full = path.join(dir, e.name);
+      if (e.isDirectory()) walk(full);
+      else if (e.isFile() && IMAGE_EXTS.has(path.extname(e.name).toLowerCase())) out.push(path.relative(root, full));
+    }
+  };
+  walk(root);
+  return out.sort();
+}
+
 /** An error meant for the user: printed as one line, exits with `code`. */
 export function userError(message, code = 2) {
   const err = new Error(message);

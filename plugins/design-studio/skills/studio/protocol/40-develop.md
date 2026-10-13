@@ -49,7 +49,7 @@ node SCRIPTS/shoot.mjs SESSION/develop/tiles/<id>/index.html --out SESSION/devel
 
 ## 5. Judge, in parallel
 
-- **Lineup, when references exist.** Build one blind lineup containing every tile's `desktop-top.png` and the references:
+- **Lineup.** Build one blind lineup containing every tile's `desktop-top.png` and the references:
 
   ```
   node SCRIPTS/lineup.mjs make --ours <tile-1.png> --ours <tile-2.png> ... --refs SESSION/references --out SESSION/develop/lineup

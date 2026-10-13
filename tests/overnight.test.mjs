@@ -18,7 +18,8 @@ function overnight(args, cwd, env = {}) {
 function makeSession() {
   const root = fs.mkdtempSync(path.join(os.tmpdir(), 'studio-overnight-'));
   const session = path.join(root, '.design-studio', 'sessions', '2026-10-11-tempo');
-  fs.mkdirSync(session, { recursive: true });
+  fs.mkdirSync(path.join(session, 'references'), { recursive: true });
+  fs.writeFileSync(path.join(session, 'references', 'ref-01.png'), 'png');
   return { root, session };
 }
 
@@ -65,6 +66,11 @@ test('bad input exits 2', () => {
   const { root, session } = makeSession();
   assert.equal(overnight(['--session', session, '--host', 'gpt', '--dry-run'], root).code, 2);
   assert.equal(overnight(['--session', path.join(root, 'nope'), '--host', 'claude', '--dry-run'], root).code, 2);
+  fs.rmSync(path.join(session, 'references', 'ref-01.png'));
+  const gated = overnight(['--session', session, '--host', 'claude', '--dry-run'], root);
+  assert.equal(gated.code, 2, 'no overnight loop without references');
+  assert.match(gated.stderr, /reference gate closed/);
+  fs.writeFileSync(path.join(session, 'references', 'ref-01.png'), 'png');
   assert.equal(overnight(['--host', 'claude', '--dry-run'], root).code, 2);
   assert.equal(overnight(['--session', session, '--host', 'claude', '--steps', '0', '--dry-run'], root).code, 2);
 });

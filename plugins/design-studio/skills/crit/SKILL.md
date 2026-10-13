@@ -12,8 +12,10 @@ metadata:
 
 Run the Design Studio in **crit mode**.
 
+**References come first.** Before anything else, follow the reference gate in the studio skill: if the request names no references, ask for 3–5 (images, URLs, Figma frames or named sites, and what the user loves in each) and stop until they answer. Nothing runs without at least one, in any mode, including `auto`.
+
 1. Read the studio skill at `../studio/SKILL.md`, relative to this file. In Claude Code that is `${CLAUDE_SKILL_DIR}/../studio/SKILL.md`; if that text appears unexpanded, use the folder next to this one. Follow it with **mode = crit** and the user's request as the target. Everywhere it says SKILL_DIR or SCRIPTS, it means that `studio` folder and its `scripts/`.
-2. Crit mode runs a light intake, then a reference read (if the user gave references), then **one** crit round:
+2. Crit mode runs the reference gate, a light intake, a reference read, then **one** crit round:
    - capture
    - role critics, the scoring panel, and a blind lineup against the references
    - tally

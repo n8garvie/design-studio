@@ -39,7 +39,7 @@ node SCRIPTS/shoot.mjs <target> --out R/shots --viewports desktop,mobile --tiles
 |---|---|---|---|
 | Every core role, plus any invited guest (all depths) | `crit` | `criticFiles`, `R/shots/measure.json`, `brief.md`, `discover/reference-brief.md`, `define.md` | `R/crit/<role>.md` |
 | Studio critics: 1 at quick, 3 otherwise | `panel` | `criticFiles`, `brief.md`, `discover/reference-brief.md`. **Nothing else.** | `R/panel/P<k>.md` |
-| Jurors: 1 at quick, 3 otherwise, only when references exist | `lineup` | the lineup set paths only | `R/lineup/juror-J<k>.md` |
+| Jurors: 1 at quick, 3 otherwise | `lineup` | the lineup set paths only | `R/lineup/juror-J<k>.md` |
 
 Before spawning the jurors, build their lineup:
 ```
@@ -53,7 +53,7 @@ node SCRIPTS/lineup.mjs make --ours R/shots/desktop-top.png --refs SESSION/refer
 ```
 node SCRIPTS/session.mjs check --session SESSION --expect-glob 'rounds/NN/crit/*.md' --count <roles>
 node SCRIPTS/session.mjs check --session SESSION --expect-glob 'rounds/NN/panel/*.md' --count <panel>
-node SCRIPTS/lineup.mjs score --dir R/lineup            # when references exist
+node SCRIPTS/lineup.mjs score --dir R/lineup
 node SCRIPTS/tally.mjs --round R [--prev <previous round>]
 ```
 Read `R/ledger.md`. Don't read the critique files in full unless a conflict needs it.

@@ -41,10 +41,10 @@ claude plugin validate --strict plugins/design-studio
 Smoke-test the studio on the fixture (needs Playwright and Chromium):
 
 ```
-claude --plugin-dir plugins/design-studio -p "/design-studio:crit examples/flawed-landing/index.html quick auto" --permission-mode acceptEdits
+claude --plugin-dir plugins/design-studio -p "/design-studio:crit examples/flawed-landing/index.html quick auto refs: examples/reference-landing/index.html" --permission-mode acceptEdits
 ```
 
-The answer key is in `tests/fixtures/flawed-landing.key.md`. Never put it where critics can read it.
+The reference is required: without one the studio stops at its reference gate and asks for references. `examples/reference-landing` is our own restrained page in the same category. The answer key is in `tests/fixtures/flawed-landing.key.md`. Never put it where critics can read it.
 
 ## Refreshing the inspiration sources (do this whenever you update the repo)
 

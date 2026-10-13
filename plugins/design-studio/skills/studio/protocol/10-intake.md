@@ -2,6 +2,8 @@
 
 The goal is a brief worth designing against, references that set the bar, the right roster, and a plan the user agrees to. Never stall: ask briefly, propose defaults, and move.
 
+You arrive here only after the reference gate in SKILL.md is open: the user has named at least one reference. Intake never skips it and never replaces it with your own picks.
+
 ## 1. Look before you ask
 
 Never ask a question you can answer yourself. Scan the project, then tell the user what you found.
@@ -23,12 +25,12 @@ Never ask a question you can answer yourself. Scan the project, then tell the us
 4. Where does the work go: an HTML prototype in the session, or the real codebase (which files)?
 
 **Round 2, taste:**
-1. **References.** Images, URLs, Figma frames or named sites, and *what they love* in each. This is the most important input; push for at least three.
+1. **More references,** if the gate brought fewer than three, and *what they love* in each. This is the most important input.
 2. **Anti-inspirations.** What feels tacky to them, and which competitors they don't want to resemble.
 3. **Ambition dial, 1–5.** 1 is a refined convention; 5 is "ideas that sound terrible often work". Recommend 3.
 4. **Constraints and must-keeps,** real content available (copy, data, images), and the anti-goal: *what must never happen?*
 
-Use the host's question tool where it exists (see the host adapter in SKILL.md). In auto mode, skip the questions, use what the scan found plus stated defaults, and log each assumption.
+Use the host's question tool where it exists (see the host adapter in SKILL.md). In auto mode, skip these questions, use what the scan found plus stated defaults, and log each assumption. Auto never skips the reference gate.
 
 ## 3. References
 
@@ -42,7 +44,8 @@ Use the host's question tool where it exists (see the host adapter in SKILL.md).
   Keep the desktop top shot as `ref-0N.png` for lineups.
 - **Figma:** use the host's Figma tools (`get_screenshot`) if they are available.
 - **Record** each one in `references/sources.md`: source, what the user loves in it, and what to ignore.
-- **No references from the user:** spawn the brand designer and the visual designer, each with a `discover` task that includes a `NOTE` asking them to "propose 3–5 named, real references in or adjacent to this category, each with the mechanism worth borrowing". Capture the ones the user accepts. In auto mode, use the overlap of the two lists.
+- **Gate check:** once every reference is saved or captured, run `node SCRIPTS/session.mjs refs --session SESSION`. Don't continue until it exits 0. If a URL won't capture, ask the user for a screenshot of it.
+- **The user wants help finding more:** after the gate, you may spawn the brand designer and the visual designer, each with a `discover` task whose `NOTE` asks them to "propose 3–5 named, real references in or adjacent to this category, each with the mechanism worth borrowing". Add only the ones the user accepts.
 - **Calibration:** for a surface that must live inside a host app or a dense professional tool, include one real comparable screen as a calibration reference. Then the bar is "beat the best real example", not an abstract 9.
 
 ## 4. Brief
