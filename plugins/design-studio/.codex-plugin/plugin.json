@@ -1,6 +1,6 @@
 {
   "name": "design-studio",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "A design studio in a skill. A Head of Studio runs a team of designer agents (visual, type, content, interaction, product, brand & marketing, emotion) who design together and critique each other's work in rounds.",
   "keywords": ["design", "ui", "ux", "critique", "design-review", "multi-agent", "typography", "branding"],
   "skills": "./skills/",
