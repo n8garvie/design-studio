@@ -34,16 +34,27 @@ Use the host's question tool where it exists (see the host adapter in SKILL.md).
 
 ## 3. References
 
-- **Save** user images to `SESSION/references/` as `ref-01.png`, `ref-02.png` and so on.
-- **URLs:** capture them as references:
+- **Collect every reference with one command.** Pass each source the user gave, with what they love in it:
 
   ```
-  node SCRIPTS/shoot.mjs <url> --out SESSION/references/ref-0N --viewports desktop,mobile --tiles 1
+  node SCRIPTS/refs.mjs add --session SESSION --note "<what they love>" <source> [<source>...]
   ```
 
-  Keep the desktop top shot as `ref-0N.png` for lineups.
-- **Figma:** use the host's Figma tools (`get_screenshot`) if they are available.
-- **Record** each one in `references/sources.md`: source, what the user loves in it, and what to ignore.
+  It works out what each source is and records it in `references/index.json` and `references/sources.md`:
+  - **an image file, image URL or folder of images:** copied. GIF, AVIF and SVG are rendered to PNG.
+  - **a website or local page:** captured on desktop and mobile in `references/ref-NN/`.
+  - **a mood board or gallery** (Cosmos, Are.na, a1.gallery, sections.wtf, recent.design, before.click, Godly, Savee, Pinterest and similar): every tile saved in `references/boards/<board>/` as its own image, with its caption and link, plus `sheet.png`, a numbered contact sheet of the whole board. `--max` caps the tiles (default 24). Use `--as board` for a gallery the script doesn't recognise.
+  - **a social post** (Threads, X, Instagram, Bluesky, LinkedIn): its images, plus the sites its text names. Those sites are listed, not captured. Ask the user which to add, then `add` those.
+- **A board that won't open** (exit 2): a private Cosmos board, a login wall, or a site that kept failing. Tell the user exactly that, and ask them to make the board public or export its images to a folder. Never substitute your own picks.
+- **Pick the anchors.** Boards are for reading, not lineups. Open each board's `sheet.png`, choose the 3–5 tiles that best match what the user said they love and the brief, and copy them up:
+
+  ```
+  node SCRIPTS/refs.mjs pick --session SESSION boards/<board>/03.webp boards/<board>/11.png ...
+  ```
+
+  The jurors' blind lineup ranks our work against these anchors, plus any single images and captured sites. Show the anchors at Checkpoint A; in auto, log them in `decisions.md` as an assumption.
+- **Figma:** use the host's Figma tools (`get_screenshot`) if they are available, then `add` the saved image.
+- **Fill in sources.md:** replace each `loves: TODO` with what the user loves in it, and add what to ignore.
 - **Gate check:** once every reference is saved or captured, run `node SCRIPTS/session.mjs refs --session SESSION`. Don't continue until it exits 0. If a URL won't capture, ask the user for a screenshot of it.
 - **The user wants help finding more:** after the gate, you may spawn the brand designer and the visual designer, each with a `discover` task whose `NOTE` asks them to "propose 3–5 named, real references in or adjacent to this category, each with the mechanism worth borrowing". Add only the ones the user accepts.
 - **Calibration:** for a surface that must live inside a host app or a dense professional tool, include one real comparable screen as a calibration reference. Then the bar is "beat the best real example", not an abstract 9.

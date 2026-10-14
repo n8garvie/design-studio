@@ -11,7 +11,8 @@ Read this once, at the start of every session.
   sessions/<date>-<slug>/
     state.md                  phase, roster, depth, profile, maker id, notes, assumptions
     brief.md  define.md  direction.md  decisions.md  report.md  gallery.html
-    references/               user references + sources.md (and captured URL shots)
+    references/               anchors (ref-NN.*), captured sites (ref-NN/), boards/<board>/ and posts/<post>/
+                              (tiles + sheet.png), index.json, sources.md
     discover/                 <role>.md, reference-read-<role>.md, reference-brief.md, current/ (redesign baseline)
     develop/                  cards/ tiles/ shots/ reactions/ lineup/ board.html
     spec/                     <role>.md
@@ -29,6 +30,7 @@ In every command in these protocol files, `SCRIPTS`, `SESSION`, `R` and `NN` are
 | Command | Purpose |
 |---|---|
 | `node SCRIPTS/session.mjs init --slug s --mode m --depth d` | Create the session and refresh the kb snapshot |
+| `node SCRIPTS/refs.mjs add --session S --note "…" <source>...` \| `pick` \| `list` | Collect references: images, sites, boards and galleries (every tile + a contact sheet), posts; pick lineup anchors |
 | `node SCRIPTS/session.mjs refs --session S` | The reference gate: exit 0 only when `references/` holds an image |
 | `node SCRIPTS/session.mjs round --session S --next` | Open the next `rounds/NN/` (refuses until the reference gate passes) |
 | `node SCRIPTS/session.mjs check --session S --expect <rel>... \| --expect-glob '<glob>' --count n` | Barrier: exit 0 only when every output exists |

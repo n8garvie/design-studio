@@ -5,10 +5,10 @@ The goal is to see the problem clearly through every lens, and to turn the refer
 ## Wave 1, in parallel
 
 - **Always** (the reference gate guarantees at least one): spawn `visual-designer` and `brand-designer` with `TASK: reference-read`.
-  - INPUTS: every reference image in `references/`, plus `references/sources.md` and `brief.md`.
+  - INPUTS: the top-level reference images and captured sites in `references/` (the anchors), every `references/boards/*/sheet.png` and `references/posts/*/sheet.png`, plus `references/sources.md`, `references/index.json` and `brief.md`. A role opens individual board tiles when a sheet shows one worth a closer look, and names tiles by board and number (`dark-ui/07`).
   - OUTPUT: `discover/reference-read-<role>.md`.
 - **Every other roster role:** `TASK: discover`.
-  - INPUTS: `brief.md`, `references/sources.md`, the reference images, and `discover/current/*` plus `measure.json` for a redesign.
+  - INPUTS: `brief.md`, `references/sources.md`, the anchors and board sheets, and `discover/current/*` plus `measure.json` for a redesign.
   - OUTPUT: `discover/<role>.md`.
 - **Redesign, standard and deep depth:** also spawn one fresh `critic` with `TASK: panel` on the current state.
   - INPUTS: the `criticFiles` from `discover/current`, plus `brief.md`.

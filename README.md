@@ -54,6 +54,14 @@ You need Node 18+. For screenshots, Playwright with Chromium must be available t
 | `/design-studio:crit http://localhost:3000 refs: stripe.com/pricing` | `$design-studio:crit …` | One critique round, with a ranked fix list |
 | `/design-studio:studio resume` | `$design-studio:studio resume` | Continue the last session |
 
+**References can be almost anything.** The studio collects each into the session for you:
+- image files or folders
+- websites and local pages (captured on desktop and mobile)
+- mood boards and galleries: a Cosmos board, an Are.na channel, or a1.gallery, sections.wtf, recent.design, before.click, Godly and the like. Every tile is saved with its caption and link, plus a contact sheet the team reads at a glance. Then 3–5 tiles are picked as the anchors the blind lineup ranks against.
+- a Threads, X or Instagram post: its images, plus a list of the sites it names, for you to choose from.
+
+A private board can't be read: make it public, or export its images to a folder and pass the folder.
+
 Things you can say in the request:
 - `quick`, `standard` (the default) or `deep`
 - `auto`, to skip checkpoints
