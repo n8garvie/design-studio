@@ -59,6 +59,7 @@ You need Node 18+. For screenshots, Playwright with Chromium must be available t
 - websites and local pages (captured on desktop and mobile)
 - mood boards and galleries: a Cosmos board, an Are.na channel, or a1.gallery, sections.wtf, recent.design, before.click, Godly and the like. Every tile is saved with its caption and link, plus a contact sheet the team reads at a glance. Then 3–5 tiles are picked as the anchors the blind lineup ranks against.
 - a Threads, X or Instagram post: its images, plus a list of the sites it names, for you to choose from.
+- a video, such as a screen recording or a board's share export: each distinct frame becomes a tile. This needs ffmpeg.
 
 A private board can't be read: make it public, or export its images to a folder and pass the folder.
 

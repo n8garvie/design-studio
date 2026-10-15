@@ -3,6 +3,7 @@
 // mood board or gallery (Cosmos, Are.na, a1.gallery, sections.wtf, recent.design, ...) and the images
 // of a social post (Threads, X, Instagram), each with its source, caption and link.
 
+import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -13,7 +14,7 @@ import {
 import { launchBrowser, shoot } from './shoot.mjs';
 
 const HELP = `Usage:
-  node refs.mjs add --session <dir> [--as auto|site|board|post|image] [--max 24]
+  node refs.mjs add --session <dir> [--as auto|site|board|post|image|video] [--max 24]
                     [--note "what the user loves"] <source>...
   node refs.mjs pick --session <dir> <tile>...
   node refs.mjs list --session <dir> [--json]
@@ -22,7 +23,9 @@ add   Collects each source into <session>/references and records it in index.jso
       Sources: an image file or folder of images; an image URL; a website or local page
       (captured desktop and mobile, like shoot.mjs); a mood board or gallery (every tile saved
       as its own PNG plus a contact sheet, sheet.png); a social post (its images, plus the
-      sites its text names, listed for the user to choose from, never captured on their own).
+      sites its text names, listed for the user to choose from, never captured on their own);
+      a video (a screen recording or a board's share export: its distinct frames, deduplicated,
+      plus a contact sheet; needs ffmpeg).
       --as forces the kind; auto detects it from the host and the page. --max caps tiles per
       board (default 24). GIF, AVIF, SVG and video tiles are rendered to PNG.
       A private or blocked board exits 2 and says so: ask the user to make it public or to
@@ -41,6 +44,7 @@ const BOARD_HOSTS = [
 ];
 const POST_HOSTS = ['threads.com', 'threads.net', 'x.com', 'twitter.com', 'instagram.com', 'bsky.app', 'linkedin.com'];
 const RENDER_EXTS = new Set(['.gif', '.avif', '.svg', '.bmp', '.tif', '.tiff', '.heic']);
+const VIDEO_EXTS = new Set(['.mp4', '.mov', '.m4v', '.webm', '.mkv']);
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36';
 
 const hostOf = (u) => { try { return new URL(u).hostname.replace(/^www\./, ''); } catch { return ''; } };
@@ -61,12 +65,14 @@ export function classify(source, as = 'auto') {
     if (isDir(p)) return 'folder';
     const ext = path.extname(p).toLowerCase();
     if (IMAGE_EXTS.has(ext) || RENDER_EXTS.has(ext)) return 'image';
+    if (VIDEO_EXTS.has(ext)) return 'video';
     return 'site';
   }
   const url = new URL(source);
   const host = hostOf(source);
   const ext = path.extname(url.pathname).toLowerCase();
   if (IMAGE_EXTS.has(ext) || RENDER_EXTS.has(ext)) return 'image';
+  if (VIDEO_EXTS.has(ext)) return 'video';
   if (onHost(host, POST_HOSTS)) return 'post';
   if (onHost(host, BOARD_HOSTS)) return 'board';
   return 'site';
@@ -396,6 +402,62 @@ async function collectPost(browser, url, dir, { max }) {
   }
 }
 
+// ---------- video ----------
+
+/** Indices of frames worth keeping: each differs from every kept frame by more than `threshold` (mean 0-255 gray). */
+export function distinctFrames(frames, threshold = 10, max = 24) {
+  const diff = (a, b) => {
+    let sum = 0;
+    for (let i = 0; i < a.length; i++) sum += Math.abs(a[i] - b[i]);
+    return sum / a.length;
+  };
+  const kept = [];
+  for (let i = 0; i < frames.length && kept.length < max; i++) {
+    if (kept.every((k) => diff(frames[i], frames[k]) > threshold)) kept.push(i);
+  }
+  return kept;
+}
+
+function ffmpeg(args, opts = {}) {
+  const r = spawnSync('ffmpeg', ['-v', 'error', ...args], { maxBuffer: 1 << 28, ...opts });
+  if (r.error?.code === 'ENOENT') throw userError('video references need ffmpeg on the PATH (or send screenshots of the video instead)');
+  if (r.status !== 0) throw userError(`ffmpeg failed: ${String(r.stderr).trim().split('\n').pop()}`);
+  return r.stdout;
+}
+
+/**
+ * Pull the distinct frames out of a video (a screen recording, a board's share export):
+ * sample (every frame of a short clip), compare 36x64 grayscale thumbnails, keep frames that differ from
+ * every kept one (loops and holds collapse), then export those frames at full size.
+ */
+function collectVideo(file, dir, { max }) {
+  const probe = spawnSync('ffprobe', ['-v', 'error', '-select_streams', 'v:0', '-show_entries', 'stream=r_frame_rate:format=duration', '-of', 'json', file], { encoding: 'utf8' });
+  let info = {};
+  try { info = JSON.parse(probe.stdout || '{}'); } catch { /* defaults below */ }
+  const duration = Number(info.format?.duration) || 10;
+  const [num, den] = String(info.streams?.[0]?.r_frame_rate ?? '4/1').split('/').map(Number);
+  const nativeFps = num && den ? num / den : 4;
+  // Share exports flip through a board several items a second, so short clips are read frame
+  // by frame; long recordings are sampled down to about 600 frames.
+  const fps = Math.max(0.2, Math.min(nativeFps, 600 / duration));
+  const W = 36;
+  const H = 64;
+  const raw = ffmpeg(['-i', file, '-vf', `fps=${fps},scale=${W}:${H},format=gray`, '-f', 'rawvideo', '-']);
+  const size = W * H;
+  const frames = Array.from({ length: Math.floor(raw.length / size) }, (_, i) => raw.subarray(i * size, (i + 1) * size));
+  if (!frames.length) throw userError(`no frames decoded from ${file}`);
+  const kept = distinctFrames(frames, 10, max);
+  const select = kept.map((n) => `eq(n\\,${n})`).join('+');
+  ffmpeg(['-i', file, '-vf', `fps=${fps},select='${select}'`, '-vsync', 'vfr', path.join(dir, '%02d.png')]);
+  return kept.map((n, i) => ({
+    file: path.join(dir, `${String(i + 1).padStart(2, '0')}.png`),
+    alt: `frame at ${(n / fps).toFixed(1)}s`,
+    link: '',
+    src: file,
+    kind: 'frame',
+  })).filter((it) => isFile(it.file));
+}
+
 // ---------- commands ----------
 
 export async function add(session, sources, { as = 'auto', max = 24, note = '', browserOpts = {} } = {}) {
@@ -443,6 +505,19 @@ export async function add(session, sources, { as = 'auto', max = 24, note = '', 
         const out = path.join(dir, id);
         const res = await shoot(source, { out, viewports: 'desktop,mobile', tiles: 1, waitMs: 800, ...browserOpts });
         entry = { ...base, id, path: out, title: source, shots: res.shots };
+      } else if (kind === 'video') {
+        if (isUrl(source)) throw userError(`download the video first and pass the file: ${source}`);
+        if (!isFile(abs(source))) throw userError(`no such video: ${abs(source)}`);
+        const out = uniqueDir(path.join(dir, 'boards'), slugify(path.basename(source, path.extname(source))));
+        let items;
+        try {
+          items = collectVideo(abs(source), out, { max });
+        } catch (err) {
+          fs.rmSync(out, { recursive: true, force: true });
+          throw err;
+        }
+        await contactSheet(await getBrowser(), items, path.join(out, 'sheet.png'));
+        entry = { ...base, id: nextRefId(dir, index), path: out, title: path.basename(source), items };
       } else if (kind === 'board' || kind === 'post') {
         const out = uniqueDir(path.join(dir, kind === 'board' ? 'boards' : 'posts'), slugify(source.replace(/[?#].*$/, '')));
         const url = isUrl(source) ? source : pathToFileURL(abs(source)).href;
@@ -458,7 +533,7 @@ export async function add(session, sources, { as = 'auto', max = 24, note = '', 
         await contactSheet(await getBrowser(), got.items, path.join(out, 'sheet.png'));
         entry = { ...base, id: nextRefId(dir, index), path: out, title: got.title, items: got.items, ...(got.links ? { links: got.links } : {}) };
       } else {
-        throw userError(`unknown --as "${kind}" (auto, site, board, post, image)`);
+        throw userError(`unknown --as "${kind}" (auto, site, board, post, image, video)`);
       }
       index.push(entry);
       added.push(entry);
