@@ -9,7 +9,8 @@ import { fileURLToPath } from 'node:url';
 const here = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPTS = path.resolve(here, '../plugins/design-studio/skills/studio/scripts');
 const REFS = path.join(SCRIPTS, 'refs.mjs');
-const { classify, domainsIn, slugify, upgradeSrc } = await import(REFS);
+const { classify, distinctFrames, domainsIn, slugify, upgradeSrc } = await import(REFS);
+const NO_FFMPEG = spawnSync('ffmpeg', ['-version']).status === 0 ? false : 'ffmpeg is not installed';
 const { resolvePlaywright } = await import(path.join(SCRIPTS, 'shoot.mjs'));
 const NO_PLAYWRIGHT = resolvePlaywright() ? false : 'Playwright is not resolvable here';
 
@@ -40,6 +41,8 @@ test('classify sorts sources into image, folder, site, board and post', () => {
     assert.equal(classify('loop.gif'), 'image', 'rendered to PNG later');
     assert.equal(classify('page.html'), 'site');
     assert.equal(classify('.'), 'folder');
+    fs.writeFileSync(path.join(root, 'export.mp4'), 'mp4');
+    assert.equal(classify('export.mp4'), 'video');
   } finally {
     process.chdir(cwd);
   }
@@ -51,6 +54,7 @@ test('classify sorts sources into image, folder, site, board and post', () => {
   assert.equal(classify('https://linear.app'), 'site');
   assert.equal(classify('https://cdn.example.com/a/b.webp'), 'image');
   assert.equal(classify('https://linear.app', 'board'), 'board', '--as wins');
+  assert.equal(classify('https://cdn.example.com/board-export.mp4'), 'video');
 });
 
 test('helpers: post domains, slugs and the Cosmos upgrade', () => {
@@ -132,4 +136,29 @@ test('a private or unavailable board exits 2 and leaves nothing behind', { skip:
   assert.equal(res.code, 2, res.stdout);
   assert.match(res.stderr, /not readable.*private/);
   assert.deepEqual(fs.readdirSync(path.join(session, 'references', 'boards')), [], 'partial board removed');
+});
+
+test('distinctFrames keeps changes and collapses holds and loops', () => {
+  const f = (v) => Buffer.alloc(16, v);
+  // A, A, B, B (with noise), C, A again (a loop), B again.
+  const frames = [f(10), f(11), f(120), f(124), f(240), f(12), f(121)];
+  assert.deepEqual(distinctFrames(frames, 10), [0, 2, 4]);
+  assert.deepEqual(distinctFrames(frames, 10, 2), [0, 2], 'max caps the count');
+});
+
+test('add takes a video and keeps one tile per distinct frame', { skip: NO_FFMPEG || NO_PLAYWRIGHT, timeout: 180000 }, (t) => {
+  const { root, session } = makeSession();
+  // Three solid shots, then the first again: a looping share export in miniature.
+  const video = path.join(root, 'board-export.mp4');
+  const src = ['red', 'navy', 'white', 'red'].map((c) => `color=c=${c}:s=180x320:d=1:r=6`);
+  const r = spawnSync('ffmpeg', ['-v', 'error', ...src.flatMap((s) => ['-f', 'lavfi', '-i', s]), '-filter_complex', 'concat=n=4:v=1:a=0', '-pix_fmt', 'yuv420p', video]);
+  assert.equal(r.status, 0, String(r.stderr));
+  const res = refs(['add', '--session', session, 'board-export.mp4'], root);
+  if (res.code === 3) return t.skip(`no browser could launch: ${res.stderr.trim()}`);
+  assert.equal(res.code, 0, res.stderr);
+  const [entry] = JSON.parse(fs.readFileSync(path.join(session, 'references', 'index.json'), 'utf8'));
+  assert.equal(entry.kind, 'video');
+  assert.equal(entry.items.length, 3, 'the loop back to red adds nothing');
+  for (const it of entry.items) assert.ok(fs.existsSync(it.file));
+  assert.ok(fs.existsSync(path.join(entry.path, 'sheet.png')));
 });
